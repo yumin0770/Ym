@@ -44,14 +44,24 @@ public class OperatrorEx3 {
 		System.out.println("10을 초과하거나 홀수? "+ result4); 
 		
 		//정수는 0부터 50까지 사이 숫자 또는 음수인가?
+		// == 50 이하인가?
 		int num5 = 100; 
-		boolean result5 = num5 >= 0 && num5 <= 50   || num5 < 0;
+//		boolean result5 = num5 >= 0 && num5 <= 50  || num5 < 0;
+		boolean result5 = num5 <= 50;
 		System.out.println("정수는 0부터 50까지 사이 숫자 또는 음수인가? " + result5 );
 				
-
+		//계산 순서  1)부등호 > = <- 2) && 3)|| 4)대입연산 =
 	
+		//논리 부정 연산자: ! (NOT)
+		// - 논리 값을 반대로 바꾸는 연산자
+		// !ture == false , !false == true
 		
+		//11은 짝수가 아니다
+		System.out.println("11은 짝수가 아니다 " + !(11 % 2 == 0));
 
+		System.out.println(true || false && !false ); //true
+		
+		\
 	}
 
 }
