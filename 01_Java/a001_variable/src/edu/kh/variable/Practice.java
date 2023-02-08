@@ -51,7 +51,8 @@ public class Practice {
 	System.out.println(ch+iNum1); //75
 	System.out.println((char)(ch+iNum1)); //K
 	
-	
+	//수정이 가능하다!!!!
+	//주석도 쓸 수 있다!
 	}
 	
 	
