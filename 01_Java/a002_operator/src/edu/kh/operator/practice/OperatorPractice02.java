@@ -12,7 +12,7 @@ public class OperatorPractice02 {
 		String Name = sc.next();
 		
 		System.out.print("학년 : ");
-		int grade1 = sc.nextInt();
+		int classGrade = sc.nextInt();
 		
 		System.out.print("반 : ");
 		int classNumber = sc.nextInt();
@@ -24,9 +24,9 @@ public class OperatorPractice02 {
 		String gender = sc.next();
 	
 		System.out.print("성적 : ");
-		double grade2 = sc.nextDouble();
+		double grade = sc.nextDouble();
 
-		System.out.printf("%d학년 %d반 %d번 %s %s의 성적은 %.2f점 입니다.",grade1,classNumber,studentNumber,Name,gender,grade2);
+		System.out.printf("%d학년 %d반 %d번 %s %s학생의 성적은 %.2f점 입니다.",classGrade,classNumber,studentNumber,Name,gender,grade);
 	}
 
 }
