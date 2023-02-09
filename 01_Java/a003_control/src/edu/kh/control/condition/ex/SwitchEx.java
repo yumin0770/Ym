@@ -158,25 +158,56 @@ public class SwitchEx {
 
 		
 		switch(op) {
-		case "+" : System.out.printf("%d %s %d = %d" , num1,op,num2, num1 + num2); break;
-		case "-" : System.out.printf("%d %s %d = %d" , num1,op,num2, num1 - num2); break;
-		case "*" : System.out.printf("%d %s %d = %d" , num1,op,num2, num1 * num2); break;
+		case "+" : System.out.printf("%d %s %d = %.3f" , num1,op,num2, (double)num1 + num2); break;
+		case "-" : System.out.printf("%d %s %d = %.3f" , num1,op,num2, (double)num1 - num2); break;
+		case "*" : System.out.printf("%d %s %d = %.3f" , num1,op,num2, (double)num1 * num2); break;
 		case "/" : 
 				if(num2 == 0) {
 					System.out.println("0으로는 나눌 수 없습니다."); break;
 				}else {
-					 System.out.printf("%d / %d = %d" , num1,num2, num1 / num2);
+					System.out.printf("%d / %d = %.3f" , num1,num2, (double)num1 / num2);
 		
 					System.out.println();break; 
 		}
-		case "%" : System.out.printf("%d % %d = %d" , num1,num2, num1 % num2); break;
+		case "%" : System.out.printf("%d % %d = %.3f" , num1,num2, (double)num1 % num2); break;
 		default	: System.out.println("존재하지 않는 연산자 입니다."); break;
 		
 		
+	
+		}
+
 	}
 	
+	//swich 예시 5 : break의 역할
 	
-}
+	//계절 판별(switch version) 
+	public void ex5() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("달(월) 입력 : ");
+		int month = sc.nextInt();
+		
+		String result;
+				
+		//break : 멈추다
+		//=> 해당 case를 수행한 후 멈춰라!
+		// -> break 미작성 시 다음 case가 연달아 수행된다!
+		
+		//* case마다 꼭 코드가 작성될 필요는 없다!
+		switch(month) {
+		case 12 : case 1 : case 2 : result = "겨울"; break;
+		case 3 : case 4 : case 5 : result = "봄"; break;
+		case 6 : case 7 : case 8 : result = "여름"; break;
+		case 9 : case 10 : case 11 : result = "가을"; break;
+		default : result = "잘못 입력 하셨습니다."; break;
+		
+		}
+		
+		System.out.println(result);
+		
+	
+	}
+			
 }
 
 	
