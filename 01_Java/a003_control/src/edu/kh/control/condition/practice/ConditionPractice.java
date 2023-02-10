@@ -23,7 +23,7 @@ public void ex1() {
 	       res = "양수만 입력해주세요"; break;
 		
 		System.out.println(res);
-}
+	}}
 
 public void ex2() {
 	

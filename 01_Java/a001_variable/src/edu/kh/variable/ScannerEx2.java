@@ -8,23 +8,23 @@ public class ScannerEx2 {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		// sc.next()     : 다음 입력되는 한 단어를 얻어옴.
-		// sc.nextInt()  : 다음 입력되는 정수를 얻어옴
-		// sc.nextDouble :  다음 입력되는 실수를 얻어옴
+		// sc.next()     : �ㅼ�� ���λ���� �� �⑥�대�� �살�댁��.
+		// sc.nextInt()  : �ㅼ�� ���λ���� ����瑜� �살�댁��
+		// sc.nextDouble :  �ㅼ�� ���λ���� �ㅼ��瑜� �살�댁��
 		
-		System.out.print("이름 : ");
+		System.out.print("�대� : ");
 		String inputName = sc.next();
 		
-		System.out.print("나이 : ");
+		System.out.print("���� : ");
 		int inputAge = sc.nextInt();
 		
-		System.out.print("키 : ");
+		System.out.print("�� : ");
 		double inputHeight =  sc.nextDouble();
 		
 
-		// 홍길동님은 25세, 키 174.5cm 입니다.
+		// ��湲몃������ 25��, �� 174.5cm ������.
 		
-		System.out.printf("%s님은 %d세, 키 %.1fcm 입니다", inputName, inputAge, inputHeight);
+		System.out.printf("%s���� %d��, �� %.1fcm ������", inputName, inputAge, inputHeight);
 		
 	
 		
