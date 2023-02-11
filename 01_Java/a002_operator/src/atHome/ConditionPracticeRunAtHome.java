@@ -6,7 +6,7 @@ public class ConditionPracticeRunAtHome {
 
 	public static void main(String[] args) {
 	
-		ConditionPractice cp = new  ConditionPractice();
+		ConditionPracticeAtHome cp = new  ConditionPracticeAtHome();
   
 		
 			Scanner sc = new Scanner(System.in);

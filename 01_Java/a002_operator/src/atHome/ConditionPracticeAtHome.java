@@ -42,17 +42,14 @@ public void ex2() {
 	
 	int sum = kor + math + eng;
 	double avg = (sum / 3.0);
-	int grade;
+	int grade =;
 	String result;
 	
 	switch(grade) {
-	case  :
-		if(kor, math, eng <= 40 && avg <= 60); {
-		result = "불합격입니다.";break;
-		} else {
-		result = "축하합니다, 합격입니다!";break;
+	case kor  :
+		if (kor >=40) {
+		result =
 		}
-		
 	
 	
 	}

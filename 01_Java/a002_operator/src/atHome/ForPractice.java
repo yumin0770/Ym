@@ -142,21 +142,27 @@ public class ForPractice {
 
 	public void practice9() {
 		Scanner sc = new Scanner(System.in);
-			System.out.print("정수 입력 : ");
-			int number = sc.nextInt();
-			
-			for (int x = 1; x <= number; x++) {
-				for (int i = 1; i <= x; i++) {
-					for (int blk = i; blk >=0 ; blk-- ) {
-					System.out.print(" ");
-					}System.out.print("*");
+		System.out.print("정수 입력 : ");
+		int number = sc.nextInt();
 
+		for (int x = 1; x <= number; x++) {
+			for (int i = number; i >= x; i--) {
+				System.out.print(" ");
+				}
+				for (int i = 0; i <= x-1; i++) {
+					System.out.print("*");
 
 				}
-				System.out.println();
+			System.out.println();
 			}
 		}
 		
+	public void practice10() {
+		
+		
+		
+		
+	}
 
 	
 }
