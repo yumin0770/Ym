@@ -194,7 +194,7 @@ public class ForPractice {
     }System.out.println();
     System.out.printf("count: %d", count);  
       
-    
+    ddd
 }
         
 }
