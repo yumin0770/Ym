@@ -15,6 +15,9 @@ public class ConditionPracticeRunAtHome2 {
 		switch(input) {
 		case 1 :cp.ex1(); break; 
 		case 2 :cp.ex2(); break;
+		case 3 :cp.ex3(); break;
+		case 4 :cp.ex4(); break;
+		case 5 :cp.ex5(); break;
 	
 		
 		default : System.out.println("잘못 입력하셨습니다.");

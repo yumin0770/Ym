@@ -148,7 +148,7 @@ public class ForPractice {
             for (int p = 1; p <= i; p++) {
                 System.out.print("*");
                 for(int i = dan; i <= 9; i++) {
-                    System.out.printf("=====  %d�� ===== \n",i);
+                    System.out.printf("=====  %d단 ===== \n",i);
                     for (int num = 1 ; num  <= 9 ; num ++) {
                         System.out.printf("%d * %d = %2d \n", i, num, i * num);
                     }
