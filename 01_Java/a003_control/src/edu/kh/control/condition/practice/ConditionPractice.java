@@ -20,26 +20,20 @@ public void ex1() {
 		}else {
 			res = "홀수입니다."; break;
 		} default :
-	       res = "양수만 입력해주세요"; break;
+	       res = "양수를 입력해주세요"; break;
 	}	
 		System.out.println(res);
-<<<<<<< HEAD
-	}}
-
-=======
-//다시 풀기
 }
->>>>>>> 6efe7bc0b232d651d65a67f65fc84705d98d0d1f
 public void ex2() {
 	Scanner sc = new Scanner(System.in);
 	
-		System.out.print("국어점수 : ");
+		System.out.print("援��댁���� : ");
 		int kor = sc.nextInt();
 		
-		System.out.print("수학점수 : ");
+		System.out.print("�������� : ");
 		int math = sc.nextInt();
 		
-		System.out.print("영어점수 : ");
+		System.out.print("���댁���� : ");
 		int eng = sc.nextInt();
 		
 		String res;

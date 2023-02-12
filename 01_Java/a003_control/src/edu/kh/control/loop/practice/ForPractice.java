@@ -8,7 +8,7 @@ public class ForPractice {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("1이상의 숫자를 입력하세요 : ");
+		System.out.print("1�댁���� �レ��瑜� ���ν���몄�� : ");
 		int input = sc.nextInt();
 
 		if (input >= 1) {
@@ -16,7 +16,7 @@ public class ForPractice {
 				System.out.print(i + " ");
 			}
 		} else {
-			System.out.print("1 이상의 숫자를 입력하세요.");
+			System.out.print("1 �댁���� �レ��瑜� ���ν���몄��.");
 		}
 	}
 
@@ -24,7 +24,7 @@ public class ForPractice {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("1이상의 숫자를 입력하세요 : ");
+		System.out.print("1�댁���� �レ��瑜� ���ν���몄�� : ");
 		int input = sc.nextInt();
 
 		if (input >= 1) {
@@ -32,14 +32,14 @@ public class ForPractice {
 				System.out.print( i + " ");
 			} 
 		} else {
-			System.out.print("1 이상의 숫자를 입력하세요.");
+			System.out.print("1 �댁���� �レ��瑜� ���ν���몄��.");
 		}
 	}
 	public void practice3() {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("정수를 하나 입력하세요 : ");
+		System.out.print("����瑜� ���� ���ν���몄�� : ");
 		int input = sc.nextInt();
 		int sum = 0;
 
@@ -47,8 +47,8 @@ public class ForPractice {
 			sum += i; 
 		 System.out.print(i);
 
-		 //i == input == 마지막
-		 if(i != input) { //!= 마지막이 아니다
+		 //i == input == 留�吏�留�
+		 if(i != input) { //!= 留�吏�留��� ������
 			 System.out.print( " + ");
 		 }
 		}
@@ -59,10 +59,10 @@ public class ForPractice {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("첫 번째 숫자 : ");
+		System.out.print("泥� 踰�吏� �レ�� : ");
 		int num1 = sc.nextInt();
 
-		System.out.print("두 번째 숫자 : ");
+		System.out.print("�� 踰�吏� �レ�� : ");
 		int num2 = sc.nextInt();
 
 		if( num1 >= 1 && num2 >= 1) {	
@@ -71,7 +71,7 @@ public class ForPractice {
 
 
 		}} else {
-			System.out.println("1이상의 숫자를 입력해주세요.");
+			System.out.println("1�댁���� �レ��瑜� ���ν�댁＜�몄��.");
 		}
 		}
 
@@ -79,10 +79,10 @@ public class ForPractice {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("숫자 : ");
+		System.out.print("�レ�� : ");
 		int dan = sc.nextInt();
 
-		System.out.println("===== " + dan +"단 =====");
+		System.out.println("===== " + dan +"�� =====");
 			for (int num = 1 ; num  <= 9 ; num ++) {
 				System.out.printf("%d * %d = %2d \n", dan, num, dan * num);
 
@@ -93,23 +93,23 @@ public class ForPractice {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("숫자 : ");
+		System.out.println("�レ�� : ");
 		int dan = sc.nextInt();
 
 		if (dan >= 2 && dan <= 9) {
 			for(int i = dan; i <= 9; i++) {
-				System.out.printf("=====  %d단 ===== \n",i);
+				System.out.printf("=====  %d�� ===== \n",i);
                 for (int num = 1 ; num  <= 9 ; num ++) {
 				System.out.printf("%d * %d = %2d \n", i, num, i * num);
 			}
 
 		} }else
-		System.out.println("2~9 사이 숫자만 입력해주세요.");
+		System.out.println("2~9 �ъ�� �レ��留� ���ν�댁＜�몄��.");
 	}
     public void practice7() {
         Scanner sc = new Scanner(System.in);
         
-        System.out.print("정수입력 : ");
+        System.out.print("�������� : ");
         int input = sc.nextInt();
         
         for (int i = 1; i <= input; i++) {
@@ -124,7 +124,7 @@ public class ForPractice {
     
         Scanner sc = new Scanner(System.in); 
     
-        System.out.print("정수입력 : ");
+        System.out.print("�������� : ");
         int input = sc.nextInt();
     
         for (int i = input; i >= 1; i--) {
@@ -138,7 +138,7 @@ public class ForPractice {
     public void practice9() {
         Scanner sc = new Scanner(System.in);
     
-        System.out.print("정수입력 : "); 
+        System.out.print("�������� : "); 
         int input = sc.nextInt();
     
         for (int i = 1; i <= input; i++) {
@@ -148,7 +148,7 @@ public class ForPractice {
             for (int p = 1; p <= i; p++) {
                 System.out.print("*");
                 for(int i = dan; i <= 9; i++) {
-                    System.out.printf("=====  %d단 ===== \n",i);
+                    System.out.printf("=====  %d�� ===== \n",i);
                     for (int num = 1 ; num  <= 9 ; num ++) {
                         System.out.printf("%d * %d = %2d \n", i, num, i * num);
                     }
@@ -163,16 +163,16 @@ public class ForPractice {
     
     public void practice10() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("정수입력 : ");
+        System.out.print("�������� : ");
         int input = sc.nextInt();
         
-        for (int i = 0; i < 5; i++) { // 1~5번째 줄을 담당하는 for문
+        for (int i = 0; i < 5; i++) { // 1~5踰�吏� 以��� �대�뱁���� for臾�
             for (int j = 0; j < i + 1; j++) {
                 System.out.print("*");
             }
             System.out.println();
         }
-        for (int i = 0; i < 4; i++) { // 6~9번째 줄을 담당하는 for문
+        for (int i = 0; i < 4; i++) { // 6~9踰�吏� 以��� �대�뱁���� for臾�
             for (int j = 0; j < 4 - i; j++) {
                 System.out.print("*");
             }
@@ -180,7 +180,7 @@ public class ForPractice {
     }   
     public void practice13() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("자연수 하나를 입력하세요 : ");
+        System.out.print("���곗�� ����瑜� ���ν���몄�� : ");
         int input = sc.nextInt();
         
         int count = 1;
@@ -188,13 +188,13 @@ public class ForPractice {
             if (i % 2 == 0 || i % 3 == 0) {
                 System.out.print(i + " ");
             
-        }                if (i % 2 == 0 && i % 3 == 0)
+        } if (i % 2 == 0 && i % 3 == 0)
             count++;
         
     }System.out.println();
     System.out.printf("count: %d", count);  
       
-    ddd
+   
 }
         
 }
