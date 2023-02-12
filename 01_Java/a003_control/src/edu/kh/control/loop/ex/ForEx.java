@@ -4,50 +4,50 @@ import java.util.Scanner;
 
 public class ForEx {
 	/*
-	 * forë¬¸ - ëì´ ì •í•´ì ¸ ìžˆëŠ” ê²½ìš°ì— ì‚¬ìš©í•˜ëŠ” ë°˜ë³µë¬¸ (== ë°˜ë³µ íšŸìˆ˜ê°€ ì§€ì •ë˜ì–´ ìžˆëŠ” ê²½ìš° ì‚¬ìš©)
+	 * for¹® - ³¡ÀÌ Á¤ÇØÁ® ÀÖ´Â °æ¿ì¿¡ »ç¿ëÇÏ´Â ¹Ýº¹¹® (== ¹Ýº¹ È½¼ö°¡ ÁöÁ¤µÇ¾î ÀÖ´Â °æ¿ì »ç¿ë)
 	 * 
-	 * -ìž‘ì„±ë²•
+	 * -ÀÛ¼º¹ý
 	 * 
-	 * for(ì´ˆê¸°ì‹[1]; ì¡°ê±´ì‹[2][5]; ì¦ê°ì‹[4][7]){
+	 * for(ÃÊ±â½Ä[1]; Á¶°Ç½Ä[2][5]; Áõ°¨½Ä[4][7]){
 	 * 
-	 * [3][6]ì¡°ê±´ì‹ì´ trueì¼ ë•Œ ë°˜ë³µ ìˆ˜í–‰í•  ì½”ë“œ }
+	 * [3][6]Á¶°Ç½ÄÀÌ trueÀÏ ¶§ ¹Ýº¹ ¼öÇàÇÒ ÄÚµå }
 	 * 
-	 * 1~4 ë²ˆ ìˆ˜í–‰ í›„ ì¡°ê±´ì‹ì´ falseê°€ ë‚˜ì˜¬ ë•Œ ê¹Œì§€ 5~7ì„ ë°˜ë³µ
+	 * 1~4 ¹ø ¼öÇà ÈÄ Á¶°Ç½ÄÀÌ false°¡ ³ª¿Ã ¶§ ±îÁö 5~7À» ¹Ýº¹
 	 * 
-	 * - ì´ˆê¸°ì‹ : forë¬¸ì„ ì œì–´í•˜ëŠ” ìš©ë„ì˜ ë³€ìˆ˜ ì„ ì–¸ ë° ì´ˆê¸°í™” (ë³€ìˆ˜ì— ê°’ì„ ì²˜ìŒ ëŒ€ìž…í•˜ëŠ”ê²ƒ ì´ˆê¸°í™”)
+	 * - ÃÊ±â½Ä : for¹®À» Á¦¾îÇÏ´Â ¿ëµµÀÇ º¯¼ö ¼±¾ð ¹× ÃÊ±âÈ­ (º¯¼ö¿¡ °ªÀ» Ã³À½ ´ëÀÔÇÏ´Â°Í ÃÊ±âÈ­)
 	 * 
-	 * - ì¡°ê±´ì‹ : forë¬¸ì˜ ë°˜ë³µ ì—¬ë¶€ë¥¼ ì§€ì •í•˜ëŠ” ì‹ ì¡°ê±´ì‹ì´ trueì¸ ê²½ìš°ì—ë§Œ ë°˜ë³µ ìˆ˜í–‰ì„ í•¨. ë³´í†µ ì´ˆê¸°ì‹ì— ì‚¬ìš©ëœ ë³€ìˆ˜ë¥¼ ì´ìš”í–‰ì„œ
-	 * ì¡°ê±´ì‹ì„ ìž‘ì„±í•¨.
+	 * - Á¶°Ç½Ä : for¹®ÀÇ ¹Ýº¹ ¿©ºÎ¸¦ ÁöÁ¤ÇÏ´Â ½Ä Á¶°Ç½ÄÀÌ trueÀÎ °æ¿ì¿¡¸¸ ¹Ýº¹ ¼öÇàÀ» ÇÔ. º¸Åë ÃÊ±â½Ä¿¡ »ç¿ëµÈ º¯¼ö¸¦ ÀÌ¿äÇà¼­
+	 * Á¶°Ç½ÄÀ» ÀÛ¼ºÇÔ.
 	 * 
-	 * - ì¦ê°ì‹ : forë¬¸ì´ í•œ ë²ˆ ë°˜ë³µì„ ìˆ˜í–‰í•  ë•Œ ë§ˆë‹¤ ë§ˆì§€ë§‰ì— íŠ¹ì • ê°’ì„ ì¦ê°€ ë˜ëŠ” ê°ì†Œ ì‹œí‚¤ëŠ” ì‹
+	 * - Áõ°¨½Ä : for¹®ÀÌ ÇÑ ¹ø ¹Ýº¹À» ¼öÇàÇÒ ¶§ ¸¶´Ù ¸¶Áö¸·¿¡ Æ¯Á¤ °ªÀ» Áõ°¡ ¶Ç´Â °¨¼Ò ½ÃÅ°´Â ½Ä
 	 * 
-	 * ë³´í†µ ì´ˆê¸°ì‹ì— ì‚¬ìš©ëœ ë³€ìˆ˜ë¥¼ ì¦ê°€/ê°ì†Œ ì‹œì¼œ ì¡°ê±´ì‹ì˜ ê²°ê³¼ë¥¼ ë³€í™”í•˜ê²Œ ë§Œë“œëŠ” ìš©ë„
+	 * º¸Åë ÃÊ±â½Ä¿¡ »ç¿ëµÈ º¯¼ö¸¦ Áõ°¡/°¨¼Ò ½ÃÄÑ Á¶°Ç½ÄÀÇ °á°ú¸¦ º¯È­ÇÏ°Ô ¸¸µå´Â ¿ëµµ
 	 * 
 	 **/
 
-	// forë¬¸ ê¸°ì´ˆ ì‚¬ìš©ë²•1
+	// for¹® ±âÃÊ »ç¿ë¹ý1
 	public void ex1() {
 
-		// 1~10ê¹Œì§€ ë°˜ë³µ ì¶œë ¥
-		// 1,2,3,4,5,6,7,8,9,10,11 (1ë¶€í„° ì‹œìž‘, 1ì”© ì¦ê°€, 11ì—ì„œ ë©ˆì¶”ê³  ì‹¶ìŒ)
+		// 1~10±îÁö ¹Ýº¹ Ãâ·Â
+		// 1,2,3,4,5,6,7,8,9,10,11 (1ºÎÅÍ ½ÃÀÛ, 1¾¿ Áõ°¡, 11¿¡¼­ ¸ØÃß°í ½ÍÀ½)
 
-		for (int num = 1; num <= 10; num++) { // í•´ì„ì‹œ ì´ˆê¸°ì‹, ì¦ê°ì‹, ì¡°ê±´ì‹
-			// numì€ 1~10ê¹Œì§€ 1ì”© ì¦ê°€í•˜ëŠ” ë³€ìˆ˜
+		for (int num = 1; num <= 10; num++) { // ÇØ¼®½Ã ÃÊ±â½Ä, Áõ°¨½Ä, Á¶°Ç½Ä
+			// numÀº 1~10±îÁö 1¾¿ Áõ°¡ÇÏ´Â º¯¼ö
 			System.out.println(num);
 
 		}
 	}
 
 	public void ex2() {
-		// 5ë¶€í„° 12ê¹Œì§€ 1ì”© ì¦ê°€í•˜ë©° ì¶œë ¥
+		// 5ºÎÅÍ 12±îÁö 1¾¿ Áõ°¡ÇÏ¸ç Ãâ·Â
 		for (int num = 5; num <= 12; num++) {
 			System.out.print(num + " ");
 		}
 	}
 
-	// forë¬¸ ê¸°ì´ˆ ì‚¬ìš©ë²• 3
+	// for¹® ±âÃÊ »ç¿ë¹ý 3
 	public void ex3() {
-		// 3ë¶€í„° 20ê¹Œì§€ 2ì”© ì¦ê°€í•˜ë©° ì¶œë ¥
+		// 3ºÎÅÍ 20±îÁö 2¾¿ Áõ°¡ÇÏ¸ç Ãâ·Â
 
 		for (int i = 3; i <= 20; i += 2) {
 			// i = i +2
@@ -56,35 +56,35 @@ public class ForEx {
 	}
 
 	public void ex4() {
-		// 1ë¶€í„° 100ê¹Œì§€ì˜ ëª¨ë“  ì •ìˆ˜ì˜ í•© == 5,050
+		// 1ºÎÅÍ 100±îÁöÀÇ ¸ðµç Á¤¼öÀÇ ÇÕ == 5,050
 
-		int sum = 0; // iê°€ ì¦ê°€í•˜ë©´ì„œ ë³€í•œ ê°’ë“¤ì„ ëˆ„ì í•  ë³€ìˆ˜
-						// 0ìœ¼ë¡œ ì´ˆê¸°í™” í•˜ëŠ” ì´ìœ  : ì–´ë–¤ ê°’ì„ ë”í•˜ë“  ì˜í–¥ì´ ì—†ì–´ì„œ
+		int sum = 0; // i°¡ Áõ°¡ÇÏ¸é¼­ º¯ÇÑ °ªµéÀ» ´©ÀûÇÒ º¯¼ö
+						// 0À¸·Î ÃÊ±âÈ­ ÇÏ´Â ÀÌÀ¯ : ¾î¶² °ªÀ» ´õÇÏµç ¿µÇâÀÌ ¾ø¾î¼­
 		for (int i = 1; i <= 100; i++) {
 
 			sum += i; // = sum = i + 1
 
 		}
 
-		System.out.println("í•©ê³„ : " + sum);
+		System.out.println("ÇÕ°è : " + sum);
 	}
 
-	// forë¬¸ ê¸°ì´ˆ ì‚¬ìš©ë²•5
+	// for¹® ±âÃÊ »ç¿ë¹ý5
 	public void ex5() {
-		// ë‘ ì •ìˆ˜ë¥¼ ìž…ë ¥ ë°›ì•„
-		// ë‘ ì •ìˆ˜ ì‚¬ì´ì˜ ëª¨ë“  ì •ìˆ˜ì˜ í•© ì¶œë ¥í•˜ê¸°
-		// (ë‹¨, ì²« ë²ˆì§¸ ìž…ë ¥ ë°›ëŠ” ì •ìˆ˜ê°€ ë¬´ì¡°ê±´ ìž‘ë‹¤ê³  ê°€ì •)
+		// µÎ Á¤¼ö¸¦ ÀÔ·Â ¹Þ¾Æ
+		// µÎ Á¤¼ö »çÀÌÀÇ ¸ðµç Á¤¼öÀÇ ÇÕ Ãâ·ÂÇÏ±â
+		// (´Ü, Ã¹ ¹øÂ° ÀÔ·Â ¹Þ´Â Á¤¼ö°¡ ¹«Á¶°Ç ÀÛ´Ù°í °¡Á¤)
 
-		// ì •ìˆ˜ 1 ìž…ë ¥: 2
-		// ì •ìˆ˜ 2 ìž…ë ¥: 5
-		// 2ë¶€í„° 5ê¹Œì§€ ëª¨ë“  ì •ìˆ˜ì˜ í•©:14
+		// Á¤¼ö 1 ÀÔ·Â: 2
+		// Á¤¼ö 2 ÀÔ·Â: 5
+		// 2ºÎÅÍ 5±îÁö ¸ðµç Á¤¼öÀÇ ÇÕ:14
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("ì •ìˆ˜ 1 : ");
+		System.out.print("Á¤¼ö 1 : ");
 		int num1 = sc.nextInt();
 
-		System.out.print("ì •ìˆ˜ 2 : ");
+		System.out.print("Á¤¼ö 2 : ");
 		int num2 = sc.nextInt();
 
 		int sum = 0;
@@ -92,41 +92,41 @@ public class ForEx {
 			sum += i;
 
 		}
-		System.out.printf("%dë¶€í„° %dê¹Œì§€ ëª¨ë“  ì •ìˆ˜ì˜ í•© : %d", num1, num2, sum);
+		System.out.printf("%dºÎÅÍ %d±îÁö ¸ðµç Á¤¼öÀÇ ÇÕ : %d", num1, num2, sum);
 	}
 
-	// forë¬¸ ê¸°ì´ˆ ì‚¬ìš©ë²•6 //**ì•”ê¸°
+	// for¹® ±âÃÊ »ç¿ë¹ý6 //**¾Ï±â
 	public void ex6() {
 
-		// ë‹¤ë¥¸ ìžë£Œí˜•ìœ¼ë¡œ forë¬¸ ì‚¬ìš©í•˜ê¸°
-		// 10ë¶€í„° 20ê¹Œì§€ 0.5ì”© ì¦ê°€í•˜ë©° ì¶œë ¥
-		for (double i = 10; i <= 20; i += 0.5) { // í˜•ë³€í™˜ ëŒ€ìž…ì—°ì‚°ì¸ ê²½ìš°ì—ëŠ” ëŒ€ìž…ì— ë§žì¶°ì§
-			// ì´ˆê¸°ì‹ì„ intí˜•ì„ ì§€ì •í•˜ê²Œ ë˜ëŠ” ê²½ìš° ë¬´í•œë£¨í”„ì— ë¹ ì§€ê²Œ ëœë‹¤.
-			// ì™œ? i += 0.5 ìˆ˜í–‰ ì‹œ 10.5ê°€ ì•„ë‹Œ
-			// 10ìœ¼ë¡œ(intí˜•ìœ¼ë¡œ) í˜•ë³€í™˜ë˜ì–´ iì— ëŒ€ìž…ë˜ê¸° ë•Œë¬¸ì—
+		// ´Ù¸¥ ÀÚ·áÇüÀ¸·Î for¹® »ç¿ëÇÏ±â
+		// 10ºÎÅÍ 20±îÁö 0.5¾¿ Áõ°¡ÇÏ¸ç Ãâ·Â
+		for (double i = 10; i <= 20; i += 0.5) { // Çüº¯È¯ ´ëÀÔ¿¬»êÀÎ °æ¿ì¿¡´Â ´ëÀÔ¿¡ ¸ÂÃçÁü
+			// ÃÊ±â½ÄÀ» intÇüÀ» ÁöÁ¤ÇÏ°Ô µÇ´Â °æ¿ì ¹«ÇÑ·çÇÁ¿¡ ºüÁö°Ô µÈ´Ù.
+			// ¿Ö? i += 0.5 ¼öÇà ½Ã 10.5°¡ ¾Æ´Ñ
+			// 10À¸·Î(intÇüÀ¸·Î) Çüº¯È¯µÇ¾î i¿¡ ´ëÀÔµÇ±â ¶§¹®¿¡
 
-			// í•´ê²° ë°©ë²• : ì´ˆê¸°ì‹ì„ double ìžë£Œí˜•ìœ¼ë¡œ ë³€ê²½
+			// ÇØ°á ¹æ¹ý : ÃÊ±â½ÄÀ» double ÀÚ·áÇüÀ¸·Î º¯°æ
 
 			System.out.println(i);
 
 		}
 
 		System.out.println("-------------------------------");
-		// A-Zê¹Œì§€ ëª¨ë“  ì•ŒíŒŒë²³ ì¶œë ¥í•˜ê¸°
+		// A-Z±îÁö ¸ðµç ¾ËÆÄºª Ãâ·ÂÇÏ±â
 
-		// 1) A, Zì˜ ìœ ë‹ˆì½”ë“œ ë²ˆí˜¸ ì´ìš©í•˜ê¸°(ì•„ìŠ¤í‚¤ ì½”ë“œ)
+		// 1) A, ZÀÇ À¯´ÏÄÚµå ¹øÈ£ ÀÌ¿ëÇÏ±â(¾Æ½ºÅ° ÄÚµå)
 		for (int i = 65; i <= 90; i++) {
 			System.out.print((char) i);
 		}
 
-		// 2) ìœ ë‹ˆì½”ë“œ ë²ˆí˜¸ë¥¼ ëª¨ë¥¼ ë•Œ
+		// 2) À¯´ÏÄÚµå ¹øÈ£¸¦ ¸ð¸¦ ¶§
 		System.out.println();
 		for (int i = 'A'; i <= 'Z'; i++) {
 			System.out.print((char) i);
 
 		}
 
-		// 3) char ìžë£Œí˜•ì€ ë¬¸ìží˜•ì´ì§€ë§Œ ì‹¤ì œë¡œëŠ” ì •ìˆ˜ë¥¼ ì €ìž¥í•œë‹¤!
+		// 3) char ÀÚ·áÇüÀº ¹®ÀÚÇüÀÌÁö¸¸ ½ÇÁ¦·Î´Â Á¤¼ö¸¦ ÀúÀåÇÑ´Ù!
 		System.out.println();
 		for (char i = 'A'; i <= 'Z'; i++) {
 			System.out.print(i);
@@ -134,28 +134,28 @@ public class ForEx {
 
 	}
 
-	// forë¬¸ ì‘ìš© ì‚¬ìš©ë²•1
+	// for¹® ÀÀ¿ë »ç¿ë¹ý1
 	public void ex7() {
-		// ê°ì†Œí•˜ê¸°
-		// 10ë¶€í„° 1ê¹Œì§€ 1ì”© ê°ì†Œí•˜ë©° ì¶œë ¥
+		// °¨¼ÒÇÏ±â
+		// 10ºÎÅÍ 1±îÁö 1¾¿ °¨¼ÒÇÏ¸ç Ãâ·Â
 		for (int i = 10; i >= 1; i--) {
 			System.out.print(i + " ");
 		}
 
 	}
 
-	// forë¬¸ ì‘ìš© ì‚¬ìš©ë²•2
+	// for¹® ÀÀ¿ë »ç¿ë¹ý2
 	public void ex8() {
-		// ìž…ë ¥, í•©ê³„, for
+		// ÀÔ·Â, ÇÕ°è, for
 
-		// ì •ìˆ˜ 5ê°œë¥¼ ìž…ë ¥ ë°›ì•„ í•©ê³„ ì¶œë ¥í•˜ê¸°
+		// Á¤¼ö 5°³¸¦ ÀÔ·Â ¹Þ¾Æ ÇÕ°è Ãâ·ÂÇÏ±â
 
 		Scanner sc = new Scanner(System.in);
 
-		int sum = 0; // í•©ê³„ë¥¼ ì €ìž¥í•  ë³€ìˆ˜ ì„ ì–¸ ë° 0ìœ¼ë¡œ ì´ˆê¸°í™”
+		int sum = 0; // ÇÕ°è¸¦ ÀúÀåÇÒ º¯¼ö ¼±¾ð ¹× 0À¸·Î ÃÊ±âÈ­
 
-		for (int i = 1; i <= 5; i++) {// 1ë¶€í„° 5ê¹Œì§€ 1ì”© ì¦ê°€ (5íšŒë°˜ë³µ)
-			System.out.printf("ì •ìˆ˜ ìž…ë ¥ %d :", i);
+		for (int i = 1; i <= 5; i++) {// 1ºÎÅÍ 5±îÁö 1¾¿ Áõ°¡ (5È¸¹Ýº¹)
+			System.out.printf("Á¤¼ö ÀÔ·Â %d :", i);
 			sum += sc.nextInt();
 
 		}
@@ -164,52 +164,52 @@ public class ForEx {
 
 	}
 
-	// ex9ë²ˆ ì‘ìš© 3
+	// ex9¹ø ÀÀ¿ë 3
 	public void ex9() {
 
-		// ì •ìˆ˜ë¥¼ ëª‡ ë²ˆ ìž…ë ¥ ë°›ì„ì§€ ë¨¼ì € ìž…ë ¥í•˜ê³ 
-		// ìž…ë ¥ëœ ì •ìˆ˜ì˜ í•©ê³„ë¥¼ ì¶œë ¥í•˜ë¼
+		// Á¤¼ö¸¦ ¸î ¹ø ÀÔ·Â ¹ÞÀ»Áö ¸ÕÀú ÀÔ·ÂÇÏ°í
+		// ÀÔ·ÂµÈ Á¤¼öÀÇ ÇÕ°è¸¦ Ãâ·ÂÇÏ¶ó
 
-		// ìž…ë ¥ ë°›ì„ ì •ìˆ˜ì˜ ê°œìˆ˜ : 2
-		// ìž…ë ¥ 1 : 3
-		// ìž…ë ¥ 2 : 5
-		// í•©ê³„ : 8
+		// ÀÔ·Â ¹ÞÀ» Á¤¼öÀÇ °³¼ö : 2
+		// ÀÔ·Â 1 : 3
+		// ÀÔ·Â 2 : 5
+		// ÇÕ°è : 8
 
-		// ìž…ë ¥ ë°›ì„ ì •ìˆ˜ì˜ ê°œìˆ˜ : 4
-		// ìž…ë ¥ 1: 3
-		// ìž…ë ¥ 2: 5
-		// ìž…ë ¥ 3 : 1
-		// ìž…ë ¥4 : 2
-		// í•©ê³„ : 11
+		// ÀÔ·Â ¹ÞÀ» Á¤¼öÀÇ °³¼ö : 4
+		// ÀÔ·Â 1: 3
+		// ÀÔ·Â 2: 5
+		// ÀÔ·Â 3 : 1
+		// ÀÔ·Â4 : 2
+		// ÇÕ°è : 11
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.printf("ìž…ë ¥ ë°›ì„ ì •ìˆ˜ì˜ ê°œìˆ˜ : ");
+		System.out.printf("ÀÔ·Â ¹ÞÀ» Á¤¼öÀÇ °³¼ö : ");
 		int num = sc.nextInt();
 
 		int sum = 0;
 		for (int i = 1; i <= num; i++) {
-			System.out.printf("ìž…ë ¥ %d :", i);
+			System.out.printf("ÀÔ·Â %d :", i);
 			sum += sc.nextInt();
 
 		}
 
-		System.out.printf("í•©ê³„ : %d ", sum);
+		System.out.printf("ÇÕ°è : %d ", sum);
 
 	}
 
-	// forë¬¸ ì‘ìš© ì‚¬ìš©ë²• 4
+	// for¹® ÀÀ¿ë »ç¿ë¹ý 4
 	public void ex10() {
-		// for + if ë™ì‹œ ì‚¬ìš©
+		// for + if µ¿½Ã »ç¿ë
 
-		// 1ë¶€í„° 10ê¹Œì§€ ë°˜ë³µí•˜ë©° ì¶œë ¥
-		// ë‹¨, ì§ìˆ˜ì¼ ê²½ìš° ()ë¡œ ìˆ«ìžë¥¼ ê°ì‹¸ì„œ ì¶œë ¥
+		// 1ºÎÅÍ 10±îÁö ¹Ýº¹ÇÏ¸ç Ãâ·Â
+		// ´Ü, Â¦¼öÀÏ °æ¿ì ()·Î ¼ýÀÚ¸¦ °¨½Î¼­ Ãâ·Â
 
 		// 1 (2) 3 (4) 5 (6) 7 (8) 9 (10)
 
 		for (int i = 1; i <= 10; i++) {
 
-			// ì§ìˆ˜ì¸ ê²½ìš°
+			// Â¦¼öÀÎ °æ¿ì
 			if (i % 2 == 0) {
 				System.out.printf("(%d) ", i);
 			} else
@@ -218,17 +218,17 @@ public class ForEx {
 
 	}
 
-	// forë¬¸ ì‘ìš© ì‚¬ìš©ë²• 5
+	// for¹® ÀÀ¿ë »ç¿ë¹ý 5
 	public void ex11() {
 
-		// 1ë¶€í„° 10ê¹Œì§€ 1ì”© ì¦ê°€í•˜ë©° ì¶œë ¥
-		// ë‹¨, 3ì˜ ë°°ìˆ˜ì¸ ê²½ìš° ìˆ«ìžë¥¼ [] ê°ì‹¸ì„œ ì¶œë ¥
-		// ë‹¨, 5ì˜ ë°°ìˆ˜ì¸ ê²½ìš° ìˆ«ìž ëŒ€ì‹  '@' ì¶œë ¥
+		// 1ºÎÅÍ 10±îÁö 1¾¿ Áõ°¡ÇÏ¸ç Ãâ·Â
+		// ´Ü, 3ÀÇ ¹è¼öÀÎ °æ¿ì ¼ýÀÚ¸¦ [] °¨½Î¼­ Ãâ·Â
+		// ´Ü, 5ÀÇ ¹è¼öÀÎ °æ¿ì ¼ýÀÚ ´ë½Å '@' Ãâ·Â
 
 		for (int i = 1; i <= 10; i++) {
-			if (i % 3 == 0) { // 3ì˜ ë°°ìˆ˜
+			if (i % 3 == 0) { // 3ÀÇ ¹è¼ö
 				System.out.printf("[%d] ", i);
-			} else if (i % 5 == 0) { // 5ì˜ ë°°ìˆ˜
+			} else if (i % 5 == 0) { // 5ÀÇ ¹è¼ö
 				System.out.print("@ ");
 			} else
 				System.out.print(i + " ");
@@ -237,12 +237,12 @@ public class ForEx {
 
 	}
 
-	// forë¬¸ ì‘ìš© ì‚¬ìš©ë²• 6 êµ¬êµ¬ë‹¨
+	// for¹® ÀÀ¿ë »ç¿ë¹ý 6 ±¸±¸´Ü
 	public void ex12() {
 
 		// for, if, printf
 
-		// êµ¬êµ¬ë‹¨ 2ë‹¨ ì¶œë ¥í•˜ê¸°
+		// ±¸±¸´Ü 2´Ü Ãâ·ÂÇÏ±â
 		// 2 x 1= 2
 		// 2 x 9 = 18
 
@@ -252,18 +252,18 @@ public class ForEx {
 
 	}
 
-	// forë¬¸ ì‘ìš© ì‚¬ìš©ë²• 7 êµ¬êµ¬ë‹¨
+	// for¹® ÀÀ¿ë »ç¿ë¹ý 7 ±¸±¸´Ü
 	public void ex13() {
 
-		// ì›í•˜ëŠ” ë‹¨ì„ ìž…ë ¥ ë°›ì•„ì„œ ì—­ìˆœìœ¼ë¡œ ì¶œë ¥
+		// ¿øÇÏ´Â ´ÜÀ» ÀÔ·Â ¹Þ¾Æ¼­ ¿ª¼øÀ¸·Î Ãâ·Â
 
-		// ë‹¨ ìž…ë ¥: 3
+		// ´Ü ÀÔ·Â: 3
 		// 3 x 9 =27
 		// 3 x 1 = 3
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("ë‹¨ ìž…ë ¥ : ");
+		System.out.print("´Ü ÀÔ·Â : ");
 		int num = sc.nextInt();
 
 		for (int i = 9; i >= 1; i--) {
@@ -272,43 +272,43 @@ public class ForEx {
 
 	}
 
-	// forë¬¸ ì‘ìš© ì‚¬ìš©ë²• 8
+	// for¹® ÀÀ¿ë »ç¿ë¹ý 8
 	public void ex14() {
 
-		// ìž…ë ¥ ë°›ì€ ë‹¨ì˜ êµ¬êµ¬ë‹¨ ì¶œë ¥í•˜ê¸°
-		// ë‹¨, ìž…ë ¥ ë°›ì€ ë‹¨ì´ 2~9ì‚¬ì´ê°€ ì•„ë‹ˆë¼ë©´
-		// "ìž˜ëª» ìž…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤."ì¶œë ¥
+		// ÀÔ·Â ¹ÞÀº ´ÜÀÇ ±¸±¸´Ü Ãâ·ÂÇÏ±â
+		// ´Ü, ÀÔ·Â ¹ÞÀº ´ÜÀÌ 2~9»çÀÌ°¡ ¾Æ´Ï¶ó¸é
+		// "Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù."Ãâ·Â
 
 		Scanner sc = new Scanner(System.in);
-		System.out.print("ë‹¨ ìž…ë ¥ : ");
+		System.out.print("´Ü ÀÔ·Â : ");
 		int num = sc.nextInt();
 
-		if (num >= 2 && num <= 9) { // ì¡°ê±´ì„ ë¨¼ì € ì„¤ì • (input < 2 || input >9)
+		if (num >= 2 && num <= 9) { // Á¶°ÇÀ» ¸ÕÀú ¼³Á¤ (input < 2 || input >9)
 			for (int i = 1; i <= 9; i++) {
 				System.out.printf("%d x %d = %2d \n", num, i, num * i);
 			}
 		} else
-			System.out.print("ìž˜ëª» ìž…ë ¥ í•˜ì…¨ìŠµë‹ˆë‹¤.");
+			System.out.print("Àß¸ø ÀÔ·Â ÇÏ¼Ì½À´Ï´Ù.");
 
 	}
 
-	// ì¤‘ì²© ë°˜ë³µë¬¸
+	// ÁßÃ¸ ¹Ýº¹¹®
 	public void ex15() {
 
-		// 12345 ì—°ë‹¬ì•„ ìˆ˜ì—…
+		// 12345 ¿¬´Þ¾Æ ¼ö¾÷
 
-		// 1), 2), 3) ì½”ë“œë¥¼ ìž‘ì„±í•˜ê¸°ìœ„í•´ ìƒê°í•œ ìˆœì„œ
-		for (int x = 1; x <= 5; x++) { // 3) 4íšŒ ë°˜ë³µ
+		// 1), 2), 3) ÄÚµå¸¦ ÀÛ¼ºÇÏ±âÀ§ÇØ »ý°¢ÇÑ ¼ø¼­
+		for (int x = 1; x <= 5; x++) { // 3) 4È¸ ¹Ýº¹
 
-			for (int i = 1; i <= 5; i++) { // 1)1234 ì¶œë ¥
+			for (int i = 1; i <= 5; i++) { // 1)1234 Ãâ·Â
 				System.out.print(i);
 
 			}
-			System.out.println(); // 2) ì¤„ë°”ê¿ˆ(ê°œí–‰)
+			System.out.println(); // 2) ÁÙ¹Ù²Þ(°³Çà)
 		}
 	}
 
-	// ì¤‘ì²© ë°˜ë³µë¬¸ ê¸°ë³¸ ì‚¬ìš©ë²•2
+	// ÁßÃ¸ ¹Ýº¹¹® ±âº» »ç¿ë¹ý2
 	public void ex16() {
 
 		// 1 2 3 4 5
@@ -317,7 +317,7 @@ public class ForEx {
 		// 4 8 12 16 20
 		// 5 10 15 20 25
 
-		for (int x = 1; x <= 5; x++) {
+		for (int x = 1; x <= 6; x++) {
 			for (int i = 1; i <= 5; i++) {
 				System.out.printf("%3d", x * i);
 			}
@@ -325,9 +325,9 @@ public class ForEx {
 		}
 	}
 
-	// ì¤‘ì²© ë°˜ë³µë¬¸ ì‘ìš© ì‚¬ìš©ë²•1
+	// ÁßÃ¸ ¹Ýº¹¹® ÀÀ¿ë »ç¿ë¹ý1
 	public void ex17() {
-		// êµ¬êµ¬ë‹¨ì„ 2ë‹¨ ë¶€í„° 9ë‹¨ê¹Œì§€ ëª¨ë‘ ì¶œë ¥í•˜ê¸°
+		// ±¸±¸´ÜÀ» 2´Ü ºÎÅÍ 9´Ü±îÁö ¸ðµÎ Ãâ·ÂÇÏ±â
 
 		// 2x1 =2 2x2=4 ...
 
@@ -340,18 +340,18 @@ public class ForEx {
 		}
 	}
 
-	// ì¤‘ì²© ë°˜ë³µë¬¸ ì‘ìš© ì‚¬ìš©ë²•1
+	// ÁßÃ¸ ¹Ýº¹¹® ÀÀ¿ë »ç¿ë¹ý1
 	public void ex18() {
 
-		// 2ì¤‘ FORë¬¸ì„ ì´ìš©í•˜ì—¬ ë‹¤ìŒ ëª¨ì–‘ì„ ì¶œë ¥í•˜ì„¸ìš”.
+		// 2Áß FOR¹®À» ÀÌ¿ëÇÏ¿© ´ÙÀ½ ¸ð¾çÀ» Ãâ·ÂÇÏ¼¼¿ä.
 
 		// 1
 		// 12
 		// 123
 		// 1234
 
-		for (int x = 1; x <= 4; x++) { // 4ë²ˆ ë°˜ë³µ
-			for (int i = 1; i <= x; i++) { // í•œ ì¤„ ì¶œë ¥
+		for (int x = 1; x <= 4; x++) { // 4¹ø ¹Ýº¹
+			for (int i = 1; i <= x; i++) { // ÇÑ ÁÙ Ãâ·Â
 				System.out.print(i);
 
 			}
@@ -360,17 +360,17 @@ public class ForEx {
 	}
 
 
-	// ì¤‘ì²© ë°˜ë³µë¬¸ ì‘ìš© ì‚¬ìš©ë²•3
+	// ÁßÃ¸ ¹Ýº¹¹® ÀÀ¿ë »ç¿ë¹ý3
 	public void ex19() {
-		// 2ì¤‘ FORë¬¸ì„ ì´ìš©í•˜ì—¬ ë‹¤ìŒ ëª¨ì–‘ì„ ì¶œë ¥í•˜ì„¸ìš”.
+		// 2Áß FOR¹®À» ÀÌ¿ëÇÏ¿© ´ÙÀ½ ¸ð¾çÀ» Ãâ·ÂÇÏ¼¼¿ä.
 		
 		//4
 		//43
 		//432
 		//4321
 		
-		for (int x = 4; x >= 1; x--) { // 4ë²ˆ ë°˜ë³µ x=4,3,2,1
-			for (int i = 4; i >= x; i--) { // í•œ ì¤„ ì¶œë ¥
+		for (int x = 4; x >= 1; x--) { // 4¹ø ¹Ýº¹ x=4,3,2,1
+			for (int i = 4; i >= x; i--) { // ÇÑ ÁÙ Ãâ·Â
 				System.out.print(i);
 
 			}
@@ -378,21 +378,21 @@ public class ForEx {
 		}
 	
 	}
-	// ì¤‘ì²© ë°˜ë³µë¬¸ ì‘ìš© ì‚¬ìš©ë²•4
+	// ÁßÃ¸ ¹Ýº¹¹® ÀÀ¿ë »ç¿ë¹ý4
 	public void ex20() {
-		//ìž…ë ¥ëœ ì •ìˆ˜ : 3
+		//ÀÔ·ÂµÈ Á¤¼ö : 3
 		//321
 		//21
 		//1
 		
-		//ìž…ë ¥ëœ ì •ìˆ˜ : 4
+		//ÀÔ·ÂµÈ Á¤¼ö : 4
 		//4321
 		//321
 		//21
 		//1
 		
 		Scanner sc = new Scanner(System.in);
-		System.out.print("ìž…ë ¥ëœ ì •ìˆ˜ : ");
+		System.out.print("ÀÔ·ÂµÈ Á¤¼ö : ");
 		int input = sc.nextInt();
 
 		for(int x = input; x >= 1; x-- ) { // 3,2,1
@@ -404,20 +404,20 @@ public class ForEx {
 			
 		}
 	}
-	//ì¹´ìš´íŠ¸(ê°œìˆ˜ ì„¸ê¸°)
+	//Ä«¿îÆ®(°³¼ö ¼¼±â)
 	public void ex21() {
-		//1ë¶€í„° 20ì‚¬ì´ì˜ 3ì˜ ë°°ìˆ˜ì˜ í•©ê³¼ ê°œìˆ˜ë¥¼ ì¶œë ¥
+		//1ºÎÅÍ 20»çÀÌÀÇ 3ÀÇ ¹è¼öÀÇ ÇÕ°ú °³¼ö¸¦ Ãâ·Â
 		//3 6 9 12 15 18
 		
 		
 		//sum : 63
 		//count : 6
 		
-		int sum = 0; //í•©ê³„ ì €ìž¥ìš© ë³€ìˆ˜
-		int count = 0; //ì¹´ìš´íŠ¸ìš© ë³€ìˆ˜
+		int sum = 0; //ÇÕ°è ÀúÀå¿ë º¯¼ö
+		int count = 0; //Ä«¿îÆ®¿ë º¯¼ö
 		
 		for(int i= 1; i<=20; i++) {
-			if(i % 3 == 0) { //3ì˜ ë°°ìˆ˜ì¸ ê²½ìš°
+			if(i % 3 == 0) { //3ÀÇ ¹è¼öÀÎ °æ¿ì
 				sum+= i;
 				count++;
 				
@@ -428,25 +428,25 @@ public class ForEx {
 	}
 
 
-	//countë¥¼ ì´ìš©í•œ ì´ì¤‘ forë¬¸
+	//count¸¦ ÀÌ¿ëÇÑ ÀÌÁß for¹®
 		public void ex22() {
 			
 			// 1  2  3  4
 			// 5  6  7  8
 			// 9 10 11 12
 			
-			int count = 1; //ìˆ«ìžë¥¼ ì„¸ê¸°ìœ„í•œ ë³€ìˆ˜ ì„ ì–¸
+			int count = 1; //¼ýÀÚ¸¦ ¼¼±âÀ§ÇÑ º¯¼ö ¼±¾ð
 			
-			for(int row=1 ; row<=3; row++) {//3ì¤„ (3í–‰)
-				for(int col=1; col <=4; col++) { //4ì—´
+			for(int row=1 ; row<=3; row++) {//3ÁÙ (3Çà)
+				for(int col=1; col <=4; col++) { //4¿­
 				
-					System.out.printf("%3d", count++); //count++ ë°–ì— ìžˆì—ˆëŠ”ë° ì•ˆìœ¼ë¡œ ë“¤ì–´ì˜´
-					// í›„ìœ„ì—°ì‚° ì¹´ìš´íŠ¸ ë‹¤í•˜ê³  ì—°ì‚°ë¼ì„œ ê´„í˜¸ ì•ˆìœ¼ë¡œ ë“¤ì–´ê°€ë„ ë˜‘ê°™ìŒ.
+					System.out.printf("%3d", count++); //count++ ¹Û¿¡ ÀÖ¾ú´Âµ¥ ¾ÈÀ¸·Î µé¾î¿È
+					// ÈÄÀ§¿¬»ê Ä«¿îÆ® ´ÙÇÏ°í ¿¬»êµÅ¼­ °ýÈ£ ¾ÈÀ¸·Î µé¾î°¡µµ ¶È°°À½.
 					
 					
 					
 				}
-				System.out.println(); //ê°œí–‰
+				System.out.println(); //°³Çà
 				
 			}
 			
@@ -455,6 +455,7 @@ public class ForEx {
 			
 			
 		}
+	
 		
 	
 
