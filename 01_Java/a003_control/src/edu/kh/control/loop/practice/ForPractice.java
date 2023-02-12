@@ -7,208 +7,106 @@ public class ForPractice {
 	public void practice1() {
 
 		Scanner sc = new Scanner(System.in);
-		System.out.print("1ì´ìƒì˜ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
+
+		System.out.print("1ÀÌ»óÀÇ ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
 		int input = sc.nextInt();
 
 		if (input >= 1) {
-			for (int x = 1; x <= input; x++) {
-				System.out.print(x + " ");
+			for (int i = 1; i <= input; i++) {
+				System.out.print(i + " ");
 			}
-		} else
-			System.out.println("1 ì´ìƒì˜ ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
-
+		} else {
+			System.out.print("1 ÀÌ»óÀÇ ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+		}
 	}
 
 	public void practice2() {
 
 		Scanner sc = new Scanner(System.in);
-		System.out.print("1ì´ìƒì˜ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
+
+		System.out.print("1ÀÌ»óÀÇ ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
 		int input = sc.nextInt();
 
 		if (input >= 1) {
-			for (int x = input; x >= 1; x--) {
-				System.out.print(x + " ");
-			}
-		} else
-			System.out.println("1 ì´ìƒì˜ ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
-
+			for (int i = input; i >= 1; i--) {
+				System.out.print( i + " ");
+			} 
+		} else {
+			System.out.print("1 ÀÌ»óÀÇ ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+		}
 	}
-
 	public void practice3() {
 
 		Scanner sc = new Scanner(System.in);
-		System.out.print("ì •ìˆ˜ ì…ë ¥ : ");
+
+		System.out.print("Á¤¼ö¸¦ ÇÏ³ª ÀÔ·ÂÇÏ¼¼¿ä : ");
 		int input = sc.nextInt();
-
 		int sum = 0;
-		for (int i = 1; i <= input; i++) {
-			sum += i;
-			System.out.print(i);
 
-			if (i != input) {
-				System.out.print(" + ");
-			}
+		for(int i = 1 ; i <= input ; i++) {
+			sum += i; 
+		 System.out.print(i);
 
+		 //i == input == ¸¶Áö¸·
+		 if(i != input) { //!= ¸¶Áö¸·ÀÌ ¾Æ´Ï´Ù
+			 System.out.print( " + ");
+		 }
 		}
-		System.out.print(" = " + sum);
+		System.out.println(" = " + sum);
 
 	}
-
 	public void practice4() {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("ì²« ë²ˆì§¸ ìˆ«ì : ");
+		System.out.print("Ã¹ ¹øÂ° ¼ıÀÚ : ");
 		int num1 = sc.nextInt();
 
-		System.out.print("ë‘ ë²ˆì§¸ ìˆ«ì : ");
+		System.out.print("µÎ ¹øÂ° ¼ıÀÚ : ");
 		int num2 = sc.nextInt();
 
-		if (num1 >= 1 && num2 >= 1) {
-			if (num1 >= num2) {
-				for (int i = num2; i >= num1; i++) {
-					System.out.print(i);
+		if( num1 >= 1 && num2 >= 1) {	
+			for (int i = num1; i <= num2 ; i++) {
+			System.out.print(i + " ");
 
-				}
-			} else if (num1 <= num2) {
-				for (int x = num1; x >= num2; x++) {
-					System.out.print(x);
 
-				}
-			}
-		} else {
-			System.out.println("1ì´ìƒì˜ ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
+		}} else {
+			System.out.println("1ÀÌ»óÀÇ ¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
 		}
-
-	}
+		}
 
 	public void practice5() {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("ìˆ«ì : ");
+		System.out.print("¼ıÀÚ : ");
 		int dan = sc.nextInt();
 
-		System.out.printf("==== %dë‹¨ ==== \n", dan);
+		System.out.println("===== " + dan +"´Ü =====");
+			for (int num = 1 ; num  <= 9 ; num ++) {
+				System.out.printf("%d * %d = %2d \n", dan, num, dan * num);
 
-		for (int i = 1; i <= 9; i++) {
-			System.out.printf("%d * %d = %d \n", dan, i, dan * i);
+			}
 		}
-
-	}
 
 	public void practice6() {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("ìˆ«ì : ");
+		System.out.println("¼ıÀÚ : ");
 		int dan = sc.nextInt();
 
 		if (dan >= 2 && dan <= 9) {
-			for (int i = dan; i <= 9; i++) {
-				System.out.printf("==== %dë‹¨ ==== \n", i);
-				for (int x = 1; x <= 9; x++) {
-					System.out.printf("%d * %d = %d \n", i, x, i * x);
-				}
+			for(int i = dan; i <= 9; i++) {
+				System.out.printf("=====  %d´Ü ===== \n",i);
+                for (int num = 1 ; num  <= 9 ; num ++) {
+				System.out.printf("%d * %d = %2d \n", i, num, i * num);
 			}
-		} else {
-			System.out.println("2~9ì‚¬ì´ì˜ ìˆ«ìë§Œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
-		}
 
+		} }else
+		System.out.println("2~9 »çÀÌ ¼ıÀÚ¸¸ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
 	}
 
-	public void practice7() {
-
-		Scanner sc = new Scanner(System.in);
-
-		System.out.print("ì •ìˆ˜ì…ë ¥ : ");
-		int input = sc.nextInt();
-
-		for (int i = 1; i <= input; i++) {
-			for (int x = 1; x <= i; x++) {
-				System.out.print("*");
-
-			}
-			System.out.println();
-		}
-
-	}
-
-	public void practice8() {
-
-		Scanner sc = new Scanner(System.in);
-
-		System.out.print("ì •ìˆ˜ì…ë ¥ : ");
-		int input = sc.nextInt();
-
-		for (int i = input; i >= 1; i--) {
-			for (int x = i; x >= 1; x--) {
-				System.out.print("*");
-
-			}
-			System.out.println();
-		}
-
-	}
-
-	public void practice9() {
-
-		Scanner sc = new Scanner(System.in);
-
-		System.out.print("ì •ìˆ˜ì…ë ¥ : ");
-		int input = sc.nextInt();
-
-		for (int i = 1; i <= input; i++) {
-			for (int x = input; x >= i; x--) {
-				System.out.print(" ");
-			}
-			for (int p = 1; p <= i; p++) {
-				System.out.print("*");
-			}
-			System.out.println();
-
-		}
-	}
-
-	public void practice10() {
-
-		Scanner sc = new Scanner(System.in);
-
-		System.out.print("ì •ìˆ˜ì…ë ¥ : ");
-		int input = sc.nextInt();
-
-		for (int i = 0; i < 5; i++) { // 1~5ë²ˆì§¸ ì¤„ì„ ë‹´ë‹¹í•˜ëŠ” forë¬¸
-			for (int j = 0; j < i + 1; j++) {
-				System.out.print("*");
-			}
-			System.out.println();
-		}
-		for (int i = 0; i < 4; i++) { // 6~9ë²ˆì§¸ ì¤„ì„ ë‹´ë‹¹í•˜ëŠ” forë¬¸
-			for (int j = 0; j < 4 - i; j++) {
-				System.out.print("*");
-			}
-			System.out.println();
-		}
-	}
-
-	public void practice13() {
-
-		Scanner sc = new Scanner(System.in);
-
-		System.out.print("ìì—°ìˆ˜ í•˜ë‚˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
-		int input = sc.nextInt();
-
-		int count = 1;
-
-		for (int i = 1; i <= input; i++) {
-			if (i % 2 == 0 || i % 3 == 0) {
-				System.out.print(i + " ");
-			}
-				if (i % 2 == 0 && i % 3 == 0)
-					count++;
-		}
-				System.out.println();
-				System.out.printf("count: %d", count);
-	}
 
 }
+
