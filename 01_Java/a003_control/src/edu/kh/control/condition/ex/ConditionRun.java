@@ -1,4 +1,4 @@
-package edu.kh.control.condition.ex;
+
 
 public class ConditionRun {
 // -> 실행하고자 하는 코드를 작성한 후 Run

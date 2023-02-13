@@ -157,7 +157,7 @@ public class ForPractice {
     
     public void practice10() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("�������� : ");
+        System.out.print("정수입력 : ");
         int input = sc.nextInt();
         
         for (int i = 0; i < 5; i++) { 
@@ -172,6 +172,37 @@ public class ForPractice {
             }
         }            System.out.println();
     }   
+    public void practice11() {
+    	  Scanner sc = new Scanner(System.in);
+          System.out.print("정수입력 : ");
+          int input = sc.nextInt();
+          
+        for(int row=1 ; row <=input ; row++) {
+        	
+//        	//빈칸 먼저 출력
+//        	for(int col=input-row; col>=1; col--) {
+//        		System.out.print(" ");
+//        	}
+//        	for(int col=1;col<=row*2-1; col++){
+//        		System.out.print("*");
+//        		
+//        		
+//        	} 
+        	
+        	for(int col=1; col<=input+row-1; col++) {
+        		
+        		if(input-row >= col) {
+        			System.out.println(" ");
+          		}else {
+        			System.out.println("*");
+        		} 	System.out.println();
+
+        	}
+        	
+        }	
+    	
+    }
+    
     public void practice12() {
     
     	 Scanner sc = new Scanner(System.in);

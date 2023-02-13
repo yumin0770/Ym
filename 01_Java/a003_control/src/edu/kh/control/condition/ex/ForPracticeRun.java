@@ -1,4 +1,4 @@
-package edu.kh.control.loop.practice;
+package edu.kh.control.condition.ex;
 
 public class ForPracticeRun {
 	public static void main(String[] args) {

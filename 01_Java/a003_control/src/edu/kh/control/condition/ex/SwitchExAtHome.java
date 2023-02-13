@@ -12,18 +12,18 @@ public class SwitchExAtHome {
 		Scanner sc = new Scanner(System.in);
 
 		int random = (int) (Math.random() * 3);
-		// 0,1,2 Áß ÇÏ³ª¸¦ ¹«ÀÛÀ§ ¹ß»ı
+		// 0,1,2 ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½
 
 		String result;
 		switch (random) {
 		case 0:
-			result = "¹éÆÀ";
+			result = "ï¿½ï¿½ï¿½ï¿½";
 			break;
 		case 1:
-			result = "Ã»ÆÀ";
+			result = "Ã»ï¿½ï¿½";
 			break;
 		default:
-			result = "È«ÆÀ";
+			result = "È«ï¿½ï¿½";
 
 		}
 
@@ -34,26 +34,26 @@ public class SwitchExAtHome {
 
 		Scanner sc = new Scanner(System.in);
 
-		// ¸Ş´º¸¦ ÀÔ·Â ¹Ş¾Æ¼­ °¡°İÀÌ ¾ó¸¶ÀÎÁö Ãâ·ÂÇÏ±â
+		// ï¿½Ş´ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½Ş¾Æ¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï±ï¿½
 
-		System.out.print("¸Ş´º¸¦ ÀÔ·ÂÇÏ¼¼¿ä (±è¹ä/¶ó¸é/»÷µåÀ§Ä¡/¶±ººÀÌ): ");
+		System.out.print("ï¿½Ş´ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½): ");
 
 		String input = sc.next();
 		
-		int price; //°¡°İÀ» ÀúÀåÇÒ º¯¼ö ¼±¾ğ
+		int price; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		
 		switch(input) {
-		case "±è¹ä" : 	price = 4500; break;
-		case "¶ó¸é" : 	price = 3500; break;
-		case "»÷µåÀ§Ä¡" : 	price = 5800; break;
-		case "¶±ººÀÌ" : 	price = 4000; break;
-		default : price = -1; //Àß¸ø ÀÔ·ÂÇÑ °æ¿ì¿¡ »ç¿ëÇÏÁö ¾Ê´Â ¼ıÀÚ(-1)¸¦ ÀÌ¿ëÇØ¼­ Ç¥Çö
+		case "ê¹€ë°¥" : 	price = 4500; break;
+		case "ë¼ë©´" : 	price = 3500; break;
+		case "ìƒŒë“œìœ„ì¹˜" : 	price = 5800; break;
+		case "ê¹€ì¹˜ì°Œê°œ" : 	price = 4000; break;
+		default : price = -1; //ï¿½ß¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ì¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ ï¿½ï¿½ï¿½ï¿½(-1)ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½Ø¼ï¿½ Ç¥ï¿½ï¿½
 		}
 		
 		 if(price != -1) {
-			 System.out.printf("%s´Â %d¿ø ÀÔ´Ï´Ù.", input, price);
-		 }else { //price°¡ -1ÀÎ °æ¿ì
-			 System.out.println("Á¸ÀçÇÏÁö ¾Ê´Â ¸Ş´º ÀÔ´Ï´Ù.");
+			 System.out.printf("%sï¿½ï¿½ %dï¿½ï¿½ ï¿½Ô´Ï´ï¿½.", input, price);
+		 }else { //priceï¿½ï¿½ -1ï¿½ï¿½ ï¿½ï¿½ï¿½
+			 System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ ï¿½Ş´ï¿½ ï¿½Ô´Ï´ï¿½.");
 			 
 		 }
 	}
@@ -63,13 +63,13 @@ public class SwitchExAtHome {
 		Scanner sc = new Scanner(System.in);	
 		
 		
-		System.out.print("Á¤¼ö1 ÀÔ·Â : ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½1 ï¿½Ô·ï¿½ : ");
 		int num1 = sc.nextInt();
 		
-		System.out.print("¿¬»êÀÚ ÀÔ·Â : ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ : ");
 		String op = sc.next();
 		
-		System.out.print("Á¤¼ö2 ÀÔ·Â : ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½2 ï¿½Ô·ï¿½ : ");
 		int num2 = sc.nextInt();
 		
 		
@@ -79,14 +79,14 @@ public class SwitchExAtHome {
 		case "*" : System.out.printf("%d %s %d = %.3f" , num1,op,num2, (double)num1 * num2); break;
 		case "/" : 
 				if(num2 == 0) {
-					System.out.println("0À¸·Î´Â ³ª´­ ¼ö ¾ø½À´Ï´Ù."); break;
+					System.out.println("0ï¿½ï¿½ï¿½Î´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½."); break;
 				}else {
 					System.out.printf("%d / %d = %.3f" , num1,num2, (double)num1 / num2);
 		
 					System.out.println();break; 
 		}
 		case "%" : System.out.printf("%s %s %s = %.3f" , num1,op,num2, (double)num1 % num2); break;
-		default	: System.out.println("Á¸ÀçÇÏÁö ¾Ê´Â ¿¬»êÀÚ ÀÔ´Ï´Ù."); break;
+		default	: System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô´Ï´ï¿½."); break;
 	
 	
 	

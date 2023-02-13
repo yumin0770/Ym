@@ -42,7 +42,7 @@ public void ex2() {
 		int sum = kor+math+eng;
 		double avg = sum /3.0 ;
 		
-		switch() {
+		switch(input) {
 		case 1 : grade = 40 ; System.out.printf("%d",kor,kor); break;
 		case 2 : grade = 40 ; System.out.printf("%d",math,math); break;
 		case 3 : grade = 40 ;System.out.printf("%d",eng,eng); break;

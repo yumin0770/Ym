@@ -1,4 +1,4 @@
-package edu.kh.control.loop.practice;
+package edu.kh.control.condition.ex;
 
 import java.util.Scanner;
 
@@ -103,7 +103,7 @@ public class ForPractice {
 				System.out.printf("%d * %d = %2d \n", dan, num, dan * num);
 			}
 
-		} else
+		}} else
 		System.out.println("2~9 사이 숫자만 입력해주세요.");
 
 
