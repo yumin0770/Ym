@@ -47,8 +47,8 @@ public class ForPractice {
 			sum += i; 
 		 System.out.print(i);
 
-		 //i == input == 留�吏�留�
-		 if(i != input) { //!= 留�吏�留��� ������
+		 //i == input == 마지막
+		 if(i != input) { //!= 마지막이 아니다
 			 System.out.print( " + ");
 		 }
 		}
@@ -79,7 +79,7 @@ public class ForPractice {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("�レ�� : ");
+		System.out.print("숫자 : ");
 		int dan = sc.nextInt();
 
 		System.out.printf("===== %d단 =====",dan);
@@ -109,7 +109,7 @@ public class ForPractice {
     public void practice7() {
         Scanner sc = new Scanner(System.in);
         
-        System.out.print("�������� : ");
+        System.out.print("정수 입력 : ");
         int input = sc.nextInt();
         
         for (int i = 1; i <= input; i++) {
@@ -137,37 +137,38 @@ public class ForPractice {
     
     public void practice9() {
         Scanner sc = new Scanner(System.in);
+   
+        
+            System.out.print("정수 입력 : "); 
+            int input = sc.nextInt();
+        
+            for (int i = 1; i <= input; i++) {
+                for (int x = input; x >= i; x--) {
+                    System.out.print(" ");
+                } 
+                for (int p = 1; p <= i; p++) {
+                    System.out.print("*");
     
-        System.out.print("정수 입력 : "); 
-        int dan	 = sc.nextInt();
-    
-                for(int i = dan; i <= 9; i++) {
-                    System.out.printf("=====  %d단 ===== \n",i);
-                    for (int num = 1 ; num  <= 9 ; num ++) {
-                        System.out.printf("%d * %d = %2d \n", i, num, i * num);
-                    }
-                    System.out.println();
-    
-                }
+               } System.out.println();
             }
             
               
 
-  
+    }
     
     public void practice10() {
         Scanner sc = new Scanner(System.in);
         System.out.print("정수입력 : ");
         int input = sc.nextInt();
         
-        for (int i = 0; i < 5; i++) { 
+        for (int i = 0; i < input; i++) { 
             for (int j = 0; j < i + 1; j++) {
                 System.out.print("*");
             }
             System.out.println();
         }
-        for (int i = 0; i < 4; i++) { 
-            for (int j = 0; j < 4 - i; j++) {
+        for (int i = 0; i < input-1; i++) { 
+            for (int j = 0; j > input-1 - i; j--) {
                 System.out.print("*");
             }
         }            System.out.println();

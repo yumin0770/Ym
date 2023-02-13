@@ -1,73 +1,67 @@
 package atHome;
 
-import java.awt.GraphicsDevice;
 import java.util.Scanner;
-
-import javax.print.attribute.standard.MediaSize.Engineering;
 
 public class ConditionPracticeAtHome {
 
+	public void ex1() {
 
-public void ex1() {
-	Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 
-	System.out.print("¼ýÀÚ¸¦ ÇÑ °³ ÀÔ·ÂÇÏ¼¼¿ä : ");
-	int number = sc.nextInt();
+		System.out.print("ìˆ«ìžë¥¼ í•œ ê°œ ìž…ë ¥í•˜ì„¸ìš” : ");
+		int input = sc.nextInt();
 
-	String res;
-	
-	switch(number) {
-	case number :
-	if (number % 2 == 0 || number % 2 != 0);{
-			res = "Â¦¼öÀÔ´Ï´Ù.";break;
-			}else {
-			res = "È¦¼öÀÔ´Ï´Ù.";break;
-			}default : res ="¾ç¼ö¸¸ ÀÔ·ÂÇØÁÖ¼¼¿ä.";break;
+
+
+		if(input % 2 == 0 && input >= 1) {
+			System.out.print("ì§ìˆ˜ìž…ë‹ˆë‹¤"); 
+		} else if(input % 2 != 0) {
+			System.out.print("í™€ìˆ˜ìž…ë‹ˆë‹¤"); 
+		} else {
+			System.out.print("ì–‘ìˆ˜ë§Œ ìž…ë ¥í•´ì£¼ì„¸ìš”");
 		}
-	
-}
+	}
+
+	public void ex2() {
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("êµ­ì–´ì ìˆ˜ : ");
+		int kor = sc.nextInt();
+
+		System.out.print("ì˜ì–´ì ìˆ˜ : ");
+		int eng = sc.nextInt();
+
+		System.out.print("ìˆ˜í•™ì ìˆ˜ : ");
+		int math = sc.nextInt();
+
+		int sum = kor+eng+math;
+		double avg = sum / 3.0;
+
+		if(kor>=40 && eng>=40 && math>=40 && avg >=60) {
+			System.out.println("êµ­ì–´ : " + kor);
+			System.out.println("ì˜ì–´ : " + eng);
+			System.out.println("ìˆ˜í•™ : " + math);
+			System.out.println("í•©ê³„ : " + sum);
+			System.out.printf("í‰ê·  %.1f \n: " , avg);
+			System.out.println("ì¶•í•˜í•©ë‹ˆë‹¤,í•©ê²©ìž…ë‹ˆë‹¤");
+		}else 
+			System.out.println("ë¶ˆí•©ê²©ìž…ë‹ˆë‹¤.");
+
+	}
+	public void ex3() {
 
 
-public void ex2() {
-	Scanner sc = new Scanner(System.in);
 
-	System.out.print("±¹¾îÁ¡¼ö : ");
-	int kor = sc.nextInt();
-	
-	System.out.print("¼öÇÐÁ¡¼ö : ");
-	int math = sc.nextInt();
-	
-	System.out.print("¿µ¾îÁ¡¼ö : ");
-	int eng = sc.nextInt();
-	
-	int sum = kor + math + eng;
-	double avg = (sum / 3.0);
-	int grade =;
-	String result;
-	
-	switch(grade) {
-	case kor  :
-		if (kor >=40) {
-		result =
-		}
-	
-	
+
+
+
 	}
-	}
-	
-	
-			
-	
-	}
-public void ex3() {
-	
-	}
-public void ex4() {
-	
-	}
-public void ex5() {
-	
-	}
+
+
+
+
+
 
 
 }

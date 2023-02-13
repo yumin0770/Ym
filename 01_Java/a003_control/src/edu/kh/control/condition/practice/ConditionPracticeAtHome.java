@@ -3,69 +3,69 @@ package edu.kh.control.condition.practice;
 import java.util.Scanner;
 
 public class ConditionPracticeAtHome {
-	
+
 	public void ex1() {
-		
+
 		Scanner sc = new Scanner(System.in);
-		
-		System.out.print("¼ıÀÚ¸¦ ÇÑ °³ ÀÔ·ÂÇÏ¼¼¿ä : ");
+
+		System.out.print("ìˆ«ìë¥¼ í•œ ê°œ ì…ë ¥í•˜ì„¸ìš” : ");
 		int input = sc.nextInt();
-	
-		
-		 	 	
+
+
+
 		if(input % 2 == 0 && input >= 1) {
-			System.out.print("Â¦¼öÀÔ´Ï´Ù"); 
+			System.out.print("ì§ìˆ˜ì…ë‹ˆë‹¤"); 
 		} else if(input % 2 != 0) {
-			System.out.print("È¦¼öÀÔ´Ï´Ù"); 
+			System.out.print("í™€ìˆ˜ì…ë‹ˆë‹¤"); 
 		} else {
-			System.out.print("¾ç¼ö¸¸ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+			System.out.print("ì–‘ìˆ˜ë§Œ ì…ë ¥í•´ì£¼ì„¸ìš”");
 		}
 	}
 
 	public void ex2() {
-		
+
 		Scanner sc = new Scanner(System.in);
-		
-		System.out.print("±¹¾îÁ¡¼ö : ");
+
+		System.out.print("êµ­ì–´ì ìˆ˜ : ");
 		int kor = sc.nextInt();
-		
-		System.out.print("¿µ¾îÁ¡¼ö : ");
+
+		System.out.print("ì˜ì–´ì ìˆ˜ : ");
 		int eng = sc.nextInt();
-			
-		System.out.print("¼öÇĞÁ¡¼ö : ");
+
+		System.out.print("ìˆ˜í•™ì ìˆ˜ : ");
 		int math = sc.nextInt();
-		
+
 		int sum = kor+eng+math;
 		double avg = sum / 3.0;
-	
+
 		if(kor>=40 && eng>=40 && math>=40 && avg >=60) {
-			System.out.println("±¹¾î : " + kor);
-			System.out.println("¿µ¾î : " + eng);
-			System.out.println("¼öÇĞ : " + math);
-			System.out.println("ÇÕ°è : " + sum);
-			System.out.printf("Æò±Õ %.1f \n: " , avg);
-			System.out.println("ÃàÇÏÇÕ´Ï´Ù,ÇÕ°İÀÔ´Ï´Ù");
+			System.out.println("êµ­ì–´ : " + kor);
+			System.out.println("ì˜ì–´ : " + eng);
+			System.out.println("ìˆ˜í•™ : " + math);
+			System.out.println("í•©ê³„ : " + sum);
+			System.out.printf("í‰ê·  %.1f \n: " , avg);
+			System.out.println("ì¶•í•˜í•©ë‹ˆë‹¤,í•©ê²©ì…ë‹ˆë‹¤");
 		}else 
-			System.out.println("ºÒÇÕ°İÀÔ´Ï´Ù.");
-	
+			System.out.println("ë¶ˆí•©ê²©ì…ë‹ˆë‹¤.");
+
 	}
 	public void ex3() {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("1~12»çÀÌÀÇ Á¤¼ö ÀÔ·Â : \n");
+		System.out.print("1~12ì‚¬ì´ì˜ ì •ìˆ˜ ì…ë ¥: \n");
 		int month = sc.nextInt();
 		
 		
 		
 		switch(month) {
 		case 1 : case 3 : case 5 : case 7 : case 8 : case 10 : case 12 : 
-			System.out.printf("%d¿ùÀº 31ÀÏ±îÁö ÀÖ½À´Ï´Ù.", month);break;
+			System.out.printf("%dì›”ì€ 31ê¹Œì§€ ìˆìŠµë‹ˆë‹¤.", month);break;
 		case 4 : case 6 : case 9 : case 11 :  
-			System.out.printf("%d¿ùÀº 30ÀÏ±îÁö ÀÖ½À´Ï´Ù.", month);break;
+			System.out.printf("%dì›”ì€ 30ì¼ê¹Œì§€ ìˆìŠµë‹ˆë‹¤..", month);break;
 		case 2 :
-			System.out.printf("%d¿ùÀº 28ÀÏ±îÁö ÀÖ½À´Ï´Ù.", month);break;
-		default : System.out.printf("%d¿ùÀº Àß¸ø ÀÔ·ÂµÈ ´ŞÀÔ´Ï´Ù.",month);break;
+			System.out.printf("%dì›”ì€ 28ì›”ê¹Œì§€ ìˆìŠµë‹ˆë‹¤.", month);break;
+		default : System.out.printf("%dì›”ì€ ì˜ëª» ì…ë ¥ëœ ë‹¬ì…ë‹ˆë‹¤.",month);break;
 		
 	
 		}
@@ -74,28 +74,28 @@ public class ConditionPracticeAtHome {
 			 
 			Scanner sc = new Scanner(System.in);
 			
-			System.out.print("Å°(m)¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä : \n");
+			System.out.print("í‚¤(m)ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”. : ");
 			double hei = sc.nextDouble();
 			
-			System.out.print("¸ö¹«°Ô(kg)¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä : \n");
+			System.out.print("ëª¸ë¬´ê²Œë¥¼(kg)ì…ë ¥í•´ ì£¼ì„¸ìš”. :");
 			double wei = sc.nextDouble();
 			
-			System.out.printf("BMI Áö¼ö : %f \n", (wei / (hei * hei)));
+			System.out.printf("BMI ì§€ìˆ˜ : %f \n", (wei / (hei * hei)));
 			
 			
 			double bmires = wei / (hei * hei);
 			String result;
 			
 			if(bmires < 18.5) {
-				result = "ÀúÃ¼Áß";
+				result = "ì €ì²´ì¤‘";
 			}else if(bmires >=18.5 && bmires < 23) {
-				result = "Á¤»óÃ¼Áß";
+				result = "ì •ìƒì²´ì¤‘";
 			}else if(bmires >=23 && bmires <253) {
-				result = "°úÃ¼Áß";
+				result = "ê³¼ì²´ì¤‘";
 			}else if(bmires >=25 && bmires < 30) {
-				result = "Á¤»óÃ¼Áß";
+				result = "ë¹„ë§Œ";
 			}else {
-				result = "°íµµ ºñ¸¸";
+				result = "ê³ ë„ ë¹„ë§Œ";
 			}
 			System.out.println(result);
 			
@@ -104,49 +104,49 @@ public class ConditionPracticeAtHome {
 			
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("Áß°£ °í»ç Á¡¼ö : ");
+		System.out.print("ì¤‘ê°„ ê³ ì‚¬ ì ìˆ˜ : ");
 		int med = sc.nextInt();
 
-		System.out.print("±â¸» °í»ç Á¡¼ö : ");
+		System.out.print("ê¸°ë§ ê³ ì‚¬ ì ìˆ˜ : ");
 		int fin = sc.nextInt();
 		
-		System.out.print("°úÁ¦ È½¼ö : ");
+		System.out.print("ê³¼ì œ ì ìˆ˜ : ");
 		int asm = sc.nextInt();
 
-		System.out.print("Ãâ¼® È½¼ö : ");
-		double atd = sc.nextDouble();
+		System.out.print("ì¶œì„ íšŸìˆ˜ : ");
+		int atd = sc.nextInt();
 		
-		System.out.println("================= °á°ú =================");	
+		System.out.println("================= ê²°ê³¼ =================");	
 		
 		double sum = med + fin + asm + atd;
 		double medres = med/100.0*20.0 ;
 		double finres = fin / 100.0*30.0 ;
 		double asmres = asm / 100.0*30.0 ;
-		double asmres2 = asm/20.0*100.0;
 		double total = medres + finres + asmres + atd;
 		
 		
-		
-		if(total >= 70) {
-		System.out.printf("Áß°£ °í»ç Á¡¼ö(20) : %f \n", medres);
-		System.out.printf("±â¸» °í»ç Á¡¼ö(30) : %f \n", finres);
-		System.out.printf("°úÁ¦ Á¡¼ö(30) : %f \n", asmres);
-		System.out.printf("Ãâ¼® Á¡¼ö(20) : %f \n", atd);
-		System.out.printf("ÃÑÁ¡ : %f \n", total);
-		System.out.print("PASS");	
-		
-		}else if (total < 70 ) {
-			System.out.printf("Áß°£ °í»ç Á¡¼ö(20) : %f \n", medres);
-			System.out.printf("±â¸» °í»ç Á¡¼ö(30) : %f\n", finres);
-			System.out.printf("°úÁ¦ Á¡¼ö(30) : %f \n", asmres);
-			System.out.printf("Ãâ¼® Á¡¼ö(20) : %f \n", atd);
-			System.out.printf("ÃÑÁ¡ : %f \n", total);
-			System.out.print("fail [Á¡¼ö ¹Ì´Ş]");
-	
-		}else if (asmres2>= 30 ) {
-			System.out.printf("fail [Ãâ¼® È½¼ö ºÎÁ· %d/%d]",atd,a);
+		if (atd<= 14 ) {
+			System.out.printf("fail [ì¶œì„ íšŸìˆ˜ ë¶€ì¡± (%d/20)]",atd);
 	
 			}
+		
+		else if(total >= 70) {
+		System.out.printf("ì¤‘ê°„ ê³ ì‚¬ ì ìˆ˜(20) : %.2f \n", medres);
+		System.out.printf("ê¸°ë§ ê³ ì‚¬ ì ìˆ˜(30) : %.2f \n", finres);
+		System.out.printf("ê³¼ì œ ì ìˆ˜(30) : %.2f \n", asmres);
+		System.out.printf("ì¶œì„ íšŸìˆ˜(20) : %d \n", atd);
+		System.out.printf("ì´ì  %.2f \n", total);
+		System.out.print("PASS");	
+		
+		}else  {
+			System.out.printf("ì¤‘ê°„ ê³ ì‚¬ ì ìˆ˜(20) : %.2f \n", medres);
+			System.out.printf("ê¸°ë§ ê³ ì‚¬ ì ìˆ˜(30) : %.2f \n", finres);
+			System.out.printf("ê³¼ì œ ì ìˆ˜(30) : %.2f \n", asmres);
+			System.out.printf("ì¶œì„ íšŸìˆ˜(20) : %d \n", atd);
+			System.out.printf("ì´ì  %.2f \n", total);
+			System.out.print("fail [ì ìˆ˜ë¯¸ë‹¬]");
+	
+		}
 	
 		}
 				

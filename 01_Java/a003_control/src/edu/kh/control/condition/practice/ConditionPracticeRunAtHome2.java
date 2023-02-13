@@ -5,22 +5,22 @@ import java.util.Scanner;
 public class ConditionPracticeRunAtHome2 {
 	public static void main(String[] args) {
 		
-		ConditionPracticeAtHome cp = new  ConditionPracticeAtHome();
+		ConditionPracticeAtHome cph = new  ConditionPracticeAtHome();
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("¿¹Á¦ ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		System.out.println("ì˜ˆì œ ë²ˆí˜¸ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”.");
 		int input =sc.nextInt();
 		
 		switch(input) {
-		case 1 :cp.ex1(); break; 
-		case 2 :cp.ex2(); break;
-		case 3 :cp.ex3(); break;
-		case 4 :cp.ex4(); break;
-		case 5 :cp.ex5(); break;
+		case 1 :cph.ex1(); break; 
+		case 2 :cph.ex2(); break;
+		case 3 :cph.ex3(); break;
+		case 4 :cph.ex4(); break;
+		case 5 :cph.ex5(); break;
 	
 		
-		default : System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+		default : System.out.println("ìž˜ëª»");
 		}
 		
 		
