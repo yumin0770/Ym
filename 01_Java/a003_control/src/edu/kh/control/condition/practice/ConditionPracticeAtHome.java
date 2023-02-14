@@ -39,11 +39,7 @@ public class ConditionPracticeAtHome {
 		double avg = sum / 3.0;
 
 		if(kor>=40 && eng>=40 && math>=40 && avg >=60) {
-			System.out.println("국어 : " + kor);
-			System.out.println("영어 : " + eng);
-			System.out.println("수학 : " + math);
-			System.out.println("합계 : " + sum);
-			System.out.printf("평균 %.1f \n: " , avg);
+			System.out.printf("국어 : ","영어","수학","합계","평균 %.1f \n: " + kor +eng+math+sum+avg);
 			System.out.println("축하합니다,합격입니다");
 		}else 
 			System.out.println("불합격입니다.");
@@ -56,19 +52,20 @@ public class ConditionPracticeAtHome {
 		System.out.print("1~12사이의 정수 입력: \n");
 		int month = sc.nextInt();
 		
-		
+		String result;
 		
 		switch(month) {
 		case 1 : case 3 : case 5 : case 7 : case 8 : case 10 : case 12 : 
-			System.out.printf("%d월은 31까지 있습니다.", month);break;
+			result="31일까지 있습니다";break;
 		case 4 : case 6 : case 9 : case 11 :  
-			System.out.printf("%d월은 30일까지 있습니다..", month);break;
+			result="30일까지 있습니다";break;
 		case 2 :
-			System.out.printf("%d월은 28월까지 있습니다.", month);break;
-		default : System.out.printf("%d월은 잘못 입력된 달입니다.",month);break;
+			result="28일까지 있습니다";break;
+		default : result="잘못 입력된 달입니다.";break;
 		
 	
-		}
+		}System.out.printf("%d월은 ", month);
+		System.out.printf(result);
 	}
 		public void ex4() {
 			 
@@ -131,19 +128,15 @@ public class ConditionPracticeAtHome {
 			}
 		
 		else if(total >= 70) {
-		System.out.printf("중간 고사 점수(20) : %.2f \n", medres);
-		System.out.printf("기말 고사 점수(30) : %.2f \n", finres);
-		System.out.printf("과제 점수(30) : %.2f \n", asmres);
-		System.out.printf("출석 횟수(20) : %d \n", atd);
-		System.out.printf("총점 %.2f \n", total);
+		System.out.printf("중간 고사 점수(20) : %.2f \n","기말 고사 점수(30) : %.2f \n",
+							"과제 점수(30) : %.2f \n","출석 횟수(20) : %d \n","총점 %.2f \n", 
+							medres,finres,asmres,atd,total);
 		System.out.print("PASS");	
 		
 		}else  {
-			System.out.printf("중간 고사 점수(20) : %.2f \n", medres);
-			System.out.printf("기말 고사 점수(30) : %.2f \n", finres);
-			System.out.printf("과제 점수(30) : %.2f \n", asmres);
-			System.out.printf("출석 횟수(20) : %d \n", atd);
-			System.out.printf("총점 %.2f \n", total);
+			System.out.printf("중간 고사 점수(20) : %.2f \n","기말 고사 점수(30) : %.2f \n",
+							"과제 점수(30) : %.2f \n","출석 횟수(20) : %d \n","총점 %.2f \n", 
+							medres,finres,asmres,atd,total);
 			System.out.print("fail [점수미달]");
 	
 		}
