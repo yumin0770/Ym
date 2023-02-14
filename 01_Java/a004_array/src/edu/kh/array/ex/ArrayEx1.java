@@ -123,7 +123,7 @@ public class ArrayEx1 {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		double[] heightArray = new double[3];; // 0.0 0.0 0.0 
+		double[] heightArray = new double[3]; // 0.0 0.0 0.0 
 		
 		
 		//n번의 키 입력: for문 이용
