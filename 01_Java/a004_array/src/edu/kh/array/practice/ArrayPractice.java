@@ -66,32 +66,34 @@ public class ArrayPractice {
 		
 
 	
-	
+		int[] numbers = new int [5];
 		
 		for(int i=0; i<5;i++) {
 			System.out.printf("입력 %d: ", i);
-			int input = sc.nextInt();
-			int[] numbers = new int [input];
+		    numbers[i] = sc.nextInt();
+		
 			
+		} System.out.println("검색할 값 : ");
+		
 		
 			int index = 0;     
 			boolean flag = true; 
 			
-			for(int f=0; f<numbers.length-1; f++) {
+			for(int i=0; i<numbers.length+1; i ++) {
 				
-				if(input==numbers[f]) 
-					index = f;
+				if(index==numbers[i]) 
+					index = i;
 					flag = false;
 					break; 
 				
-			}
+			} 
 				if(flag) {
 					System.out.println("존재하지 않습니다.");
 				}else{
 					System.out.println(index);
 				}
 			
-	}
+	
 			
 		
 
