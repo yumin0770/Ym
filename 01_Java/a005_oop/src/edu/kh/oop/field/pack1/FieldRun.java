@@ -40,7 +40,7 @@ public class FieldRun extends FieldTest3{
 		FieldTest3 t3 = new FieldTest3();
 		
 		System.out.println(t3.v1); //public
-		System.out.println(t3.v2); //protected
+//		System.out.println(t3.v2); //protected
 		
 		System.out.println(v2);
 		// FieldRun이 FieldTest3를 상속 받음
