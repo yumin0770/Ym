@@ -35,7 +35,6 @@ public class UserService {
 				
 		//아이디 일치 여부 검사
 		boolean idCheck = userId.equals(signUpUser.getUserId());
-		
 		//비밀번호 일치 여부 검사
 		boolean pwCheck = userPw.equals(signUpUser.getUserPw());
 		

@@ -1,6 +1,8 @@
 package edu.kh.array.practice;
 
 import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Random;
 
 public class ArrayPractice {
 
@@ -182,34 +184,131 @@ public class ArrayPractice {
 		System.out.print("정수: ");
 		int input = sc.nextInt();
 		
+		int[] num = new int [input];
+		
 		while(input<3 || input%2 == 0) {
-			System.out.print("다시 입력하세요.");
+			System.out.println("다시 입력하세요.");
 			
 			System.out.print("정수: ");
 			input = sc.nextInt();
-		} 
-		
-		int[] num = new int [input];
-		 for(int i=1; i<num.length; i++);{
-		System.out.println(num[i]);
-		
-		 }
+			
+			 
+	
 	}
+		
+		 for(int i=1; i<num.length-2; i++) {
+			 System.out.printf("%d, ",i);
+			 
+		 }
+			
+		 
+		 for(int j=input-2; j>=1; j--) {
+			 if (j==1) {
+				 System.out.printf("%d",j);
+			 }else {
+				 System.out.printf("%d, ",j);
+			 }
+			 
+				 
+				
+			
+		}
+			  
+	}
+	
 	public void ex9() {
 		
-		int[] ramdonN = new int[10];
-			
-		for(int i=0 ; i<ramdonN.length; i++) {	
-		ramdonN [i] = (int)(random.nextInt()*10)+1;
-		} System.out.println("발생한 난수 :" + ramdonN [i] );
+		int[] randomN = new int[10];
+	
+		System.out.print("발생한 난수 : ");
+		for(int i=0 ; i<randomN.length; i++) {	
+			 System.out.print((int)(Math.random()*10) + " ");
+	
+			}
 	
 }
 	
-	
 	public void ex10() {
 		
-	}
+		int[] randomN = new int[11];
+		
+		int max = -1;
+		int min = 11;
+		
+		
+		
+		System.out.print("발생한 난수 : ");
+		for(int i=1 ; i<=10; i++) {	
+			randomN[i]=(int)(Math.random()*10+1);
+
+			System.out.print(randomN[i] + " ");
+			
+			 
+		} for(int i=1 ; i<randomN.length; i++) {
+				
+			 	if(randomN[i] > max) {
+					max = randomN[i];
+			}		
+					 
+				if(randomN[i] < min) {
+					min = randomN[i];
+				
+			} 
+		}
+				System.out.println();	
+				System.out.printf("최대값 : %d\n",max);	
+				System.out.printf("최소값 : %d",min);	
+				
+		
+		
+		}
+    public void ex11() {
+    	
+    	int[] r = new int [10];
+    	
+    		for(int i=0; i<r.length;i++) {
+    			r[i]=(int)(Math.random()*10+1);
+    			for(int j=0;j<i;j++) {
+    				if(r[i]==r[j]) {
+    					i--;
+    				}
+    			}
+    		}
+    	for(int i=0; i<r.length; i++) {
+    		System.out.print(r[i]+" ");
+    	}
+    	
+    
+    }					 
+
 	public void ex12() {
+		
+		int[] r = new int [6];
+    	
+		for(int i=0; i<r.length;i++) {
+			r[i]=(int)(Math.random()*6+1);
+			for(int j=0;j<i;j++) {
+				if(r[i]==r[j]) {
+					i--;
+					
+					if(r[i]>r[j]) {
+						int temp = i;
+						r[i]=r[j];
+						j=temp;
+						
+						System.out.print(j+" ");
+					}
+					
+				}
+			} 
+		} 
+		
+		
+{
+		
+	}
+	
+
 		
 	}
 	public void ex13() {
