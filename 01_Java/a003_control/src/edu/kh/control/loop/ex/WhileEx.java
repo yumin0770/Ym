@@ -103,7 +103,7 @@ public class WhileEx {
 				break;
 			case 3 :
 				sum+= 4000;
-				menu += "라면";				
+				menu += "라면 ";				
 				break;
 			case 9 : break;
 			default : System.out.println("잘못 입력 하셨습니다.");

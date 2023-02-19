@@ -1,11 +1,11 @@
 package edu.kh.array.practice;
 
-public class ArrayPracticeRun {
+public class ArrayPracticeRun2 {
 	
 	public static void main(String[] args) {
-		ArrayPractice ap = new ArrayPractice();
+		ArrayPracticeAtHome ap = new ArrayPracticeAtHome();
 	
-//	ap.ex1();
+	ap.ex1();
 //	ap.ex2();
 //	ap.ex3();
 //	ap.ex4();
@@ -17,13 +17,7 @@ public class ArrayPracticeRun {
 //	ap.ex10();
 //	ap.ex11();
 //	ap.ex12();
-	ap.ex13();
-//	ap.ex14();
-//	ap.ex15();
-//	ap.ex16();
-//	ap.ex17();
-//	ap.ex18();
-//	ap.ex19();
+//	ap.ex13();
 	
 	}
 	

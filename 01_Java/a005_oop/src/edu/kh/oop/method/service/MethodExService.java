@@ -4,7 +4,7 @@ package edu.kh.oop.method.service;
 // -> 비지니스 로직(if,for)
 public class MethodExService {
 	
-	//매개 변수 O, 반환 값 X
+	//2.매개 변수 O, 반환 값 X
 	// Void : 반환 값 없음
 	//매개 변수: 전달 받은 값을 저장할 변수
 	public void threeNumbersSumAndAverage(int a, int b, int c) {
@@ -17,7 +17,7 @@ public class MethodExService {
 		double avg = sum / 3.0;
 		
 		System.out.println("a : " + a);
-		System.out.println("b: " + b);
+		System.out.println("b : " + b);
 		System.out.println("c : " + c);
 		System.out.println("합계 : " + sum);
 		System.out.println("평균 : " + avg);
@@ -28,7 +28,7 @@ public class MethodExService {
 	//3.매개 변수 X, 반환 값 O
 	//[ 1부터 10사이의 난수 5개를 저장한 배열 반환 받아 출력]
 	
-	public int[] fiveRandomNumber() {
+	public int[] fiveRandomNumbers() {
 		//-> !!!!!!!!!!!!!반환하는 자료형!!!!!!!!!!!!
 		
 		int[] arr = new int[5];
@@ -40,7 +40,7 @@ public class MethodExService {
 			
 	
 			
-		}
+		}n
 		//return : 반환, 돌아가다  
 		//로직처리후 호출한 위치로 돌아감
 		//->돌아갈 때 가져갈 값이 있으면

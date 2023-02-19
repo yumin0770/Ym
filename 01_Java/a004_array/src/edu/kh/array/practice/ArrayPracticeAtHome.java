@@ -4,26 +4,17 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Random;
 
-public class ArrayPractice {
+public class ArrayPracticeAtHome {
 
 	public void ex1() {
 
-		int[] arr = new int[10];
-
+		int[] arr = new int [10];
+		
 		int sum = 0;
-
-		for (int i = 1; i < arr.length; i++) {
-			System.out.print(i + " ");
-
-			if (i % 2 != 0) {
-				sum += i;
-
-			}
-
+		
+		for(int i=1; i<arr.length;i++ ) {
+			
 		}
-		System.out.println();
-		System.out.printf("짝수 번째 인덱스 합 : %d", sum);
-
 	}
 
 	public void ex2() {
@@ -169,10 +160,7 @@ public class ArrayPractice {
 		}
 
 	}
-//  3이상인 홀수를 입력 받아 배열의 중간까지는 1부터 1씩 증가하여 오름차순으로 값을 넣고,
-//	중간 이후부터 끝까지는 1씩 감소하여 내림차순으로 값을 넣어 출력하세요.
-//	단, 입력한 정수가 홀수가 아니거나 3 미만일 경우 “다시 입력하세요”를 출력하고
-//	다시 정수를 받도록 하세요.
+
 	public void ex8() {
 		Scanner sc = new Scanner(System.in);
 
@@ -272,11 +260,10 @@ public class ArrayPractice {
 
 		for (int i = 0; i < r.length; i++) {
 			r[i] = (int) (Math.random() * 45 + 1);
-			
 			for (int j = 0; j < i; j++) {
 				if (r[i] == r[j]) {
 					i--;
-					break;
+
 				}
 			}
 
@@ -315,25 +302,33 @@ public class ArrayPractice {
 		
 		char[] arr = new char[str.length()];
 		int count = 0;
-	
+
 		System.out.print("문자열에 있는 문자 : ");
 
 		for (int i = 0; i < arr.length; i++) {
 			arr[i] = str.charAt(i);
 			
-			for (char j = 0; j < arr.length-1; j++) {
-				for (char k = 1; k < arr.length-1; k++) {
-					if (arr[i] == arr[j]) {
-						i--;
-						System.out.println(arr[i]);
-					count++;
-			
-					}System.out.println("문자 개수" + count);
-			}
+			boolean flag = true;
 		
+			for (int j = 0; j < i; j++) {
+				if (arr[j] == arr[i])
+					flag = false;
+			}
+			
+			if (flag) {
+				if (i == 0)
+					System.out.print(arr[i]);
+				else
+					System.out.print(", " + arr[i]);
+	                
+				count++;
+			}
 		}
+
+		System.out.println("\n문자 개수 : " + count);
+		
+		sc.close();
 	}
-}
 
 	public void ex14() {
 		Scanner sc = new Scanner(System.in);
@@ -341,33 +336,53 @@ public class ArrayPractice {
 		System.out.print("배열의 크기를 입력하세요 : ");
 		String[] arr = new String[sc.nextInt()];
 		sc.nextLine();
-
 		
-		for(int i=0; i<arr.length;i++) {
-			System.out.println(i +"번째 문자열 : ");
-			String input = sc.nextLine();
+		int index = 0;
+		
+		while (true) {
+			for (int i = index; i < arr.length; i++) {
+				System.out.print(i + 1 + "번째 문자열 : ");
+				arr[i] = sc.nextLine();
+			}
 			
+			index = arr.length;
+
+			System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
+			char plus = sc.next().charAt(0);
+
+			if (plus == 'Y' || plus == 'y') {
+				System.out.print("더 입력하고 싶은 개수 : ");
+				String[] arr2 = new String[arr.length + sc.nextInt()];
+				sc.nextLine();
+				
+				System.arraycopy(arr, 0, arr2, 0, arr.length);
+				arr = arr2;
+				
+			} else if (plus == 'N' || plus == 'n') {
+				System.out.println(Arrays.toString(arr));
+				break;
+				
+			} else {
+				System.out.println("잘못 입력하셨습니다.");
+				continue;
+			}
+
 		}
 		
-
-	
+		sc.close();
 	}
 
 	
 
 	public void ex15() {
+		String[][] arr = new String[3][3];
 	
-		String[][] str = new String[3][3];
-		
-		for ( int row=0; row<str.length; row++) {
-			for ( int col=0; col<str[row].length; col++) 
-				System.out.print("(" + row + "," + col +")");
-			System.out.println();
-			
-		
-		}
+	for (int row = 0; row < arr.length; row++) {
+		for (int col = 0; col < arr[row].length; col++)
+			System.out.print("(" + row + ", " + col + ")");
+		System.out.println();
+	}
 }
-	
 	
 
 	public void ex16() {
@@ -407,45 +422,27 @@ public class ArrayPractice {
 		
 		int[][] arr = new int[4][4];
 		
-		int rowsum = 0;
-		int colsum = 0;
+		final int RowFinal = arr.length - 1;
+		final int ColFinal = arr[0].length - 1;
 		
 		for (int row = 0; row < arr.length; row++) {
 			for (int col = 0; col < arr[row].length; col++) {
-				if(row>=1 && row<=10 && col>=1 && col<=10) {
-					arr[row][col]=(int)(Math.random());
+				if (row != RowFinal && col != ColFinal) {
+					arr[row][col] = (int)(Math.random() * 10 + 1);
 					
+					arr[row][ColFinal] += arr[row][col];
+					arr[RowFinal][col] += arr[row][col];
+					arr[RowFinal][ColFinal] += arr[row][col];
 				}
-
-				arr[row][rowsum] += arr[row][col];
-				arr[colsum][col] += arr[row][col];
-				arr[rowsum][colsum] += arr[row][col];
-				System.out.println(arr[row][col]);
-		
+				System.out.printf("%4d ", arr[row][col]);
 			}
+			System.out.println();
 		}
 		
+		sc.close();
 	}
 
 	public void ex19() {
-		
-		Scanner sc = new Scanner(System.in);
-			int input = sc.nextInt();
-			int input2 = sc.nextInt();
-			
-			int[][] arr = new int [input][input2];
-			
-			if(input<=1 && input>=10 ) {
-				System.out.println("반드시 1~10 사이의 정수를 입력해야 합니다");
-			}else {
-				for(int row=0; row<input;row++) {
-					for(int col=0; col<input2;col++) {
-						System.out.printf("%4d ", (char)arr[row][col]);
-				}
-				System.out.println();
-			}
-		}
-		
 
 	}
 

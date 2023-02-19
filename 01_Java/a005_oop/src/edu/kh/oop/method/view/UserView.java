@@ -4,12 +4,9 @@ import java.util.Scanner;
 import edu.kh.oop.method.dto.User;
 import edu.kh.oop.method.service.UserService;
 
+//입/출력용 객체를 만들기 위한 클래스
 public class UserView {
 	
-
-	
-	
-
 	private Scanner sc = new Scanner(System.in);
 
 	// UserService 객체 생성
@@ -155,11 +152,12 @@ public class UserView {
 	private void userPrint() {
 		
 		System.out.println("***4. 회원 정보 출력***");
+		//로그인 O
 		if(UserView.loginUser !=null) {
 			System.out.println(UserView.loginUser.toString());
 		
 			
-		}else { //로그인 O
+		}else { //로그인 X
 			System.out.println("[로그인 후 이용해주세요.]");
 		}
 		

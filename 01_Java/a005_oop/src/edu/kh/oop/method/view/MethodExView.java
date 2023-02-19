@@ -3,11 +3,11 @@ package edu.kh.oop.method.view;
 import java.util.Scanner;
 
 import edu.kh.oop.method.service.MethodExService;
-
+//View : 프로그램 실행 시 보여지는 부분
+//-> 콘솔에 내용을 출력, 입력 받는 용도의 객체를 만들기 위한 클래스
 public class MethodExView {
 
-	//View : 프로그램 실행 시 보여지는 부분
-	//-> 콘솔에 내용을 출력, 입력 받는 용도의 객체를 만들기 위한 클래스
+
 
 	//필드 (==멤버변수)
 	private Scanner sc = new Scanner(System.in);
@@ -42,7 +42,7 @@ public class MethodExView {
 			 switch(input){
 			 case 1 : menu1(); break; //1 입력 시 menu1() 메서드 호출
 			 
-			 case 2 : menu2(); break; //2 입력 시 menu1() 메서드 호출
+			 case 2 : menu2(); break; //2 입력 시 menu2() 메서드 호출
 			 
 			 case 3 : menu3(); break;
 			 case 4 : menu4(); break;
@@ -83,6 +83,7 @@ public class MethodExView {
 		System.out.print("입력 3: ");
 		int num3 = sc.nextInt();
 		
+		
 		//service에서 제공하는 기능
 		//threeNumbersSumAndAverage(정수1, 정수2, 정수3) 호출 시
 		//정수 1,2,3에 각각 num1,2,3를 전달함
@@ -95,7 +96,7 @@ public class MethodExView {
 		
 		System.out.println("[ 1부터 10사이의 난수 5개를 저장한 배열 반환 받아 출력]");
 		
-		int[] numbers = service.fiveRandomNumber();
+		int[] numbers = service.fiveRandomNumbers();
 		
 		//1)Service의 fiveRandomNumbers()를 호출
 		//2) 난수 5개가 저장된 int[] 이 반환됨(돌아옴)

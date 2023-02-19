@@ -2,7 +2,8 @@ package edu.kh.oop.method.dto;
 
 //DTO (Data Transfer Object) : 값 전달용 객체
 public class User {
-
+	
+	//필드
 	// 아이디, 비밀번호, 이름, 성별(M/F)
 
 	// private : 외부 접근 차단 (캡슐화 원칙 적용)
@@ -34,7 +35,7 @@ public class User {
 	}
 
 	// getter /setter 작성
-	// -> 캡슐화 원칙에 의해
+	// -> 캡슐화 원칙(private)에 의해
 	// 직접 접근이 차단된 필드와 데이터 교환을 할 수 있는 기능(간접 접근 방법)
 
 	// getter 작성법 (외부에서 필드값을 얻어 갈 수 있게 하는 방법)

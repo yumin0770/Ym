@@ -5,7 +5,7 @@ import edu.kh.oop.method.view.MethodExView;  //패키지가 다를 때 import �
 public class MethodExRun {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 
 		//MethodExView 객체 생성 -> new를 이용해서 메모리를 할당하라!
 		MethodExView view = new MethodExView(); //기본 생성자
