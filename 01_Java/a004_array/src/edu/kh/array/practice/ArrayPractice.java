@@ -270,30 +270,27 @@ public class ArrayPractice {
 
 		int[] r = new int[6];
 
+		
 		for (int i = 0; i < r.length; i++) {
 			r[i] = (int) (Math.random() * 45 + 1);
+			
+		
 			
 			for (int j = 0; j < i; j++) {
 				if (r[i] == r[j]) {
 					i--;
+					
 					break;
+								
 				}
 			}
+			
+		} Arrays.sort(r);
 
-		}
-		for (int i = 0; i < r.length; i++) {
-			for (int j = 1; j < r.length; j++) {
-				if (r[i] > r[j]) {
-					int tmp = r[i];
-					r[i] = r[j];
-					r[j] = tmp;
-
-				}
-
-			}
-		}
 		for (int i = 0; i < 6; i++) {
 			System.out.print(r[i] + " ");
+			
+			
 		}
 
 	}
@@ -316,24 +313,38 @@ public class ArrayPractice {
 		char[] arr = new char[str.length()];
 		int count = 0;
 	
+	
+		
 		System.out.print("문자열에 있는 문자 : ");
 
 		for (int i = 0; i < arr.length; i++) {
 			arr[i] = str.charAt(i);
 			
+					
 			for (char j = 0; j < arr.length-1; j++) {
 				for (char k = 1; k < arr.length-1; k++) {
-					if (arr[i] == arr[j]) {
+					if (arr[i] == arr[k]) 
 						i--;
-						System.out.println(arr[i]);
-					count++;
+					
+					for (int i = arr - 2; i >= 1; i--) {
+						if (i == 1) {
+							System.out.printf("%d", i);
+						} else {
+							System.out.printf("%d, ", i);
+						}
+
+					}
+					
+
+					}System.out.println(arr[i]);
+											
 			
 					}System.out.println("문자 개수" + count);
 			}
 		
 		}
-	}
-}
+	
+
 
 	public void ex14() {
 		Scanner sc = new Scanner(System.in);
