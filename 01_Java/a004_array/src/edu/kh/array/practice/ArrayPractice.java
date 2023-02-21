@@ -75,7 +75,7 @@ public class ArrayPractice {
 			number[i] = sc.nextInt();
 
 		}
-		System.out.print("검색할 값 : ");
+		System.out.print(" 검색할 값 : ");
 		int search = sc.nextInt();
 
 		for (int i = 0; i <= number.length - 1; i++) {
@@ -343,15 +343,94 @@ public class ArrayPractice {
 
 	public void ex14() {
 		Scanner sc = new Scanner(System.in);
-
+		
+		//1) next(): 한 단어 (띄어쓰기, 엔터를 만나면 입력 종료)
+		//	 nextLine() :한 문장(엔터 만나면 입력 종료)
+		
+		//2) 스캐너 입력 버퍼와 nextXXXX의 의미
+		
+		//입력 => 입력 버퍼에 저장 -> nextXXX() 통해 버퍼 내용을 읽어옴
+		
+		//                 입력 버퍼             nextXXX()          후처리
+		//nextLine() :   hello world(엔터) -> hello world(엔터) ->엔터 제거
+		
+		//nextInt() :      100(엔터)        -> 100
+		//(다음 정수)
+		//** net(), nextDouble(), nextInt() 등
+		// 모두 입력 버퍼에서 (엔터)를 제외하고 내용만 읽어옴 **
+		
+//		System.out.println("--------------------------------------");
+//		System.out.println("nextInt() : ");
+//		int a =sc.nextInt();
+//		// 100  //입력버퍼 [ (엔터) ]
+//		
+//		System.out.println("nextLine() : "); // 입력버퍼 : [a b c (엔터)]ㄴ 
+//		String s = sc.nextLine();
+//		
+//		//a b c //입력버퍼 : [ ]
+//		
+//		System.out.println("종료");
+//		
+		//nextInt() 이후 입력 버퍼에 남아있는 (엔터) 때문에
+		//다음 nextLine() 수행 시 버퍼에 남아있는 (엔터)를 읽어버리기 때문에
+		// 추가적인 입력을 시도하지 못하고 다음 코드로 넘어가는 문제 발생.
+		
+		//[해결방법]
+		//입력을 위한 nextLine() 수행 전
+		//입력버퍼에서 (엔터)를 제거
+		// -> 빈 공간에 sc.nextLine() 구문을 한 번 작성하면 (엔터)가 제거됨
+		
+		
+		//1. 첫 배열 크기 지정
 		System.out.print("배열의 크기를 입력하세요 : ");
-		String[] arr = new String[sc.nextInt()];
-		sc.nextLine();
+		int size = sc.nextInt(); //입력 버퍼에 개행문자(엔터)가 남음
+		sc.nextLine(); //입력 버퍼에 남은 개행문자(엔터) 제거
 
-		for (int i = 0; i < arr.length; i++) {
-			System.out.println(i + "번째 문자열 : ");
-			String input = sc.nextLine();
+		//2.첫배열 생성
+		String[] books = new String[size];
+		
+		//3.첫 배열에 저장할 문자열 입력 받기
+		
+		for (int i = 0; i < books.length; i++) {
+			System.out.println((i+1) + "번째 문자열 : ");
+			books[i]=sc.nextLine(); //입력 버퍼에서 다음 엔터까지 읽어옴
 
+		
+			//4. n이 입력될 때 까지 무한 반복 -> n 입력 시 break
+			while(true) {
+				System.out.println("더 값을 입력하시겠습니까?(Y/N) : ");
+				char ch = sc.nextLine().charAt(0);
+				
+				if(ch== 'N') {
+					break;
+					
+				}
+				//5.더 입력 받을 개수 입력
+				System.out.println("더 입력하고 싶은 개수 : ");
+				int addSize = sc.nextInt();
+				sc.nextLine(); //입력 버퍼 개행문자 제거
+				
+				//6.기존 배열보다 늘어난 개수만큼 큰 새 배열 생성
+				String newBooks[] = new String[books.length + addSize];
+				
+				//7.깊은 복사를 통해 기존 배열 내용을 새 배열로 복사
+				System.arraycopy(books, 0, newBooks, 0, books.length);
+				
+				//8.새 배열의 빈칸 부터 새로운 입력을 받아서 저장
+				for(int i=books.length; i<newBooks.length; i++) {
+					System.out.println((i+1)+"번째 문자열 : ");
+					newBooks[i] = sc.nextLine();
+		
+					
+				}
+				//9.기존 참조배열 books에 newBooks의 주소를 얕은 복사
+				books = newBooks;
+							
+	
+			} //while 종료
+			//10.배열에 저장된 모든 값 출력
+			System.out.println(Arrays.toString(books));
+			
 		}
 
 	}
@@ -467,12 +546,12 @@ public class ArrayPractice {
 		int inputrow = sc.nextInt();
 		
 		int[] row = new int[inputrow];
+	
 		
 			for(int col=0; col<row.length; col++) {
 				System.out.printf("열의 크기 %d: ", col);
 				int inputcol = sc.nextInt();
 			
-			} for(int i=0;i<col.length;i++) {
 				
 			}
 		
