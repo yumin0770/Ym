@@ -394,7 +394,7 @@ public class ArrayPractice {
 		for (int i = 0; i < books.length; i++) {
 			System.out.println((i+1) + "번째 문자열 : ");
 			books[i]=sc.nextLine(); //입력 버퍼에서 다음 엔터까지 읽어옴
-
+		}
 		
 			//4. n이 입력될 때 까지 무한 반복 -> n 입력 시 break
 			while(true) {
@@ -433,7 +433,7 @@ public class ArrayPractice {
 			
 		}
 
-	}
+	
 
 	public void ex15() {
 
@@ -477,15 +477,16 @@ public class ArrayPractice {
 	}
 
 	public void ex18() {
-
+		
+		//1. 4헹 4열 2차원 배열 생성
 		int[][] arr = new int [4][4];
-				
+		
 		int columnTotal = arr.length - 1;
-		int rowTotal = arr[0].length - 1;
-		int total = 0;
+		int rowTotal = arr.length - 1;
+	
 		
 		for(int row =0; row<arr.length;row++) {
-			for(int col  =0; col<arr[row].length;col++) {
+			for(int col  =0; col<arr.length;col++) {
 				if (row != rowTotal && col!= columnTotal) {
 				arr[row][col] = (int)(Math.random() * 10 + 1);	
 				
@@ -499,11 +500,51 @@ public class ArrayPractice {
 			                    
 			}
 			System.out.println();
-			}
-		
-		
-
 	}
+}
+		  /* 실습문제 18
+	    4행 4열 2차원 배열을 생성하여 0행 0열부터 2행 2열까지는 1~10까지의 임의의 정수 값 저장 후
+	    아래의 내용처럼 처리하세요.
+	    [실행 화면]
+	     9  3  7 19
+	     3  6  9 18
+	     6 10 10 26
+	    18 19 26 63
+	     */
+//	   public void practice18() {
+//	      
+//	      // 1. 4행 4열 2차원 배열 생성
+//	      int[][] arr = new int[4][4];
+//	      
+//	      final int LAST_ROW_INDEX = arr.length - 1; // 행 마지막 인덱스
+//	      final int LAST_COL_INDEX = arr[0].length - 1; // 열 마지막 인덱스
+//	      
+//	      // 2. 0행 0열 ~ 2행 2열까지 1~10 사이 난수 대입
+//
+//	      Random random = new Random();
+////	      random.nextInt(); 0이상 1미만 정수
+//	      
+//	      for(int row=0 ; row < LAST_ROW_INDEX ; row++) {
+//	         for(int col=0 ; col < LAST_COL_INDEX ; col++) {
+//	            arr[row][col] = random.nextInt(10) + 1;
+//	            
+//	            // 3행 3열에 발생된 난수 모두 누적
+//	            arr[LAST_ROW_INDEX][LAST_COL_INDEX] += arr[row][col];
+//	            
+//	            // 난수 대입과 동시에 해당 행/열의 끝에 누적
+//	            arr[row][LAST_COL_INDEX] += arr[row][col]; // 각 행 마지막 열에 누적
+//	            arr[LAST_ROW_INDEX][col] += arr[row][col]; // 각 열 마지막 행에 누적
+//	         }
+//	      }
+//	      
+//	      // 출력용 2중 for문
+//	      for(int row=0 ; row <= LAST_ROW_INDEX ; row++) {
+//	         for(int col=0 ; col <= LAST_COL_INDEX ; col++) {
+//	            System.out.printf("%3d", arr[row][col]);
+//	         }
+//	         System.out.println();
+//	      }
+//	   }
 
 	public void ex19() {
 
@@ -542,25 +583,55 @@ public class ArrayPractice {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("행의 크기 : ");
-		int inputrow = sc.nextInt();
 		
-		int[] row = new int[inputrow];
-	
+		char ch ='a';
 		
-			for(int col=0; col<row.length; col++) {
-				System.out.printf("열의 크기 %d: ", col);
-				int inputcol = sc.nextInt();
+		System.out.print("행 크기 : ");
+		int input = sc.nextInt();
+		
+		char[][] arr = new char[input][];
+		
+		for(int i=0; i<=arr.length; i++) {
+			System.out.printf("%d열의 크기 : ", i);
+			int input2 = sc.nextInt();
 			
+			arr[input] = new char[input2];
+			
+		
+			for(int alp=0; alp<arr.length; alp++) {
+				arr[alp][input2] =	ch++;
+			}
+		}
+		
+		
+		
+			for(int row=0; row<=arr.length; row++) {
+				for(int col=0; col<=arr.length;col++) {
+					System.out.print((char)[row][col] + " ");
+				}
 				
 			}
+		
+		
 		
 		
  
 	}
 
 	public void ex21() {
+//		1차원 문자열 배열에 학생 이름 초기화되어 있다.
+//		3행 2열 짜리 2차원 문자열 배열 2개를 새로 선언 및 할당하여
+//		학생 이름을 2차원 배열에 순서대로 저장하고 아래와 같이 출력하시오.
+//		(첫 번째 2차원 배열이 모두 저장된 경우 두 번째 2차원 배열에 저장 진행)
+//		String[] students = {"강건강", "남나나", "도대담", "류라라", "문미미", "박보배",
+//	"송성실", "윤예의", "진재주", "차천축", "피풍표", "홍하하"};
 
+		
+		
+		
+		
+		
+	      
 	}
 
 	public void ex22() {

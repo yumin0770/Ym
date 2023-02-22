@@ -1,7 +1,9 @@
 package edu.kh.inheritance.dto;
 
-public class Parent {
-
+//final class : 상속이 불가능한 클래스 
+//				보통 코드 재사용을 원치 않을 때 사용
+public /*final*/ class Parent /*extends Object*/{
+					//컴파일러가 자동 추가
 	private int money = 400_000_000; //돈
 	private String lastName = "박"; //성
 	
@@ -24,13 +26,13 @@ public class Parent {
 	
 	
 	//getter/setter
-	
-	public int getMoney() {
+	// final 메서드 : 오버라이딩 불가
+	public /*final*/ int getMoney() {
 		return money;
 		
 	}
 	
-	public void setMoney() {
+	public void setMoney(int money) {
 		this.money = money;
 		
 	}
@@ -40,7 +42,7 @@ public class Parent {
 		
 	}
 	
-	public void setlastName(String lastName) {
+	public void setLastName(String lastName) {
 		this.lastName = lastName;
 		
 	}
