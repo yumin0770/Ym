@@ -211,7 +211,7 @@ public class CarService {
 			
 			
 		}
-
+		//다형성 업캐스팅 적용
 		private Car createCar(int num) {
 			
 			switch(num) {

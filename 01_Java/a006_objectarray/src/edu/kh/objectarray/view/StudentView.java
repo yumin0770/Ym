@@ -11,7 +11,8 @@ public class StudentView {
 	private Scanner sc = new Scanner(System.in);
 	
 	private StudentService service = new StudentService();
-	
+//=> 프라이빗(해당 클래스에만 접근할 수 있는) 스튜턴트 서비스 참조변수를 서비스라고 선언함. 참조할 수 있는 서비스를 만들었고
+//	스튜턴트서비스 클래스의 기본생성자를 이용해서 새 객체를 만드는 것. 새 객체가 만들어져서  주소가 할당되면 앞에 만들었던 서비스에 대입
 	
 	public void displayMenu () {
 	
@@ -47,7 +48,7 @@ public class StudentView {
 			
 			System.out.println();
 			
-		}while(input !=0);
+		}while(input !=0); //0이되면 종료!
 			
 		}
 
@@ -215,7 +216,7 @@ public class StudentView {
 		System.out.println("[점수 합계, 평균, 최고점, 최저점]");
 		System.out.println("[학생 총점 합계, 평균, 최고점, 최저점]");
 
-		int[] arr = service.sumAvgMaxMin();
+		int[] arr = service.sumAvgMaxMin(0, 0, 0, 0);
 		
 		//0번 인덱스 : 합계
 		//1번 인덱스 : 평균
