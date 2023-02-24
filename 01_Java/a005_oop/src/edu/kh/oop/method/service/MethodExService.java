@@ -40,7 +40,7 @@ public class MethodExService {
 			
 	
 			
-		}n
+		}
 		//return : 반환, 돌아가다  
 		//로직처리후 호출한 위치로 돌아감
 		//->돌아갈 때 가져갈 값이 있으면

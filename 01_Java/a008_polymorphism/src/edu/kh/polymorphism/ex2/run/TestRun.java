@@ -11,8 +11,8 @@ public class TestRun {
 			
 		//	service.ex1();
 			
-		//	service.ex2();
-			service.ex3();
+		service.ex2();
+	//		service.ex3();
 			
 			
 			}

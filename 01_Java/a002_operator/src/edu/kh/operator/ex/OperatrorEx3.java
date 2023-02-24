@@ -61,7 +61,7 @@ public class OperatrorEx3 {
 
 		System.out.println(true || false && !false ); //true
 		
-		\
+		
 	}
 
 }

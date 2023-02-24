@@ -8,7 +8,7 @@ public class ForPractice {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("1ÀÌ»óÀÇ ¼ýÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("1ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ : ");
 		int input = sc.nextInt();
 
 		if (input >= 1) {
@@ -16,7 +16,7 @@ public class ForPractice {
 				System.out.print(i + " ");
 			}
 		} else {
-			System.out.print("1 ÀÌ»óÀÇ ¼ýÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+			System.out.print("1 ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.");
 		}
 	}
 
@@ -24,7 +24,7 @@ public class ForPractice {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("1ÀÌ»óÀÇ ¼ýÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("1ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ : ");
 		int input = sc.nextInt();
 
 		if (input >= 1) {
@@ -32,7 +32,7 @@ public class ForPractice {
 				System.out.print(i + " ");
 			}
 		} else {
-			System.out.print("1 ÀÌ»óÀÇ ¼ýÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+			System.out.print("1 ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.");
 		}
 	}
 
@@ -40,7 +40,7 @@ public class ForPractice {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("Á¤¼ö¸¦ ÇÏ³ª ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ : ");
 		int input = sc.nextInt();
 		int sum = 0;
 
@@ -48,8 +48,8 @@ public class ForPractice {
 			sum += i;
 			System.out.print(i);
 
-			// i == input == ¸¶Áö¸·
-			if (i != input) { // != ¸¶Áö¸·ÀÌ ¾Æ´Ï´Ù
+			// i == input == ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			if (i != input) { // != ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ï´ï¿½
 				System.out.print(" + ");
 			}
 		}
@@ -61,10 +61,10 @@ public class ForPractice {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("Ã¹ ¹øÂ° ¼ýÀÚ : ");
+		System.out.print("Ã¹ ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ : ");
 		int num1 = sc.nextInt();
 
-		System.out.print("µÎ ¹øÂ° ¼ýÀÚ : ");
+		System.out.print("ï¿½ï¿½ ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ : ");
 		int num2 = sc.nextInt();
 
 		if (num1 >= 1 && num2 >= 1) {
@@ -73,7 +73,7 @@ public class ForPractice {
 
 			}
 		} else {
-			System.out.println("1ÀÌ»óÀÇ ¼ýÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+			System.out.println("1ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.");
 		}
 	}
 
@@ -81,10 +81,10 @@ public class ForPractice {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("¼ýÀÚ : ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ : ");
 		int dan = sc.nextInt();
 
-		System.out.println("===== " + "%d" +"´Ü ===== \n",dan,dan);
+		System.out.printf("===== " + "%d" +"ï¿½ï¿½ ===== \n",dan,dan);
 			for (int num = 1 ; num  <= 9 ; num ++) {
 				System.out.printf("%d * %d = %2d \n", dan, num, dan * num);
 
@@ -95,18 +95,18 @@ public class ForPractice {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("¼ýÀÚ : ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ : ");
 		int dan = sc.nextInt();
 		
 		if (dan >= 2 && dan <= 9) {
 			for(int x = dan; x <= 9; x++) {
-			System.out.printf("===== " + "%d" + "´Ü =====\n",x);
+			System.out.printf("===== " + "%d" + "ï¿½ï¿½ =====\n",x);
 			for(int i = 1; i <= 9; i++) {
 			System.out.printf("%d * %d = %2d \n", x, i, x * i);
 			}
 		}
 	} else
-		System.out.println("2~9 »çÀÌ ¼ýÀÚ¸¸ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		System.out.println("2~9 ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.");
 
 
 		
@@ -114,7 +114,7 @@ public class ForPractice {
 
 	public void practice7() {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Á¤¼ö ÀÔ·Â : ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ : ");
 		int number = sc.nextInt();
 
 		for (int x = 1; x <= number; x++) {
@@ -128,7 +128,7 @@ public class ForPractice {
 
 	public void practice8() {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Á¤¼ö ÀÔ·Â : ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ : ");
 		int number = sc.nextInt();
 
 		for (int x = number; x >= 1; x--) {
@@ -142,7 +142,7 @@ public class ForPractice {
 
 	public void practice9() {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Á¤¼ö ÀÔ·Â : ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ : ");
 		int number = sc.nextInt();
 
 		for (int x = 1; x <= number; x++) {

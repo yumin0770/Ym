@@ -45,7 +45,7 @@ public class TestService {
 	public void ex2() {
 		//인터페이스
 		
-		//1.인터페이스는 상수형 필드 (publiv static final)만 작성 가능
+		//1.인터페이스는 상수형 필드 (public static final)만 작성 가능
 		//- 인터페이스에 작성했지만 클래스에 작성하는 static 필드와 사용법 동일
 		//- 인터페이스 필드는 묵시적(암묵적)으로 public static final
 		
