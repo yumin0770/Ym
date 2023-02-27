@@ -39,17 +39,18 @@ public class APIService {
 			boolean check1 = s.getGrade() ==  grade;     //s.get어쩌고 꺼내온거 == 입력받은 거
 			boolean check2 = s.getClassRoom() ==  classRoom; 
 			boolean check3 = s.getNumber() ==  number;
-			boolean check4 = s.getName().equals(name);
+			boolean check4 = s.getName().equals(name); //String은 equals로 비교
 			
 			//학생 배열에 입력 받은 학생이 존재 한다면 
-			if(check1 && check2  && check3 && check4)
-				return false;
+			if(check1 && check2  && check3 && check4)  //모두 true 같은지 확인 하는 것
+				return false; //->중복된 학생 있는 경우 false
 			
-			 index++;
+			 index++;  //-> for문으로 가서 1,2,3,4 확인
 		}
-			
+			//학생 배열에 학생이 가득 찬 경우
 			if(index == studentList.length) return false;
 	
+			//학생이 배열이 가득 찬게 아니면하면 아래처럼 지정된 index에 학생 추가
 			studentList[index] = new Student(grade, classRoom, number, name);
 			return true;
 			
