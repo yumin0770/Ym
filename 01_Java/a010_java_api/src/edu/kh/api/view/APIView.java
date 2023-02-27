@@ -55,7 +55,7 @@ public class APIView {
 				
 				//일번\n 읽어오는데 따로 출력하는게 없어서 공중분해
 				input = -1; //input 값에 0이 아닌 값을 대입하여 
-							//while문이 종료되지 않게함.
+							//while문이 종료되지 않게함. 
 				
 			}
 		} while(input !=0);
