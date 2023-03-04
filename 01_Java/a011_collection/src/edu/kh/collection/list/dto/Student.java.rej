@@ -1,0 +1,12 @@
+diff a/01_Java/a011_collection/src/edu/kh/collection/list/dto/Student.java b/01_Java/a011_collection/src/edu/kh/collection/list/dto/Student.java	(rejected hunks)
+@@ -2,7 +2,9 @@
+ 
+ import java.util.Objects;
+ 
+-public class Student {
++//Comparable<T> 인터페이스
++// - 객체의 기본 정렬 기준을 제공하는 인터페이스
++public class Student implements Comparable<Student>{
+ 
+ 	private String name;
+ 	private int grade;
