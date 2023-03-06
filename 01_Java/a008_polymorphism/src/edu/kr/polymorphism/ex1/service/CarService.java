@@ -77,8 +77,7 @@ public class CarService {
 		
 		//carList[i] == Car 참조변수
 		carList[0] = new Truck(6, 4, "경유", 1); //업캐스팅
-		
-		
+				
 		carList[1] = new LightCar(4, 4, "휘발유", 0.3);
 
 		carList[2] = new Car(4, 2, "전기");

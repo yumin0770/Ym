@@ -11,7 +11,7 @@ public interface KH { //인터페이스(접점)
 	 * 
 	 * **/
 	/*public static final*/ String KH_ADDRESS = "서울시 중구 남대문로 120 2층";
-	//무조건 상수라 지워도 괜춚ㄴ
+	//무조건 상수라 지워도 괜춚
 	
 	int A = 10;
 	
