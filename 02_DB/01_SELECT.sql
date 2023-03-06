@@ -248,5 +248,7 @@ WHERE DEPT_CODE IS NOT NULL;
 SELECT EMP_NAME || '의 급여는 ' || SALARY || '원 입니다.' AS 결과
 FROM EMPLOYEE;
 
-
+-- '':값,리터럴
+-- "":계정명, 비밀번호, 컬럼명, 테이블명
+--   값이 아닌 것들에 대한 대소문자 구분
 
