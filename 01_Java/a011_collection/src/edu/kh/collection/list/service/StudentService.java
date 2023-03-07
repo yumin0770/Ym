@@ -15,21 +15,21 @@ import java.util.List;
 
 public class StudentService {
 
-<<<<<<< HEAD
+
 //	private List<Student> studentList = new ArrayList<Student>();
-	private List<Student> studentList = new LinkedList<Student>();
+	private List<Student> studentList1 = new LinkedList<Student>();
 										//각각 장단점 있음.
-=======
+
 	private List<Student> studentList = new ArrayList<Student>();
->>>>>>> origin/main
+
 	
 	public StudentService() {
 		
-		studentList.add(new Student ("홍길동", 3, 5, 17, "서울시 중구", 'M', 75));
-		studentList.add(new Student ("김갑순", 2, 7, 12, "서울시 서대문구", 'F', 85));
-		studentList.add(new Student ("박흥민", 1, 4, 25, "경기도 안산", 'M', 60));
-		studentList.add(new Student ("이민영", 2, 3, 8, "경기도 부천시", 'F', 90));
-		studentList.add(new Student ("김샛별", 3, 1, 2, "서울시 강남구", 'F', 95));
+		studentList1.add(new Student ("홍길동", 3, 5, 17, "서울시 중구", 'M', 75));
+		studentList1.add(new Student ("김갑순", 2, 7, 12, "서울시 서대문구", 'F', 85));
+		studentList1.add(new Student ("박흥민", 1, 4, 25, "경기도 안산", 'M', 60));
+		studentList1.add(new Student ("이민영", 2, 3, 8, "경기도 부천시", 'F', 90));
+		studentList1.add(new Student ("김샛별", 3, 1, 2, "서울시 강남구", 'F', 95));
 		
 	}
 	
@@ -39,14 +39,14 @@ public class StudentService {
 	 * @return true //add는 무조건 true!
 	 */
 	public boolean addStudent(Student std) {
-		return studentList.add(std);
+		return studentList1.add(std);
 		
 	}
 	/*전체 학생 조회 서비스
 	 * @return studnetList
 	 * */
 	public List<Student> selcetAll() {
-		return studentList;
+		return studentList1;
 	}
 
 
@@ -61,7 +61,7 @@ public class StudentService {
 		//						   2) 기존에 있던 요소 e2를 반환
 		
 		
-		return studentList.set(index, std);
+		return studentList1.set(index, std);
 	}
 
 
@@ -77,9 +77,9 @@ public class StudentService {
 		//					 	없으면 false를 반환
 		
 		
-		return studentList.remove(index);
+		return studentList1.remove(index);
 	}
-<<<<<<< HEAD
+
 
 
 	/**학생 이름 검색 서비스
@@ -94,7 +94,7 @@ public class StudentService {
 		//2)studentList의 모든 요소를 순차 접근하면서 이름이 일치하는 학생을
 		// list에서 추가
 		
-		for(Student s : studentList) {
+		for(Student s : studentList1) {
 			if(s.getName().equals(name)) list.add(s);
 			
 		}
@@ -112,7 +112,7 @@ public class StudentService {
 		
 		List<Student> list = new ArrayList<Student>();
 		
-		for(Student s: studentList) {
+		for(Student s: studentList1) {
 			
 			//String.contains("문자열") : String에 "문자열"이 포함되어 있으면 true 반환
 			if(s.getAddress().contains(input)) list.add(s);
@@ -133,7 +133,7 @@ public class StudentService {
 	// -생성되는 컬렉션 객체의 제네익을 별도 작성하지 않아도
 	// 참조 변수의 제네릭을 통해 제한되는 타입을 유추(추론)
 		
-		for(Student s: studentList) {
+		for(Student s: studentList1) {
 			if(s.getGrade() == input ) list.add(s);
 		}
 		
@@ -149,7 +149,7 @@ public class StudentService {
 		
 		List<Student> list = new ArrayList<>();
 	
-			for(Student s: studentList) {
+			for(Student s: studentList1) {
 				if(s.getGender() == inputGender ) list.add(s);
 				
 			}
@@ -172,7 +172,7 @@ public class StudentService {
 		
 		//<?> : 어떤게 작성될지 모름 == 아무거나 작성 가능
 		//<?> void java.util.Collections.sort(List<?> list)
-		Collections.sort(studentList);
+		Collections.sort(studentList1);
 		//studentList에 저장된 객체 Student의
 		// 오버라이딩된 compareTo() 메서드를 이용해서 정렬
 		// -> 현재 큰 숫자가 오른쪽으로 이동하도록 오버라이딩
@@ -186,15 +186,8 @@ public class StudentService {
 		
 		
 		
-		return studentList;
+		return studentList1;
 	}
 	
-	
-	
 
-=======
-	
-	
-	
->>>>>>> origin/main
 }

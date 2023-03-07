@@ -55,9 +55,9 @@ public class APIView {
 				
 				//일번\n 읽어오는데 따로 출력하는게 없어서 공중분해
 				input = -1; //input 값에 0이 아닌 값을 대입하여 
-				//while문이 종료되지 않게함. ==0이면 종료됨
-
-			}
+ 
+							//while문이 종료되지 않게함. ==0이면 종료됨
+    }
 		} while(input !=0);
 	
 		
@@ -66,7 +66,6 @@ public class APIView {
 		
 	}
 	private void ex1() {
-		
 		//한 학생의 정보를 입력 받아 Service의 학생 배열에 추가
 		//단, 중복되는 학생은 제외
 		
@@ -77,6 +76,7 @@ public class APIView {
 		
 		System.out.print("반 : ");
 		int classRoom = sc.nextInt();
+
 		
 		System.out.print("번호 : ");
 		int number = sc.nextInt();
