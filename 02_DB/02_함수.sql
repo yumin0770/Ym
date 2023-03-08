@@ -319,7 +319,8 @@ FROM EMPLOYEE;
 --EMPLOYEE 테이블에서 
 --기존에 보너스를 받지 못했던 사원은 0.3으로 변경
 --기존에 받았던 사원은 기존 보너스 + 0.2으로 변경
-
+SELECT EMP_NAME, BONUS,NVL2(BONUS,BONUS+0.2,0.3)
+FROM EMPLOYEE ;
 
 
 
