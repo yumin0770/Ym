@@ -122,12 +122,11 @@ public class ExceptionService {
 			System.out.print("입력 2: ");
 			int num2 = sc.nextInt();
 			
-			if(num2==0) {
-				System.out.println();
-			}
+//			if(num2==0) {
+//				System.out.println();
+//			}
 			
 			System.out.printf("%d / %d = %d \n ",num1,num2,num1/num2);
-			
 			
 			
 		}
@@ -137,7 +136,7 @@ public class ExceptionService {
 			//산술적 예외 잡아 처리
 			System.out.println("0으로 나눌 수  없습니다.");
 			
-		}catch(Exception e) {
+		}catch(/*InputMismatch*/Exception e) {
 			//스캐너 사용 시 작성법이 잘못되거나 범위를 초과하면 발생하는 예외
 			System.out.println("입력이 잘못되었습니다.");
 			
@@ -160,9 +159,6 @@ public class ExceptionService {
 			
 			
 		}
-		
-		
-		
 		
 		finally { 
 			//finally :

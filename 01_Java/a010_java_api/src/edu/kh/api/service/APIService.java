@@ -22,7 +22,7 @@ public class APIService {
 	}
 	// alt+shift +j
 	
-	/**
+	/** 학생 추가 서비스2 (equals/ hashCode 사용)ㄴ
 	 * @param grade
 	 * @param classRoom
 	 * @param number

@@ -98,7 +98,7 @@ public class SetService {
 			
 			//Set이 저장된 객체가 중복임을 확인하는 방법
 			// ->equals()를 통해 필드 값이 같으면 중복으로 판단
-			// --> equals() 오버라디더 필수
+			// --> equals() 오버라이딩 필수
 			
 			//Hash가 붙은 Set/Map
 			// - Hash가 붙은 이유 : 속도 향상

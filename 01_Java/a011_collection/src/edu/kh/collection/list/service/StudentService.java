@@ -5,23 +5,18 @@ import edu.kh.collection.list.dto.Student;
 import edu.kh.collection.list.view.*;
 
 import java.util.ArrayList;
-<<<<<<< HEAD
 import java.util.Collections;
 import java.util.LinkedList;
-=======
->>>>>>> origin/main
 import java.util.List;
 
 
 public class StudentService {
 
-<<<<<<< HEAD
-//	private List<Student> studentList = new ArrayList<Student>();
-	private List<Student> studentList = new LinkedList<Student>();
+
+//	private List<Student> studentList = new ArrayList<Student>(); //검색이 쉽다.
+	private List<Student> studentList = new LinkedList<Student>(); //검색이 상대적으로 느리고 값을 바꾸기 좋다.
 										//각각 장단점 있음.
-=======
-	private List<Student> studentList = new ArrayList<Student>();
->>>>>>> origin/main
+
 	
 	public StudentService() {
 		
@@ -79,7 +74,7 @@ public class StudentService {
 		
 		return studentList.remove(index);
 	}
-<<<<<<< HEAD
+
 
 
 	/**학생 이름 검색 서비스
@@ -189,12 +184,5 @@ public class StudentService {
 		return studentList;
 	}
 	
-	
-	
 
-=======
-	
-	
-	
->>>>>>> origin/main
 }

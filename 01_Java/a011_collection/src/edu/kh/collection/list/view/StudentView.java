@@ -44,19 +44,12 @@ public class StudentView {
 				case 2 : selectAll(); break;
 				case 3 : updateStudent(); break;
 				case 4 : removeStudent(); break;
-<<<<<<< HEAD
 				case 5 : selectName(); break;
 				case 6 : selectAddress(); break;
 				case 7 : selectGrade(); break;
 				case 8 : selectGender(); break;
 				case 9 : sortScore(); break;
-=======
-				case 5 : break;
-				case 6 : break;
-				case 7 : break;
-				case 8 : break;
-				case 9 : break;
->>>>>>> origin/main
+
 				case 0 : System.out.println("[프로그램 종료]");break;
 				default : System.out.println("[잘못 입력하셨습니다.]");			
 				}
@@ -80,6 +73,7 @@ public class StudentView {
 		
 		//학생 정보 입력 메서드 호출 후 결과 반환 받기
 		Student std = inputStudent();
+		
 		
 		if (service.addStudent(std)) {
 			System.out.println("[학생 정보가 추가되었습니다.]");
@@ -118,7 +112,7 @@ public class StudentView {
 		
 		
 		//학생 정보 입력 메서드 호출 후 결과 반환 받기
-		Student std = inputStudent();
+		Student std = inputStudent(); //아래 만들어놓은 인풀 스튜던트 만들어놓은거 삽입
 		
 		System.out.println("------------------------");
 		System.out.println("수정할 학생의 index : ");
@@ -180,7 +174,7 @@ public class StudentView {
 		 Student s =service.removeStudent(index);
 		 
 		 System.out.println(s.getName() + "학생 정보다 제거되었습니다.");
-<<<<<<< HEAD
+
 			
 	}
 	
@@ -377,20 +371,5 @@ public class StudentView {
 		
 		
 		
-	}
-	
-	
-=======
-				 
-		
-	
-		
-		
-		
-		
-	}
-	
-		
+	}}
 
->>>>>>> origin/main
-}

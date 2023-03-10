@@ -70,7 +70,7 @@ public class ListService {
 			//원하는 코드가 있을 경우 타입 검사 + 다운 캐스팅이 강제됨
 			
 			if(list.get(i) instanceof String) {
-				char ch = ((String) list.get(i)).charAt(0);
+				char ch = ((String) list.get(i)).charAt(0); //요소가 String인 경우
 				System.out.println("ch :" + ch);
 				
 			}else if (list.get(i) instanceof Integer) { //요소가 Integer인 경우
@@ -105,7 +105,8 @@ public class ListService {
 		// + 자동으로 다운캐스팅 진행
 		
 		//boolean list.add(String e)
-
+		
+	
 		list.add("그만좀");
 		list.add("졸아라");
 		list.add("누군지 아시죠??");

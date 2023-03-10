@@ -8,8 +8,8 @@ public class ListRun {
 	
 		ListService service = new ListService();
 		
-//		service.ex1();
-		service.ex2();
+	service.ex1();
+//		service.ex2();
 	}
 	
 }

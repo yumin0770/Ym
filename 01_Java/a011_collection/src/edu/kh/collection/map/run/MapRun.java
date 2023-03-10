@@ -8,8 +8,8 @@ public class MapRun {
 	
 		MapService service = new MapService();
 		
-		//service.ex1();
-		service.ex2();
+		service.ex1();
+		//service.ex2();
 
 	}
 

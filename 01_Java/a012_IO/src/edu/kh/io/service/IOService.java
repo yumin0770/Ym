@@ -143,7 +143,7 @@ public class IOService {
 			int value = 0; //파일에서 읽어온 바이트 하나를 저장할 변수
 			
 			while(true) {//파일의 내용이 얼마나 있는지 모르기 때문에
-						// 일단 문한히 반복
+						// 일단 무한히 반복
 				
 				value = fis.read();
 						//다음 1byte를 읽어와 int형으로 반환

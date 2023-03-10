@@ -2,13 +2,13 @@ package edu.kh.collection.list.dto;
 
 import java.util.Objects;
 
-<<<<<<< HEAD
+
 //Comparable<T> 인터페이스
 // - 객체의 기본 정렬 기준을 제공하는 인터페이스
 public class Student implements Comparable<Student>{
-=======
-public class Student {
->>>>>>> origin/main
+
+
+
 
 	private String name;
 	private int grade;
@@ -18,16 +18,13 @@ public class Student {
 	private char gender;
 	private int score;
 	
-<<<<<<< HEAD
+
 	//
 	public Student() {
 	
 }
-=======
-	
-	
-	public Student() {}
->>>>>>> origin/main
+
+
 
 	
 	public Student(String name, int grade, int classRoom, int number, String address, char gender, int score) {
@@ -138,7 +135,7 @@ public class Student {
 				&& grade == other.grade && Objects.equals(name, other.name) && number == other.number
 				&& score == other.score;
 	}
-<<<<<<< HEAD
+
 
 
 	@Override
@@ -162,11 +159,6 @@ public class Student {
 
 
 
-=======
-	
-	
->>>>>>> origin/main
-	// equals() 오버라이딩
 	
 	
 }
