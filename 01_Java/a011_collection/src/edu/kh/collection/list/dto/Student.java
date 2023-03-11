@@ -1,13 +1,12 @@
 package edu.kh.collection.list.dto;
 
+import java.util.List;
 import java.util.Objects;
 
 
 //Comparable<T> 인터페이스
 // - 객체의 기본 정렬 기준을 제공하는 인터페이스
 public class Student implements Comparable<Student>{
-
-
 
 
 	private String name;
@@ -17,13 +16,13 @@ public class Student implements Comparable<Student>{
 	private String address;
 	private char gender;
 	private int score;
+
 	
 
 	//
 	public Student() {
 	
 }
-
 
 
 	
@@ -159,6 +158,6 @@ public class Student implements Comparable<Student>{
 
 
 
-	
-	
+
 }
+

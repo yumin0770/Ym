@@ -363,13 +363,7 @@ public class StudentView {
 		for(Student s: studentList) {
 			System.out.println(s);
 		}
-		
 
-		
-		
-		
-		
-		
-		
 	}}
+
 
