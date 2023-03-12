@@ -1,5 +1,7 @@
 package edu.kh.api.view;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -17,12 +19,15 @@ public class APIView {
 		int input = 0;
 		
 		do {
-			System.out.println("--- API 테스트 프로그램 ---");
-			System.out.println("1. equals() + hashCode");
 			System.out.println("2. String 클래스 제공 메서드1(split)");
 			System.out.println("3. String 클래스 제공 메서드2(join)");
-			System.out.println("4. String 클래스 특징,문제점");
-			System.out.println("0. 프로그램 종료");
+			System.out.println("4. String 클래스의 특징, 문제점");
+			System.out.println("5. StringBuffer/Builder");
+			System.out.println("6. 문자열을 계속 입력 받아 한 번에 출력하기");
+			System.out.println("7. Wrapper Class");
+			System.out.println("8. Date 클래스");
+
+			System.out.println("0. 프로그램 종료");;
 			
 			System.out.print("메뉴 선택 : ");
 			
@@ -38,9 +43,14 @@ public class APIView {
 				
 				switch(input){
 				case 1: ex1(); break;
-				case 2: ex2(); break;
-				case 3: ex3(); break;
-				case 4: ex4(); break;
+				case 2 : ex2(); break;
+				case 3 : ex3(); break;
+				case 4 : ex4(); break;
+				case 5 : ex5(); break;
+				case 6 : ex6(); break;
+				case 7 : ex7(); break;
+				case 8 : ex8(); break;
+				
 				case 0: break;
 				default: System.out.println("메뉴에 존재하는 번호만 입력해주세요.");
 				}
@@ -57,6 +67,8 @@ public class APIView {
 				input = -1; //input 값에 0이 아닌 값을 대입하여 
 
 							//while문이 종료되지 않게함. ==0이면 종료됨
+
+
 
     }
 
@@ -90,36 +102,35 @@ public class APIView {
 		
 		//3학년 1반 2번 입력버퍼에 
 		
-		if(service.addStudents(grade, classRoom, number, name)) {
-			System.out.println("추가되었습니다.");
+		if(service.addStudent(grade, classRoom, number, name)) {
+			System.out.println("추가되었습니다.");  //트루인경우 성공!
 		}else {
 			System.out.println("중복되는 학생이 존재하거나 배열이 가득 찼습니다.");
 		}
 		
 		
+	}public void ex2() {
+		// 이름을 여러 명을 한 줄로 입력 받아
+		// 학생 배열에 같은 이름의 학생이 있다면 출력
+		System.out.println("\n--- 학생 검색 ---\n");
+		
+		System.out.print("검색할 이름(여러 명 검색 시 / 또는 , 로 구분) : ");
+		// 손흥민,김영희,박찬호
+		
+		Student[] result = service.selectName(sc.nextLine());
+		
+		if(result == null) {
+			System.out.println("[검색 결과가 없습니다.]");
+		}else {
+			
+			for(Student s : result) {
+				if(s == null) break;
+
+				System.out.println(s.toString());
+			}
+			
+		}
 	}
-	 public void ex2() {
-		 
-		 //이름을 여러명 한 줄로 입력 받아
-		 //이름을 입력 받아서 학생 배열에 같은 이름의 학생이 있다면 출력
-		 System.out.println("\n--- 학생 검색 ---\n");
-		 
-		 System.out.println("검색할 이름(여러 명 검색 시 /로 구분) :");
-		 //손흥미,김영희,박찬호
-		 
-		 Student[] result = service.selectName(sc.nextLine()); 
-		 
-		 if(result == null) {
-			 System.out.println("검색 결과가 없습니다");
-		 }else {
-			 
-			 for(Student s : result) {
-				 if(s==null)break;
-				 System.out.println(s.toString());
-			 }
-		 }
-		 
-	 }
 
 	 public void ex3() {
 		 
@@ -131,7 +142,7 @@ public class APIView {
 	 }
 	
 	 public void ex4() {
-		 //String 특징, 문제점
+		 //String class 특징, 문제점
 		 
 		 //1.String 객체 생성 방법
 		 String s1 = new String("abc"); //HEAP 메모리 영역에 String 객체 생성
@@ -166,58 +177,55 @@ public class APIView {
 		 //새 객체를 생성해서 참조하게된다.
 		 
 		 
-	 }private void ex5() {
-			System.out.println("\n--- StringBuffer/Builder ---\n");
-
-			// StringBuffer, StringBuilder 두 클래스는 제공하는 메서드가 동일하다
-			//StringBuffer sb = new StringBuffer();
-			StringBuilder sb = new StringBuilder();
-
-			// StringBuffer.capacity() : 현재 버퍼의 크기
-			System.out.println(sb.capacity());
-
-			System.out.println("현재 주소 : " + System.identityHashCode(sb) );
-
-			// StringBuffer.append(문자열) 
-			// - StringBuffer 객체에 문자열을 기존 데이터 뒤에 붙임
-			sb.append("abc");
-
-			// StringBuffer.toString()
-			// - StringBuffer에 저장된 문자열을 String 형태로 반환
+	 }
+	 private void ex5() {
+		 System.out.println("\n--- StringBuffer/Builder ---\n");
+		 
+		 StringBuffer sb = new StringBuffer();
+		 
+		 //StringBuffer.capacity() : 현재의 버퍼의 크기
+			 System.out.println(sb.capacity());
+			System.out.println("현재 주소 : "+System.identityHashCode(sb));
+		
+		//String .append(문자열)append(추가하다)
+		//StringBuffer 객체에 문자열을 기존 데이터 뒤에 붙임
+		sb.append("abc");
+		
+		//StringBuffer.toString()
+		//-StringBuffer에 저장된 문자열을 String형태로 반환
 			System.out.println("sb에 저장된 문자열 : " + sb.toString());
-
-			System.out.println("abc 추가 후 주소 : " + System.identityHashCode(sb));
-
-			sb.append("def"); 
-			System.out.println("sb에 저장된 문자열 : " + sb.toString());
+		//객체가 가지고 있는 필드값을 문자열로 바꾸고 싶을 때 toString
+			
+			System.out.println("abc 추가 후 주소 : " +System.identityHashCode(sb));
+			
+			sb.append("def");
+			System.out.println("sb에 저장된 문자열 : " +sb.toString());
 			System.out.println("def 추가 후 주소 : " + System.identityHashCode(sb));
-
-			// 새로운 문자열이 추가되어도
-			// 객체의 주소는 변하지 않음 == 가변성(mutable)
-			// -> 문자열 수정 시 새로운 객체를 생성하지 않아
-			//   메모리 소비를 절약할 수 있다.
-
-			// insert(인덱스, 문자열) : 중간 삽입
-
+		
+		//새로운 문자열이 추가되어도
+		//객체의 주소는 변하지 않음 == 가변성 (mutable)
+		//->문자열 수정 시 새로운 객체를 생성하지 않아 메모리 소비를 절약할 수 있다.
+	 
+		//insert(인덱스, 문자열) : 중간 삽입
+		
 			sb.insert(2, "@");
 			System.out.println(sb.toString());
-
-			// delete(int start, int end) : 삭제(start 이상 end 미만)
-			sb.delete(3, 5); // ab@cdef
-			System.out.println(sb.toString()); // ab@ef
-
+			
+		
+		//delete(int start, int end): 삭제
+			sb.delete(3, 5); //삭제 start이상 end 미만 ,ab@cdef (cde) (3~4까지만) 미만으로 주로 끝남.
+			System.out.println(sb.toString()); //ab@ef
+			
 			System.out.println(sb.length());
-
-			// replace(int start, int end, String str)
-			// - start 이상 end 미만을 str로 변경
-			sb.replace(0, 2, "AB");
+	 
+		//replace (int start, int end, String str)
+		//- start이상 end미만을 str로 변경
+			sb.replace(0,2,"AB");
 			System.out.println(sb.toString());
-		}
-
-
-
-
-		private void ex6() {
+			
+	 }
+	 
+	 private void ex6() {
 			System.out.println("\n--- 문자열을 계속 입력 받아 한 번에 출력하기 ---\n");
 
 			StringBuffer sb = new StringBuffer();
@@ -358,7 +366,7 @@ public class APIView {
 
 
 		}
-
+		
 	 
 	}
 	 

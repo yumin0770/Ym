@@ -30,7 +30,7 @@ public class FieldRun extends FieldTest3{
 		//-> private은 다른 클래스에서 보이지 않음
 		
 		System.out.println(f2.v1); //public
-		//System.o+ut.println(f2.v2);
+		//System.out.println(f2.v2);
 		//패키지가 다른 FeildTest2는
 		//public만 접근 가능하고 나머지는 불가능
 		

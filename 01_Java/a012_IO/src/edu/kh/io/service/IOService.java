@@ -43,7 +43,7 @@ public class IOService {
 	public void byteOutput() {
 		// 바이트 기반 출력
 		
-		FileOutputStream fos = null;
+		FileOutputStream fos= null;
 		//스트림 참조 변수 선언을 try전에 한 이유
 		//finally에서도 해당 참조 변수를 사용할 수 있게 하려고
 		
@@ -63,8 +63,8 @@ public class IOService {
 			//FileNotFoundException 발생 가능성이 있음
 			
 			//content에 작성된 문자를 하나씩 쪼개기
-			for(int i=0; i<content.length(); i++) {
-				char ch = content.charAt(i);
+			for(int i =0; i<content.length(); i++) { 
+				char ch = content.charAt(i); //문자를 하나씩 쪼개는거 charAt
 				
 				fos.write(ch); //프로그램이 txt에 쓴다(==출력)
 				
@@ -108,7 +108,7 @@ public class IOService {
 			
 			
 			fw.write(content);
-			//문자열 content를 지정된 경로로 출력
+			//문자열 content를 지정된 경로로 출력   //byte기반은 쪼개서 보냈는데(스트림이 얇아서) 문자기반은 한 번에 보냄
 			
 			System.out.println("문자 기반 스트림 출력 완료");
 			
@@ -122,6 +122,8 @@ public class IOService {
 			try {
 			if(fw !=null)	fw.close();
 							//스트림에 남은 내용을 모두 밀어내고 닫기
+			//	fw = new FileWriter("char/charTest.txt", true); 여기서 예외 생기면
+			//FileWriter fw = null;로 남아서 NULLPOINT어쩌고 예외 발생할 수 있서 if(fw !=null)구문 넣어줌
 			} catch (IOException e) {
 				
 				e.printStackTrace();
@@ -276,7 +278,7 @@ public class IOService {
 		}
 	}
 	
-	public void objectOutpt() {
+	public void objectOutput() {
 		//객체 출력 보조 스트림
 		
 		//ObjectXXXStream : 객체를 파일 또는 네트워크를 통해

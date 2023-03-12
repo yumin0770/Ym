@@ -105,7 +105,7 @@ public class MethodExView {
 		//3) 반환된 int[] 배열을 numbers 참조 변수에 저장
 		
 		for(int i=0; i<numbers.length; i++) {
-			System.out.println(numbers[i]+" ");
+			System.out.print(numbers[i]+" ");
 			
 		}
 		System.out.println();// 개행

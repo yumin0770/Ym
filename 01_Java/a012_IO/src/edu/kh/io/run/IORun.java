@@ -9,10 +9,10 @@ public class IORun {
 		IOService service = new IOService();
 
 		
-//		service.byteOutput();
+		service.byteOutput();
 //	    service.charOutput();
 //	    service.byteInput();
-		service.charInput();	
+//		service.charInput();	
 //	    service.fileCopy();	
 //	    service.objectOutpt();	
 //	    service.ojectInput();	

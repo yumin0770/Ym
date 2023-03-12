@@ -14,6 +14,7 @@ public class TestRun {
 		
 		t1.testMethod1();
 		t2.testMethod2();
+		
 
 	}
 

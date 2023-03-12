@@ -24,7 +24,7 @@ public class UserService {
 			user = new User(userId, userPw, userName, userGender);
 		}
 		
-		return user;
+		return user; //주소 또는 Null이 반환
 	
 		
 	}

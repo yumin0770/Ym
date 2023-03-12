@@ -44,8 +44,8 @@ public class StudentRun {
 		System.out.println(s2.schoolName);
 		
 		//학교 이름 변경 
-		s1.schoolName = "KH국민학교";
-//		s2.schoolName = "KH국민학교";
+		s1.schoolName = "KH국민학교"; //국민학교
+//		s2.schoolName = "KH국민학교"; //국민학교
 //	static의 효과 때문에 sc.1만 국민학교로 바뀌었는데 s2도 국민으로 바뀜
 		
 		/* 참조 변수를 이용해서 static으로 지정된 필드 값을

@@ -1,112 +1,94 @@
 package edu.kh.objectarray.dto;
 
-//data transter object ê°’ì„ ì „ë‹¬í•˜ëŠ” í´ë˜ìŠ¤
 public class Student {
 
-	//í•„ë“œ  - private=> ìº¡ìŠí™” ì›ì¹™ì— ì˜í•´ ëª¨ë‘ private - ì•„ë¬´ë„ ëª» ì”€
-	private int grade; //í•™ë…„
-	private int classRoom; //ë°˜
-	private int number; //ë²ˆí˜¸
-	private String name; //ì´ë¦„
+	// ÇÊµå (Ä¸½¶È­ ¿øÄ¢¿¡ ÀÇÇØ ¸ğµÎ private)
+	private int grade; // ÇĞ³â
+	private int classRoom; // ¹İ
+	private int number; // ¹øÈ£
+	private String name; // ÀÌ¸§
 	
-	private int kor; //êµ­ì–´ì ìˆ˜
-	private int eng; //ì˜ì–´ì ìˆ˜
-	private int math; //ìˆ˜í•™ ì ìˆ˜
+	private int kor; // ±¹¾î Á¡¼ö
+	private int eng; // ¿µ¾î Á¡¼ö
+	private int math; // ¼öÇĞ Á¡¼ö
 	
 	
-	//ìƒì„±ì
+	// »ı¼ºÀÚ
+	public Student() { } // ±âº» »ı¼ºÀÚ
 	
-	public Student() {} //ê¸°ë³¸ìƒì„±ì
-	
-	//ë§¤ê°œë³€ìˆ˜ (ì˜¤ë²„ë¡œë”© ì ìš©-ì´ë¦„ì´ ê°™ìœ¼ë©´ ì•ˆ ë˜ëŠ”ë° ê°™ìŒ. ë‹¤ë¥¸ ê°’ì„ ë„£ì–´ì„œ ì ìš©)(ê¸°ëŠ¥ì˜ ì¼ì¢…, ê°ì²´ë¥¼ ë§Œë“œëŠ” ê¸°ëŠ¥) 
-	
-	public Student(int grade, int classRoom, int number, String name ) {
+	// ¸Å°³º¯¼ö »ı¼ºÀÚ(¿À¹ö·Îµù Àû¿ë)
+	public Student(int grade, int classRoom, int number, String name) {
 		
-		//this ì°¸ì¡°ë³€ìˆ˜
+		// this ÂüÁ¶º¯¼ö 
 		this.grade = grade;
 		this.classRoom = classRoom;
 		this.number = number;
 		this.name = name;
-		
 	}
 	
-	//getter  /setter
 	
+	// getter / setter
 	public int getGrade() {
 		return grade;
-
 	}
 	
-	public  void setGrade(int grade) {
-		this.grade = grade; //ì™¸ë¶€ì—ì„œ ê°€ì ¸ì˜¨ ê°’ì„ ì—¬ê¸°ì— ìˆëŠ” í•„ë“œì— ëŒ€ì…í•˜ê² ëŠ” ì˜ë¯¸
-		
+	public void setGrade(int grade) {
+		this.grade = grade;
 	}
-	public int getClassroom() {
+	
+	public int getClassRoom() {
 		return classRoom;
-
 	}
 	
-	public  void setClassroom(int classRoom) {
-		this.classRoom = classRoom; 
-		
+	public void setClassRoom(int classRoom) {
+		this.classRoom = classRoom;
 	}
 	
 	public int getNumber() {
 		return number;
-
 	}
 	
-	public  void setNumber(int number) {
-		this.number = number; 
-		
+	public void setNumber(int number) {
+		this.number = number;
 	}
+	
 	
 	public String getName() {
 		return name;
-
 	}
 	
-	public  void setName(String name) {
-		this.name = name; 
-		
+	public void setName(String name) {
+		this.name = name;
 	}
 	
-	public int getKor() {
+	public int getKor () {
 		return kor;
-
 	}
 	
-	public  void setKor(int kor) {
-		this.kor = kor; 
-		
+	public void setKor(int kor) {
+		this.kor = kor;
 	}
 	
-	public int getEng() {
+	public int getEng () {
 		return eng;
-
 	}
 	
-	public  void setEng(int eng) {
-		this.eng = eng; 
-		
+	public void setEng(int eng) {
+		this.eng = eng;
 	}
-	public int getMath() {
+	
+	public int getMath () {
 		return math;
-
 	}
 	
-	public  void setMath(int math) {
-		this.math = math; 
-		
+	public void setMath(int math) {
+		this.math = math;
 	}
 	
-	//ê°ì²´ì˜ í•„ë“œ ê°’ì„ í•˜ë‚˜ì˜ ë¬¸ìì—´ í˜•íƒœë¡œ ë°˜í™˜í•˜ëŠ” ë©”ì„œë“œ 
-	//ìë°”ì—ì„œ Stringì€ í´ë˜ìŠ¤ , formatì€ static
+	// °´Ã¼ÀÇ ÇÊµå °ªÀ» ÇÏ³ªÀÇ ¹®ÀÚ¿­ ÇüÅÂ·Î ¹İÈ¯ÇÏ´Â ¸Ş¼­µå
 	public String toString() {
-		return String.format("%dí•™ë…„ %dë°˜ %dë²ˆ %s [%d, %d, %d,]",
-				grade, classRoom, number, name, kor, eng, math );
-			
-		
+		return String.format("%dÇĞ³â %d¹İ %d¹ø %s [%d, %d, %d]", 
+						grade, classRoom, number, name, kor, eng, math);
 	}
 	
 	

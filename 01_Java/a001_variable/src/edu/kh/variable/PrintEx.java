@@ -5,54 +5,56 @@ public class PrintEx {
 	public static void main(String[] args) {
 
 
-		//출력 메서드
+		//異��� 硫�����
 		
 		//System.out.print()
-		//-> () 안의 내용을 출력 (끝나고 줄바꿈 X)
+		//-> () ���� �댁�⑹�� 異��� (����怨� 以�諛�轅� X)
 		
 		//System.out.println()
-		//-> () 안의 내용을 출력 (끝나고 줄바꿈 O)
+		//-> () ���� �댁�⑹�� 異��� (����怨� 以�諛�轅� O)
 	
 		System.out.print(1);
 		System.out.print(2);
 		System.out.print(3);
+		
 	
 		System.out.println(1);
 		System.out.println(2);
 		System.out.println(3);
 		
 		
-		//System.out.printf("패턴이 포함된 문자열", 변수 또는 값);
-		// ->"패턴이 포함된 문자열" 출력 시
-		// 패턴 자리에 뒤에 작성된 변수 또는 값을 순서대로 대입
+		//System.out.printf("�⑦�댁�� �ы�⑤�� 臾몄����", 蹂��� ���� 媛�);
+		// ->"�⑦�댁�� �ы�⑤�� 臾몄����" 異��� ��
+		// �⑦�� ��由ъ�� �ㅼ�� ���깅�� 蹂��� ���� 媛��� ������濡� ����
 		
 	
-		String name = "홍길동";
+		String name = "��湲몃��";
 		int age = 30;
-		char gender = '남';
+		char gender = 'F';
+		
 		double height =  185.5;
 		
-		//홍길동님은 나이 30세 키 185.5cm의 남성입니다.
+		//��湲몃������ ���� 30�� �� 185.5cm�� �⑥�깆������.
 		
-		System.out.println(name + "님은 나이 " + age + "세 키" + height +"cm의 " + gender +"성입니다.");
+		System.out.println(name + "���� ���� " + age + "�� ��" + height +"cm�� " + gender +"�깆������.");
 		
 		//printf()
-		//%s : 문자열
-		//%d : 10진 정수
-		//%f : 실수 (기본 소수점 6자리까지 표현)
-		//-> %.1f 소수점 한 자리까지 표시
-		//-> % 2f 소수점 두 자리까지 표시
-		//%c : 문자형 char
-		//%b : 논리형
+		//%s : 臾몄����
+		//%d : 10吏� ����
+		//%f : �ㅼ�� (湲곕낯 ������ 6��由ш�吏� ����)
+		//-> %.1f ������ �� ��由ш�吏� ����
+		//-> % 2f ������ �� ��由ш�吏� ����
+		//%c : 臾몄���� char
+		//%b : �쇰━��
 	
-		System.out.printf("%s님은 나이 %d세, 키 %.1fcm의 %c성입니다.", name,age,height,gender);
+		System.out.printf("%s���� ���� %d��, �� %.1fcm�� %c�깆������.", name,age,height,gender);
 		
 		
-		///* printf는 출략 후 줄이 바뀌지 않는다.
-		//헤결방법 1)Systep.out.println(); 잗성
+		///* printf�� 異��� �� 以��� 諛���吏� ������.
+		//�ㅺ껐諛⑸� 1)Systep.out.println(); ����
 		System.out.println("hello wordl");
 		
-		//해결방법 2) 탈출 분(excapse)문자\| \n 작성
+		//�닿껐諛⑸� 2) ��異� 遺�(excapse)臾몄��\| \n ����
 		
 		System.out.println("\nhello \t\t\t world \u0050");
 		

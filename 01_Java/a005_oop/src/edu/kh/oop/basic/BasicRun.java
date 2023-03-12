@@ -2,33 +2,31 @@ package edu.kh.oop.basic;
 
 public class BasicRun {
 	
-	public static void main(String[] args) {
 	
-	// Javaì—ì„œì˜ Object == í´ë˜ìŠ¤ì˜ ì •ì˜ëœ ë‚´ìš©ì„ í† ëŒ€ë¡œ 	
-	//						new ì—°ì‚°ìë¥¼ í†µí•´ ë©”ëª¨ë¦¬ì— ìƒì„±ë˜ëŠ” ê²ƒ
-			
+	public static void main(String[] args) {
 		
-	// êµ­ë¯¼ ê°ì²´ ìƒì„±
-		Nation n1 = new Nation();    //HEAPì— êµ­ë¯¼ í•œ ëª… ë©”ëª¨ë¦¬ ì €ì¥
-		Nation n2= new Nation();    //ë‹¤ ì°ì–´ ë‚¼ ìˆ˜ ìˆìŒ -í´ë˜ìŠ¤ íŠ¹ì§•
-		Nation n3= new Nation();    //
+		// Java¿¡¼­ÀÇ Object == Å¬·¡½ºÀÇ Á¤ÀÇµÈ ³»¿ëÀ» Åä´ë·Î
+		//						new ¿¬»êÀÚ¸¦ ÅëÇØ ¸Ş¸ğ¸®¿¡ »ı¼ºµÇ´Â °Í
+		
+		// ±¹¹Î °´Ã¼ »ı¼º
+		Nation n1 = new Nation();
+		Nation n2 = new Nation();
+		Nation n3 = new Nation();
 		
 		//n1.pNo = "990123-1234567";
-		n1.setpNo("990123-1234567(ê°„ì ‘ ì ‘ê·¼ ì´ìš©)");
+		n1.setpNo("990123-1234567(°£Á¢ Á¢±Ù ÀÌ¿ë)");
 		
-		
-		
-		n1.name = "í™ê¸¸ë™";
-		n1.gender = 'ë‚¨';
-		n1.address = "ì„œìš¸ì‹œ ì¤‘êµ¬ ë‚¨ëŒ€ë¬¸ë¡œ 120";
+		n1.name = "È«±æµ¿";
+		n1.gender = '³²';
+		n1.address = "¼­¿ï½Ã Áß±¸ ³²´ë¹®·Î 120";
 		n1.phone = "010-1234-1234";
-		n1.age =25;
+		n1.age = 25;
 		
-		// ê°ì²´ì˜ ì†ì„±ì— ì €ì¥ëœ ê°’ ì¶œë ¥
-		//System.out.println(n1.pNo);
+		
+		// °´Ã¼ÀÇ ¼Ó¼º¿¡ ÀúÀåµÈ °ª Ãâ·Â
+//		System.out.println(n1.pNo);
 		
 		System.out.println( n1.getpNo() );
-		
 		
 		System.out.println(n1.name);
 		System.out.println(n1.gender);
@@ -36,11 +34,11 @@ public class BasicRun {
 		System.out.println(n1.phone);
 		System.out.println(n1.age);
 		
-		
-		// ê°ì²´ì˜ ê¸°ëŠ¥ í˜¸ì¶œí•˜ê¸°
+		// °´Ã¼ÀÇ ±â´É È£ÃâÇÏ±â
+		n1.medicalBenefits();
 		n1.speakKorean();
-		n1.mdeicalBenefits();
+		
 		
 	}
-	
+
 }

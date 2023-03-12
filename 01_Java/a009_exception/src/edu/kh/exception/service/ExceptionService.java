@@ -87,7 +87,7 @@ public class ExceptionService {
 		//-> IOException 이라는 Checked Exception을 발생 시키는 메서드
 		//  -> Checked Exception이 발생할 경우에 대비해서 예외처리 구문 작성(강제)
 		
-		/* 예외 강제 발생*/  //->강제 발생시키는 이유, 웬만해서 일어나지 않기 때문에
+		//test를 위해/* 예외 강제 발생*/  //->강제 발생시키는 이유, 웬만해서 일어나지 않기 때문에
 		// -> 객체를 새로 만들어서 던짐
 	 throw new IOException();
 		
@@ -184,9 +184,9 @@ public class ExceptionService {
 			methodA();
 			
 		}catch(IOException e) {
+//			
 //			e.getMessage() //어떤것 때문에 발생했는지 메세지
-			
-			e.printStackTrace();
+			e.printStackTrace(); //많아 씀
 			// Trace : 추적하다
 			// -> 예외가 발생한 지점까지의 stack 메모리를 추적하여 출력
 			System.out.println("catch문 처리");
@@ -209,7 +209,7 @@ public class ExceptionService {
 	public void methodC() throws IOException {
 		System.out.println("methodC() 실행");	
 		
-		throw new IOException();
+		throw new IOException();/*throws랑 세트**/
 	}
 	
 	
