@@ -53,7 +53,7 @@ FROM EMPLOYEE;
 
 --8번
 
-SELECT EMP_NAME, DEPT_CODE, TO_CHAR(TO_DATE(SUBSTR(EMP_NO,1,6),'RRMMDD')
+SELECT EMP_NAME, DEPT_CODE,EMP_NO, TO_CHAR(TO_DATE(SUBSTR(EMP_NO,1,6),'RRMMDD')
     					  	,'YY"년" MM"월" DD"일"') "생년월일",
  --잘못된 방법                	FLOOR((SYSDATE-TO_DATE((SUBSTR(EMP_NO,1,6))))/365)"만 나이",
        TO_CHAR(TO_DATE(SUBSTR(EMP_NO,1,6)),'YY"년" MM"월" DD"일"') "생년월일",

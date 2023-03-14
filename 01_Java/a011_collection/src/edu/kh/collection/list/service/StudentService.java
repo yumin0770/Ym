@@ -3,13 +3,9 @@ package edu.kh.collection.list.service;
 
 import edu.kh.collection.list.dto.Student;
 import edu.kh.collection.list.view.*;
-
 import java.util.ArrayList;
-<<<<<<< HEAD
 import java.util.Collections;
 import java.util.LinkedList;
-=======
->>>>>>> origin/main
 import java.util.List;
 
 

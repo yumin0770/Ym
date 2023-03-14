@@ -160,8 +160,7 @@ public class ExceptionService2 {
 		
 		throw new IOException();
 	}
-	
-	
+
 	
 	public void ex5() throws ScoreInputException{
 		//사용자 정의 예외
@@ -182,8 +181,7 @@ public class ExceptionService2 {
 		}
 		
 		System.out.println("입력한 점수는 : " + score);
-		
-		
+
 		
 	}
 	public void startEx5() {
@@ -204,24 +202,6 @@ public class ExceptionService2 {
 		
 	}
 		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }
 

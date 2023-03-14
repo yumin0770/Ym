@@ -192,9 +192,9 @@ public class IOService {
 		while(true) {
 		
 			value = fr.read(); //문자를 읽어와 int형으로 반환
-							//만약, 읽어올 문자가 없으면 -1 반환
+							//만약, 읽어올 문자가 없으면 -1 반환 //read함수는 내용이 없을 때 -1을 반환
 			
-			if(value == -1) break;
+			if(value == -1) break; 
 			
 			System.out.print((char)value);
 
