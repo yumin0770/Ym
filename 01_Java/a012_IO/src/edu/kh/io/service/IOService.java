@@ -23,7 +23,7 @@ import edu.kh.io.dto.Student;
 public class IOService {
 
 	//스트림(Stream) : 데이터가 이동하는 통로
-	//					(기본적으로 한 쪽 방향으로만 흐름)
+	//					(기본적으로 한 쪽 방향으로만 흐름)_
 	
 	//바이트 기반 스트림
 	// 1-byte 단위로 데이터를 입/출력 하는 스트림
