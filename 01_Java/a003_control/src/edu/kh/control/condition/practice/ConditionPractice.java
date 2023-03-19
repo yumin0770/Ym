@@ -23,13 +23,9 @@ public void ex1() {
 	       res = "양수만 입력해주세요"; break;
 	}	
 		System.out.println(res);
-//<<<<<<< HEAD
-	}}
-//
-//=======
-////다시 풀기
 
-//>>>>>>> 6efe7bc0b232d651d65a67f65fc84705d98d0d1f
+	}
+
 	public void ex2() {
 		Scanner sc = new Scanner(System.in);
 	
@@ -48,7 +44,7 @@ public void ex1() {
 		int sum = kor+math+eng;
 		double avg = sum /3.0 ;
 		
-		switch() {
+		switch(input) {
 		case 1 : grade = 40 ; System.out.printf("%d",kor,kor); break;
 		case 2 : grade = 40 ; System.out.printf("%d",math,math); break;
 		case 3 : grade = 40 ;System.out.printf("%d",eng,eng); break;

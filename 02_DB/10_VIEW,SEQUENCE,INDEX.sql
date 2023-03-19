@@ -92,18 +92,18 @@ SELECT* FROM DEPT_COPY2;
 --DEPT COPY2에서
 --DEPT_ID, LOCATION_ID 컬럼만 조회하는 VIEW 생성
 
-CREATE VIEW V_DCOPTY2
+CREATE VIEW V_DCOPY2
 AS SELECT DEPT_ID,LOCATION_ID
     	FROM DEPT_COPY2;
 
-SELECT * FROM V_DCOPTY2;
+SELECT * FROM V_DCOPT2;
 
 --VIEW를 이용한 INSERT
 INSERT INTO V_DCOPTY2
 VALUES('D0','L3');
 
 --INSERT 확인
-SELECT * FROM V_DCOPTY2;
+SELECT * FROM V_DCOPY2;
 -->VIEW는 값을 저장하지 않는다고 했는데...
 --저장된 것 처럼 보인다!
 --->실제 VIEW에 저장된 것이 아니라
@@ -120,7 +120,7 @@ SELECT * FROM DEPT_COPY2;
 --TCL
 ROLLBACK;
 
-SELECT * FROM V_DCOPTY2;
+SELECT * FROM V_DCOPY2;
 
 --복사한 테이브(DEPT_COPY2)의
 --DEPT_TITLE 컬럼에 NOT NULL 제약조건 추가
@@ -130,7 +130,7 @@ MODIFY DEPT_TITLE NOT NULL;
 
 
 --다시 VIEW를 이용해서 INSERT
- INSERT INTO V_DCOPTY2 VALUES('DO','L3');
+ INSERT INTO V_DCOPY2 VALUES('DO','L3');
 --SQL Error [1400] [23000]: ORA-01400: NULL을 
 --  ("KH_KYM"."DEPT_COPY2"."DEPT_TITLE") 안에 삽입할 수 없습니다
  --> 원본 테이블 DEPT_ID,LOCATION_ID 컬럼에 'D0', 'L3' 삽입
@@ -145,23 +145,23 @@ MODIFY DEPT_TITLE NOT NULL;
 -------------------------------------------------
 /*WITH READ ONLY 옵션 추가*/
 --읽기전용X로 VIEW 변경
-CREATE OR REPLACE VIEW V_DCOPTY2
+CREATE OR REPLACE VIEW V_DCOPY2
 AS SELECT * FROM DEPT_COPY2;
 --	  					DEPT_TITLE 포함
 
-INSERT INTO V_DCOPTY2
+INSERT INTO V_DCOPY2
 VALUES('D0','기획팀','L3'); -->오류 없이 삽입됨
 
 ROLLBACK;
 
 --읽기전용 O 로 VIEW 변경
-CREATE OR REPLACE VIEW V_DCOPTY2
+CREATE OR REPLACE VIEW V_DCOPY2
 AS SELECT * FROM DEPT_COPY2
 WITH READ ONLY;
 
 --다시 INSERT 시도
 
-INSERT INTO V_DCOPTY2
+INSERT INTO V_DCOPY2
 VALUES('D0','기획팀','L3'); 
 --ORA-42399:읽기 전용 뷰에서는 DML 작업을 수행할 수 없습니다.
 
@@ -296,16 +296,16 @@ SET TEST_NO = SEQ_TEST_NO.NEXTVAL,
 WHERE TEST_NO = (SELECT MAX(TEST_NO) FROM TB_TEST); 
 
 --UPDATE 확인
-SELECT* FROM TB_TEST;
+SELECT* FROM TB_TEST;  
 
---------------------------삭제-------------------------
+--------------------------삭제-------------------------------------------
 
 --VIEW, SEQUENCE 삭제
 DROP VIEW V_DCOPTY2; --VIEW 삭제
 DROP SEQUENCE SEQ_TEST_NO; --SEQUENCE 삭제
 --시퀀스 START WITH를 변경하고 싶을 때 삭제 후 다시 생성해야 한다.
 
----------------------------인덱스--------------------------
+---------------------------인덱스--------------------------------------------
 
 /*INDEX(색인)
  * -SQL 구문중 SELECT 처리 속도를 향상시키기 위해
