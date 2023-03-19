@@ -13,17 +13,10 @@
 SELECT DEPT_CODE FROM EMPLOYEE 
 WHERE EMP_NAME  = '노옹철'; -- D9
 
-
-
-
-
 -- 2) 부서코드가 D9인 직원을 조회
 SELECT EMP_NAME, DEPT_CODE 
 FROM EMPLOYEE 
 WHERE DEPT_CODE = 'D9'; -- 선동일, 송종기, 노옹철
-
-
-
 
 
 -- 3) 부서코드가 노옹철사원과 같은 소속의 직원 명단 조회   
@@ -33,10 +26,7 @@ FROM EMPLOYEE
 WHERE DEPT_CODE/*메인쿼리*/ = (SELECT DEPT_CODE FROM EMPLOYEE 
 							WHERE EMP_NAME  = '노옹철');--[서브쿼리]
                    
-                   
-
-
-                   
+                              
 -- 서브쿼리 예시 2.
 -- 전 직원의 평균 급여보다 많은 급여를 받고 있는 직원의 
 -- 사번, 이름, 직급코드, 급여 조회

@@ -89,6 +89,7 @@ WHERE DEPT_ID = 'D1';
 --> DELETE 내역이 트랜잭션에 저장
 
 
+
 SELECT* FROM DEPARTMENT2;
 
 --D1 삭제 구문 수행 후 시점을 저장
@@ -121,5 +122,6 @@ SELECT* FROM DEPARTMENT2 d ; --쌓여 나가는 STAC구조
 --트랜잭션의 모든 내용 삭제
 ROLLBACK;
 SELECT* FROM DEPARTMENT2;
+
 
 

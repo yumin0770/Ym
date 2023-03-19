@@ -60,7 +60,7 @@ SELECT 100*20+30 FROM DUAL;
 
 -- 어제, 오늘, 내일 조회
 --> DATE 타입에 +,- 연산 가능(일 단위) 
-SELECT SYSDATE-1, SYSDATE, SYSDATE+1
+SELECT SYSDATE-1, SYSDATE, SYSDATE+1 -- '-1'하루 전 날, '+1'다음날
 FROM DUAL;
 
 -- 한 시간 후 조회

@@ -32,10 +32,11 @@ ORDER BY EMP_ID DESC;
 
 ---------------------------------------
 
--- 2)  INSERT INTO 테이블명(컬럼명, 컬럼명, 컬럼명,...)
+-- 2)  INSERT INTO 테이블명(컬럼명, 컬럼명, 컬럼명,...)  
 -- VALUES (데이터1, 데이터2, 데이터3, ...);
 -- 테이블에 내가 선택한 컬럼에 대한 값만 INSERT할 때 사용
 -- 선택안된 컬럼은 값이 NULL이 들어감
+--14개중 9개만 넣고 싶음
 INSERT INTO EMPLOYEE2(EMP_NAME, EMP_ID, EMP_NO, EMAIL, PHONE, 
                       DEPT_CODE, JOB_CODE, SAL_LEVEL, SALARY)
 VALUES('장채현', 900, '901123-2345678', 'jang_ch@kh.or.kr', '01012341234',
@@ -51,6 +52,13 @@ ROLLBACK; -- 마지막 COMMIT 시점으로 돌아가라
 SELECT * FROM EMPLOYEE2 
 WHERE EMP_ID = 900; -- 장채현 남아있음
 
+DELETE FROM EMPLOYEE2 
+WHERE EMP_ID = '900';
+
+
+--2-1)--선택해서 입력할 수 있음! -커밋X 그냥 예시로 써봄
+INSERT INTO EMPLOYEE2 (EMP_ID,EMP_NAME,SALARY)
+VALUES(900,'장채현','43000000');
 
 ---------------------------------------
 
@@ -60,11 +68,11 @@ CREATE TABLE EMP_01(
     EMP_NAME VARCHAR2(30),
     DEPT_TITLE VARCHAR2(20)
 	);
-
-INSERT INTO EMP_01
-SELECT EMP_ID, EMP_NAME, DEPT_TITLE
-FROM EMPLOYEE2
-LEFT JOIN DEPARTMENT2 ON(DEPT_CODE = DEPT_ID); 
+--작성 순서
+/*4*/INSERT INTO EMP_01
+/*1*/SELECT EMP_ID, EMP_NAME, DEPT_TITLE
+/*2*/FROM EMPLOYEE2
+/*3*/LEFT JOIN DEPARTMENT2 ON(DEPT_CODE = DEPT_ID); 
 
 
 SELECT * FROM EMP_01;
@@ -139,6 +147,7 @@ COMMIT;
 
 -- * 여러 컬럼을 한번에 수정할 시 콤마(,)로 컬럼을 구분하면됨.
 -- D9 / 총무부  -> D0 / 전략기획2팀으로 수정
+
 UPDATE DEPARTMENT2 
 SET DEPT_ID = 'D0',
     DEPT_TITLE = '전략기획2팀'
@@ -147,6 +156,7 @@ WHERE DEPT_ID = 'D9'; -- 1행 수정
 SELECT * FROM DEPARTMENT2;
 
 ROLLBACK;
+
 
 
 
@@ -223,7 +233,7 @@ WHERE LOCAL_NAME LIKE 'ASIA%';
 -- 2) 아시아 지역 근무 직원 보너스 0.3으로 변경
 UPDATE EMPLOYEE2
 SET BONUS = 0.3
-WHERE EMP_ID IN(SELECT EMP_ID
+WHERE EMP_ID IN (SELECT EMP_ID
 				FROM EMPLOYEE2
 				JOIN DEPARTMENT ON(DEPT_CODE = DEPT_ID)
 				JOIN LOCATION ON(LOCATION_ID = LOCAL_CODE)
