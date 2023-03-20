@@ -221,7 +221,7 @@ public class EmployeeView {
 	
 	public void selectSalary() {
 		
-		System.out.println("\n----이름에 글자가 포홤된 사원 조회----\n");
+		System.out.println("-----급여 범위 조회-----"); //최소,최대범위
 		
 
 		try {
@@ -255,7 +255,11 @@ public class EmployeeView {
 			
 		}	
 	
-	}	
+	}
+	
+	
+	
+	
 	
 }
 	

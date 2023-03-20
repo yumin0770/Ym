@@ -17,8 +17,8 @@ public class EmployeeDAO {
 	// ->JDBC 객체 참조 변수가 계속 작성될 예정 (CONNECTION,STATEMENT)
 	// 	->필드로 작성하여 재사용
 	
-	private Statement stmt;  //기본값으로 참조하기 때문에 null로 기본값
-	private ResultSet rs;
+	private Statement stmt;  //기본값으로 참조하기 때문에 null로 기본값 // SQL 수행, 결과 반환
+	private ResultSet rs;  //  SELECT 수행 결과 저장용 객체
 	
 	/**전체 사원 조회 SQL 수행 후 결과를 반환하는 메서드
 	 * @param conn
@@ -185,10 +185,8 @@ public List<Employee> selectSalary(Connection conn) throws SQLException {
 		try {
 			
 			String sql = "SELECT EMP_ID,EMP_NAME,NVL(DEPT_TITLE,'없음') DEPT_TITLE,JOB_NAME,SALARY	"
-							+ "FROM EMPLOYEE \r\n"
-							+ "NATURAL JOIN JOB\r\n"
-							+ "LEFT JOIN DEPARTMENT ON (DEPT_CODE= DEPT_ID)\r\n"
-							+ "WHERE BETWEEN MAX(SALARY) AND MIN(SALARY)!";
+					     + "FROM EMPLOYEE"
+					     + "ORDER BY SALARY DESC";
 			
 			stmt = conn.createStatement();
 			

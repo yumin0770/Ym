@@ -34,8 +34,8 @@ public class LoadXMLFile {
 			String driver = prop.getProperty("driver");
 			String url = prop.getProperty("url");
 			String user = prop.getProperty("user");
-		    String pw = prop.getProperty("pw");
-				
+		    String pw = prop.getProperty("pw");  //"key" 요 키에 해당하는 값을 get한다!!
+				 
 					
 		    //DB 연결 테스트 (Connetion 얻어오기)
 		    Class.forName(driver);  //xml name
