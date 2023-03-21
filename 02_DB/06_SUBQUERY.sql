@@ -549,7 +549,7 @@ SELECT DEPT_ID, DEPT_TITLE,
 	(SELECT EMP_NAME FROM EMPLOYEE WHERE EMP_ID = '200')
 FROM DEPARTMENT ;
 
--- 각 직원들이 속한 직급의 급여 평균 조회
+-- 각 직원들이 속한 직급의 급여 평균 조회****************************************************어렵다!
 
 SELECT EMP_NAME,JOB_CODE,SALARY,
 		(SELECT FLOOR(AVG(SALARY)) 
@@ -623,7 +623,7 @@ FROM EMPLOYEE;
 
 /*3*/SELECT EMP_NAME, ROWNUM
 /*1*/FROM EMPLOYEE e 
-/*2*/WHERE EMP_NAME ='유지식'; --결과 ROWNUM은 1번임! 5번 아님
+/*2*/WHERE EMP_NAME ='유재식'; --결과 ROWNUM은 1번임! 5번 아님
 
 --4)1,2,3번을 토대로 급여 상위 5명 조회 시도
 /*3*/SELECT EMP_NAME,SALARY, ROWNUM
@@ -652,6 +652,7 @@ FROM (SELECT EMP_NAME, SALARY
 	  ORDER BY SALARY DESC) -->메인커리에 포함된 VIEW 생성 구문
 	  						--> 인라인 뷰
 WHERE ROWNUM <= 5;
+
 	  
 
 --*조건절에 ROWNUM사용시 주의 사항!!!!!!!!!!!!!!!!!***

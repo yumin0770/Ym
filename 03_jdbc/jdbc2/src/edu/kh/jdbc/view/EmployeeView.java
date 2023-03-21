@@ -52,7 +52,11 @@ public class EmployeeView {
 				// 이메일, 전화번호, 급여 수정
 				
 				System.out.println("7.사번으로 사원 퇴사"); //삭제X 수정O
-				//ENT_YN,ENT_DATE 수정
+				//ENT_YN = 'Y',ENT_DATE =SYSDATE 수정
+				
+				//SELECT EMP_ID, EMP_NAME, ENT_YN,ENT_DATE
+				//FROM EMPLOYESS
+				//WHERE EMP_ID = 입력한 사번
 				
 				System.out.println("8.사번으로 사원 정보 삭제");
 				
@@ -67,9 +71,9 @@ public class EmployeeView {
 				case 2: selectOne(); break;
 				case 3: selectName(); break;
 				case 4: selectSalary(); break;
-				case 5: break;
-				case 6: break;
-				case 7: break;
+				case 5: insertEmployee(); break;
+				case 6: updateEmployee(); break;
+				case 7: retireEmployee(); break;
 				case 8: break;
 				case 0: System.out.println("\n[프로그램을 종료합니다.]\n");break;
 				default : System.out.println("\n[메뉴에 존재하는 번호를 입력하세요.]\n");
@@ -219,48 +223,201 @@ public class EmployeeView {
 		
 	}
 	
-	public void selectSalary() {
+	private void selectSalary()  {
 		
 		System.out.println("-----급여 범위 조회-----"); //최소,최대범위
 		
+		System.out.print("최소 급여: ");
+		int min = sc.nextInt();
+		
+		
+		System.out.print("최대 급여: ");
+		int max = sc.nextInt();
+		
 
+		//DB에서 급여 범위에 해당되는 사원 정보를 조회하는 서비스 호출
 		try {
-						
-			List<Employee> empList = service.selectSalary();
-				
-			//없을 때
-	
-			if(empList.isEmpty()) { //조회된 사원이 없을 경우
-				System.out.println("[금액의 범위에 포함되지 않습니다.]");
-				return;
-			}
+		List<Employee> empList = service.selectSalary(min,max);
 			
-			//있을 때
-			//향상된 for문을 이용해서 모든 사원 정보 출력
-			//사번,이름,부서명,직급명,급여 조회
-			for(Employee emp : empList) {
-				System.out.printf("%d / %s / %s /%s /%d \n", 
-							emp.getEmpId(),
-							emp.getEmpName(), 
-							emp.getDepartmentTitle(),
-							emp.getJobName(),
-							emp.getSalary());
-			
-				
-			}
-		//예외  -> 왜 뷰?? 입출력하는게 뷰에서 처리하기 위해서! ex) 예외 화면 나오게 <잘못 눌렀습니다!>이런거
-		}catch (SQLException e) {
-			System.out.println("\n[급여 정보 조회 중 예외 발생]\n");	
+		//없을 때
+		if(empList.isEmpty()) { //조회된 사원이 없을 경우
+			System.out.println("[금액의 범위에 포함되지 않습니다.]");
+			return;
+		}
+		
+		//있을 때 n개행
+		//향상된 for문을 이용해서 모든 사원 정보 출력
+		//사번,이름,부서명,직급명,급여 조회
+		for(Employee emp : empList) {
+			System.out.printf("%d / %s /%s /%d \n", 
+						emp.getEmpId(),
+						emp.getEmpName(), 
+						emp.getJobName(),
+						emp.getSalary());
+		}
+		
+		} catch (SQLException e) {
+			System.out.println("\n[급여 범위 조회 중 예외 발생]\n");	
 			e.printStackTrace();
-			
-		}	
-	
+		}
 	}
 	
 	
+	private void insertEmployee() {
+	System.out.println("\n[-----사원 추가-----]\n");
+	
+	 System.out.print("이름 : ");
+     String empName = sc.next();
+     
+     System.out.print("주민등록번호 : ");
+     String empNo = sc.next();
+     
+     System.out.print("이메일 : ");
+     String email = sc.next();
+     
+     System.out.print("전화번호(-제외) : ");
+     String phone = sc.next();
+     
+     System.out.print("부서코드(D1~D9) : ");
+     String deptCode = sc.next();
+     
+     System.out.print("직급코드(J1~J7) : ");
+     String jobCode = sc.next();
+     
+     System.out.print("급여등급(S1~S6) : ");
+     String salLevel = sc.next();
+     
+     System.out.print("급여 : ");
+     int salary = sc.nextInt();
+     
+     System.out.print("보너스 : ");
+     double bonus = sc.nextDouble();
+     
+     System.out.print("사수번호 : ");
+     int managerId = sc.nextInt();
+     sc.nextLine(); //입력 버퍼에 남아있는 개행문자 제거
+     
+     
+     //2.Employee 객체를 생성하여 입력 받은 값 담기
+     Employee emp = new Employee(empName, empNo, email, phone, salary, deptCode, 
+    		 					jobCode, salLevel, bonus, managerId);
+     
+     //1.사원 정보를 DB에 삽입하는 서비스 호출 후 결과 반환 받기
+     
+     try {
+		int result = service.insertEmployee(emp);
+		
+		if(result>0 ) { //성공 시
+			System.out.println("[삽입 성공!!!]");
+		
+		}else {
+			System.out.println("[삽입 실패...]");
+		}
+		
+		
+		
+	} catch (SQLException e) {
+		System.out.println("\n[사원 정보 삽입 중 예외 발생]\n");
+
+		e.printStackTrace();
+	}
+}
 	
 	
+	/**사번으로 사원 정보 (이메일,전화번호,급여)수정
+	 * 
+	 */
+	private void updateEmployee() {
+		System.out.println("\n-----사번으로 사원 정보 수정-----\n");
+		
+		System.out.print("수정할 사원의 사번 : ");
+		int empId=sc.nextInt();
+		
+		System.out.print("이메일 : ");
+		String email=sc.next();
+		
+		System.out.print("전화번호 : ");
+		String phone=sc.next();
+		
+		System.out.print("급여 : ");
+		int salary=sc.nextInt();
+		sc.nextLine();
+		
+		
 	
+		Employee emp = new Employee();
+		
+		emp.setEmpId(empId);
+		emp.setEmail(email);
+		emp.setPhone(phone);
+		emp.setSalary(salary);
+	
+		//회원 정보 수정 서비스 호출 후 결과 반환 받기
+		
+		try {
+			int result = service.updateEmployee(emp);
+			
+			if(result>0) { //성공
+				System.out.println("[수정 성공]");
+				
+			}else { //실패
+				System.out.println("[수정 실패]");
+			}
+			
+			
+		} catch (SQLException e) {
+			System.out.println("\n[회원 정보 수정 중 예외 발생]\n");
+			e.printStackTrace();
+		}
+
+	}
+	
+	//입력 받은 값을 한번에 전달하기 위한 Employee 객체 생성
+	
+	/**
+	 * 사번으로 사원 퇴사
+	 */
+	private void retireEmployee () {
+		System.out.println("\n[-----사번으로 사원 퇴사-----]\n");
+		
+		System.out.print("퇴사 처리할 사원의 사번 입력 : ");
+		int input = sc.nextInt();
+		
+
+		System.out.print("정말 퇴사 처리 하시겠습니까?(Y/N) ");
+		char check = sc.next().toUpperCase().charAt(0); //문자 제일앞 0번째 인덱스 얻어오겠다.
+		
+		if(check == 'N') {
+			System.out.println("[취소되었습니다]");
+			return;		
+		}
+		if(check != 'Y') {
+			System.out.println("[잘못 입력 하셨습니다.]");
+			return;		
+		}
+	
+		//서비스 호출 후 결과 반환 받기
+		
+		
+		//성공 : [퇴사 처리가 완료되었습니다]
+		//실패 : [사번이 일치하는 사원이 없습니다.]
+		//예외 : [퇴사 처리 중 예외 발생]
+		try {
+			int result = service.retireEmployee(input);
+					
+				String str = null;
+				
+				if(result> 0) str = "[퇴사 처리가 완료 되었습니다.]";
+				else 		  str  = "[사번이 일치하는 사원이 없습니다.]";
+				
+					System.out.println(str);
+				
+			//예외  -> 왜 뷰?? 입출력하는게 뷰에서 처리하기 위해서! ex) 예외 화면 나오게 <잘못 눌렀습니다!>이런거
+			}catch (SQLException e) {
+				System.out.println("\n[글자가 이름에 포함된 사원 조회 중 예외 발생.]\n");	
+				e.printStackTrace();
+			}	
+	}
 }
 	
 	

@@ -1,0 +1,34 @@
+SELECT EMP_ID,EMP_NAME,JOB_NAME,SALARY
+FROM EMPLOYEE
+JOIN JOB USING (JOB_CODE)
+WHERE SALARY BETWEEN 2000000 AND 5000000
+ORDER BY SALARY DESC;
+
+---------------------------------------------------
+
+--사번 생성 시퀀스(223번 시작)
+CREATE SEQUENCE SEQ_EMP_ID 
+START WITH 223 --223번 시작
+INCREMENT BY 1 --1씩 증가
+NOCYCLE  --반복 없음
+NOCACHE; --미리 만들어 두는 번호 없음
+
+--SEQ_EMP_ID.NEXTVAL : 다음 번호 생성
+--SEQ_EMP_ID_CURRBAL : 현재 번호 조회
+--------------------------------
+UPDATE EMPLOYEE 
+SET EMAIL = ?,
+	PHONE = ?,
+	SALARY = ? 
+WHERE EMP_ID = 200;
+
+SELECT EMP_ID,EMP_NAME,PHONE ,EMAIL SALARY 
+FROM EMPLOYEE 
+WHERE EMP_ID = 223;
+----------------------------
+
+UPDATE EMPLOYEE 
+SET ENT_YN = ?,
+	ENT_DATE =SYSDATE ,
+WHERE EMP_ID =?;
+

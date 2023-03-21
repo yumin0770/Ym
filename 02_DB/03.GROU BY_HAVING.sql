@@ -137,7 +137,7 @@ ORDER BY 1;
 SELECT DEPT_CODE, SUM(SALARY),COUNT(*)
 FROM EMPLOYEE
 GROUP BY DEPT_CODE 
-HAVING SUM(SALARY)> 9000000;ㅇ
+HAVING SUM(SALARY)> 9000000;
 
 --EMPLOYEE 테이블에서 부서별 70년대생의 급여 평균이 300만 이상인 부서를 조회하여
 --부서코드, 평균 급여(소수점 내림)을 부서코드 내림 차순 조회
