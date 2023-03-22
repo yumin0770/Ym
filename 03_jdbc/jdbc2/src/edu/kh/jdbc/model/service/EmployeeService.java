@@ -194,6 +194,25 @@ public class EmployeeService {
 				//5.결과 반환
 				return result;
 			}
+
+		public int deleteEmployee(int input) throws SQLException {
+		
+			 Connection conn =getConnection();
+			 
+			 int result = dao.deleteEmployee(conn,input);
+			
+			 if(result >0 ) commit(conn);
+				else 		   rollback(conn);
+				
+				
+				//4.커네션 반환
+				close(conn);
+				
+				//5.결과 반환
+				return result;
+			
+		
+		}
 	
 	
 	

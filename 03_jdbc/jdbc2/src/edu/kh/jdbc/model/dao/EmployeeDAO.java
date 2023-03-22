@@ -447,10 +447,9 @@ public List<Employee> selectSalary(Connection conn,int min,int max) throws SQLEx
 		int result = 0;
 		
 		try {
-			
 				String sql ="UPDATE EMPLOYEE \r\n"
 						+ "SET ENT_YN = ?,\r\n"
-						+ "	ENT_DATE =SYSDATE ,\r\n"
+						+ "	ENT_DATE =SYSDATE "
 						+ "WHERE EMP_ID =?";
 				
 				pstmt =conn.prepareStatement(sql);
@@ -461,5 +460,26 @@ public List<Employee> selectSalary(Connection conn,int min,int max) throws SQLEx
 		}		
 		return result;
 	}
-	
+
+
+	public int deleteEmployee(Connection conn, int input) throws SQLException {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql ="DELETE FROM EMPLOYEE \r\n"
+					   + "WHERE EMP_ID = ? " ;
+			
+				pstmt =conn.prepareStatement(sql);
+				pstmt.setInt(1,input);
+				result =pstmt.executeUpdate();				
+			
+		}finally {
+			   close(pstmt);
+			}		
+			return result;
+		}
+
+
 }
