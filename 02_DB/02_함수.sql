@@ -266,6 +266,8 @@ SELECT EMP_NAME,
  	TO_CHAR(HIRE_DATE,'RRRR"년" MM"월" DD"일"(DY)')
 FROM EMPLOYEE;
 
+
+
 --------------------------------------------------------------
 
 --TO DATE(문자열, 숫자, [,포맷])

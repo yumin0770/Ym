@@ -37,10 +37,18 @@ ORDER BY EMP_ID DESC;
 -- 테이블에 내가 선택한 컬럼에 대한 값만 INSERT할 때 사용
 -- 선택안된 컬럼은 값이 NULL이 들어감
 --14개중 9개만 넣고 싶음
+
+INSERT INTO EMPLOYEE (EMP_NAME, EMP_ID, EMP_NO, EMAIL, PHONE, 
+                      DEPT_CODE, JOB_CODE, SAL_LEVEL, SALARY,BONUS,HIRE_DATE)
+VALUES('선동일', 200, '621231-1985634', 'sun_di@or.kr', '01099546325',
+       'D1', 'J1', 'S1', 8000000, 0.3,'1990-02-06');    
+      
+
 INSERT INTO EMPLOYEE2(EMP_NAME, EMP_ID, EMP_NO, EMAIL, PHONE, 
                       DEPT_CODE, JOB_CODE, SAL_LEVEL, SALARY)
 VALUES('장채현', 900, '901123-2345678', 'jang_ch@kh.or.kr', '01012341234',
-       'D1', 'J7', 'S3', 4300000);        
+       'D1', 'J7', 'S3', 4300000);    
+           
 
 COMMIT; -- 수행된 DML의 결과를 DB에 반영(저장)
       
