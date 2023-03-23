@@ -1,9 +1,12 @@
 package edu.kh.jdbc.view;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 import edu.kh.jdbc.model.dto.Emp;
 import edu.kh.jdbc.model.service.EmpService;
@@ -110,7 +113,8 @@ public class EmpView {
 				case 6: deleteOne(); break;
 				case 7: updateQuit(); break;
 				case 8: topFive(); break;
-				case 9:  break;
+				case 9: selectDepartment(); break;
+				case 10: checkEmployee(); break;
 				case 0: System.out.println("\n[프로그램을 종료합니다...]\n"); break;
 				default: System.out.println("\n[메뉴에 존재하는 번호를 입력하세요.]\n");
 				}
@@ -192,17 +196,17 @@ public class EmpView {
 			if(emp == null ) {
 				System.out.println("[일치하는 사번의 사원이 존재하지 않습니다.]");
 				return;
-
 			}
+			System.out.printf("%d /%s /%s /%d /%s /%s /%s /%s \n",
+			          emp.getEmpId(),
+			          emp.getEmpName(),
+			          emp.getDepartmentTitle(),
+			          emp.getSalary(),
+			          emp.getPhone(),
+			          emp.getEmail(),
+			          emp.getHireDate(),
+			          emp.getEntYN());
 			
-			System.out.printf("%d /%s /%s /%d /%s /%s / %s / %s \n",
-			          emp.getEmpId(),emp.getEmpName(),emp.getDepartmentTitle(),
-			          emp.getSalary(),emp.getPhone(),emp.getEmail(),
-			          emp.getHireDate(),emp.getEntYN());
-			
-			
-			
-		
 			} catch (SQLException e) {
 			System.out.println("[사원을 조회하던 중 예외가 발생했습니다.]");
 			e.printStackTrace();
@@ -246,7 +250,7 @@ public class EmpView {
 		     int managerId = sc.nextInt();
 		     sc.nextLine();
 			
-		     Emp emp = new Emp(empName, empNo, email, phone, salary, deptCode, 
+		     Emp emp = new Emp(empName, empNo, email, phone,salary, deptCode, 
 						      jobCode, salLevel, bonus, managerId);
 			
 		     try {
@@ -263,7 +267,6 @@ public class EmpView {
 		 		
 		 	} catch (SQLException e) {
 		 		System.out.println("\n[사원 정보 삽입 중 예외 발생]\n");
-
 		 		e.printStackTrace();
 		 	}
 		 }
@@ -357,13 +360,16 @@ public class EmpView {
 			
 			if(answer == 'N') {
 				System.out.println("[퇴직처리를 취소하겠습니다.]");
+				return;
 			}if(answer != 'Y') {
 				System.out.println("사번이 일치하지 않거나, 이미 퇴직한 사원입니다.");
+				return;
 			}
+			
 			
 			int result;
 			try {
-				result = service.updateQuit(input,answer);
+				result = service.updateQuit(input);
 				
 				String str = null;
 				 
@@ -371,8 +377,7 @@ public class EmpView {
 				else           str = "[사번이 일치하지 않거나, 이미 퇴직한 사원입니다.]";
 				
 				System.out.println(str);
-				
-				
+
 			} catch (SQLException e) {
 				System.out.println();
 				e.printStackTrace();
@@ -404,15 +409,90 @@ public class EmpView {
 				
 				e.printStackTrace();
 			}
-			
-
-			
-			
-			
 		}
 		
-	
+		private void checkEmployee() {
+			
+			System.out.println("[사번을 입력 받아 퇴사 처리]");
+			System.out.print("[사번 입력]");
+			int input = sc.nextInt();
+			
+			System.out.print("[정말로 퇴직 처리 하시겠습니까?]");
+			char answer = sc.next().toUpperCase().charAt(0);
+			
+			try {			
+				int check = service.checkEmployee(input);
+				
+				if(check == 0) {	
+				System.out.println("사번일치");
+				return;
+			}
+			else System.out.println("사번 불일치");
+				
+			int result;	
+			
+			} catch (SQLException e) {
+				System.out.println();
+				e.printStackTrace();
+			}
+			
+		}
 
-	
+	private void selectDepartment() {
+		System.out.println("\n*****부서별 통계 조회*****\n");
+		
+		
+		//DTO가 없을 때 Map을 사용하는 이유
+		// 1.DTO를 작성하는게 코드 낭비인 경우
+		// 2.DTO와 Map의 구조가 유사하기 때문에
+		
+//		Map<String,Object> map = new HashMap<>();
+//		
+//		map.put("empId", 200);
+//		map.put("empName", "고길동");
+//		
+//		map.get("empId");
+//		map.get("empName");
+//		
+//		List<Emp> empList;
+//		
+//		List<Map<String,Object>> mapList;
+//		
+//		
+//		//tip. DTO의 필드의 Map의 Key라고 생각
+//		
+		
+		//서비스 호출
+		try {
+			List<Map<String,Object>> mapList = service.selectDepartment();
+			
+			//조회 결과 출력
+			
+			//List에서 요소를 하나씩 순차 접근
+			for(Map<String,Object> map: mapList) {
+				
+//				System.out.printf("%s/ %d /%d \n",
+//									map.get("deptTitle"),
+//									map.get("count"),
+//									map.get("avg"));
+				
+				Set<String> set = map.keySet(); //map에서 key만 얻어와 반
+								//-> deptTitle, count, avg 순서
+				for(String key :  set) {
+					System.out.print(map.get(key) +  " " );
+					
+				} System.out.println();//줄바꿈			
+			}
+			
+		} catch (SQLException e) {
+			System.out.println("[부서별 통계 조회 중 예외 발생]");
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		
+	}
 	
 }

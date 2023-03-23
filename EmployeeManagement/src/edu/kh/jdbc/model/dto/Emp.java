@@ -2,6 +2,14 @@ package edu.kh.jdbc.model.dto;
 
 import java.sql.Date;
 
+/**
+ * @author user1
+ *
+ */
+/**
+ * @author user1
+ *
+ */
 public class Emp {
 	private int empId; 		// 사원 번호(사번)
 	private String empName; // 사원 이름
@@ -23,18 +31,72 @@ public class Emp {
 	
 	
 
-	public Emp(int empId2, String empName2, String departmentTitle2, int salary2, String phone2, String email2, String hireDate2, String entYN2) {
-		// TODO Auto-generated constructor stub
+
+
+
+
+
+	public Emp(int empId, String empName, String email, String phone, int salary, Date hireDate, String entYN,
+			String departmentTitle) {
+		super();
+		this.empId = empId;
+		this.empName = empName;
+		this.email = email;
+		this.phone = phone;
+		this.salary = salary;
+		this.hireDate = hireDate;
+		this.entYN = entYN;
+		this.departmentTitle = departmentTitle;
 	}
+
+
+
+
+
+	public Emp(String empName, String empNo, String email, String phone, int salary, String deptCode, String jobCode,
+			String salLevel, double bonus, int managerId) {
+		super();
+		this.empName = empName;
+		this.empNo = empNo;
+		this.email = email;
+		this.phone = phone;
+		this.salary = salary;
+		this.deptCode = deptCode;
+		this.jobCode = jobCode;
+		this.salLevel = salLevel;
+		this.bonus = bonus;
+		this.managerId = managerId;
+	}
+
+
+
+
 
 	public Emp() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Emp(String empName2, String empNo2, String email2, String phone2, int salary2, String deptCode2,
-			String jobCode2, String salLevel2, double bonus2, int managerId2) {
-		// TODO Auto-generated constructor stub
+
+
+
+
+	public Emp(int empId2, String empName2, String departmentTitle2, int salary2, String phone2, String email2,
+			String hireDate2, String entYN2) {
+		super();
+		this.empId = empId2;
+		this.empName = empName2;
+		this.departmentTitle = departmentTitle2;
+		this.salary = salary2;
+		this.phone = phone2;
+		this.email = email2;
+		this.hireDate = hireDate;
+		this.entYN = entYN2;
+		
 	}
+
+
+
+
 
 	public int getEmpId() {
 		return empId;

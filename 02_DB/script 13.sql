@@ -76,9 +76,9 @@ ORDER BY ENT_DATE  ;
 	--	// 단, 사번이 일치하는 사원이 없으면
 	--// "사번이 일치하는 사원이 없습니다" 출력
 
-SELECT EMP_ID, EMP_NAME, DEPT_TITLE, SALARY, PHONE,EMAIL,HIRE_DATE,ENT_YN
+SELECT EMP_ID,EMP_NAME,DEPT_TITLE,SALARY,PHONE,EMAIL,HIRE_DATE,ENT_YN
 FROM EMPLOYEE 
- JOIN DEPARTMENT ON (DEPT_CODE = DEPT_ID)
+LEFT JOIN DEPARTMENT ON (DEPT_CODE = DEPT_ID)
 JOIN JOB USING (JOB_CODE)
 WHERE EMP_ID = '223';
 
@@ -112,8 +112,8 @@ UPDATE EMPLOYEE
 SET ENT_YN  = 'N'
 WHERE EMP_ID = 208;
 
-SELECT ROWNUM,EMP_ID,EMP_NAME,DEPT_TITLE,HIRE_DATE
-FROM (SELECT EMP_ID,EMP_NAME,DEPT_TITLE,HIRE_DATE
+SELECT *
+FROM (SELECT EMP_ID,EMP_NAME,NVL(DEPT_TITLE,'부서없음'),HIRE_DATE
 	FROM EMPLOYEE 
 	JOIN DEPARTMENT ON (DEPT_CODE = DEPT_ID)
 	ORDER BY HIRE_DATE DESC)
@@ -127,3 +127,90 @@ FROM (SELECT EMP_NAME, SALARY
 	  ORDER BY SALARY DESC) -->메인커리에 포함된 VIEW 생성 구문
 	  						--> 인라인 뷰
 WHERE ROWNUM <= 5;
+
+
+
+
+--입력받은 사번의 사원이 존재하지 않으면 0
+--사원은 있는데 퇴직처리된 사원이면 1
+--사원도 있고, 재직중인 사원이면 2 조회
+
+
+SELECT         (SELECT 0 FROM DUAL) UNION 
+			   (SELECT 1 FROM DUAL) UNION
+			   (SELECT 2 FROM DUAL) 
+			   
+FROM EMPLOYEE 
+WHERE ETN_YN = 'NULL' IS '0'
+OR   ETN_YN = 'N' IS '2'
+OR   ETN_YN = 'Y' IS '1'
+
+
+--선택함수.. DECODE, CASE
+
+SELECT CASE 
+		--존재하지 않는 사원?
+		WHEN (SELECT COUNT(*) FROM EMPLOYEE WHERE EMP_ID = 200) = 0  --이 직워 존재??
+		THEN 0
+		
+		--존재하지만 퇴직한 사원?
+		WHEN (SELECT COUNT(*) FROM EMPLOYEE 
+			WHERE EMP_ID = 200 AND ENT_YN = 'Y') =1    --퇴사한 직원
+		THEN 1
+		
+		--존재하고 퇴직하지 않은 사원?
+		ELSE 2
+   END "CHECK"
+
+FROM DUAL;
+
+
+
+--SELECT CASE 
+--	WHEN ETN_YN = 'N'
+--	THEN 
+	
+--	WHEN 조건식
+--	THEN 조건식 참일 경우
+	
+--	ELSE 모두 FALSE
+	
+--END
+
+--FROM DUAL;
+
+
+
+
+--9.
+--//각 부서별
+--// 부서명, 인원 수, 급여 평균
+--// 부서코드 오름차순 조회
+
+SELECT DEPT_CODE,NVL(DEPT_TITLE,'부서없음'), COUNT(*) 인원, FLOOR(AVG(SALARY)) 평균
+FROM EMPLOYEE 
+LEFT JOIN DEPARTMENT ON (DEPT_CODE = DEPT_ID)
+GROUP BY DEPT_CODE, DEPT_TITLE
+ORDER BY DEPT_CODE;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

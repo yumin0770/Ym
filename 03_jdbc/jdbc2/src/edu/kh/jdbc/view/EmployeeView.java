@@ -157,9 +157,7 @@ public class EmployeeView {
 						emp.getDepartmentTitle(),
 						emp.getJobName(),
 						emp.getPhone());
-
-				
-				
+	
 			} catch (SQLException e) {
 				System.out.println("\n[사번으로 사원 조회 중 예외 발생]\n");	
 				e.printStackTrace();
