@@ -237,19 +237,19 @@ public class EmpDAO {
 	}
 
 	
-	public int updateQuit(Connection conn, char answer,int input ) throws SQLException {
+	public int updateQuit(Connection conn,int input ) throws SQLException {
 		
 		
 		int result = 0;
 		
 		try {
 		String sql  ="UPDATE EMPLOYEE \r\n"
-				+ "SET ENT_YN  = ?\r\n"
+				+ "SET ENT_YN = 'Y',\r\n"
+				+ "	ENT_DATE = SYSDATE\r\n"
 				+ "WHERE EMP_ID = ?;";
 		
 		pstmt = conn.prepareStatement(sql);
-		pstmt.setInt(1,answer);
-		pstmt.setInt(2,input);
+		pstmt.setInt(1,input);
 		
 		result =pstmt.executeUpdate();	
 		
