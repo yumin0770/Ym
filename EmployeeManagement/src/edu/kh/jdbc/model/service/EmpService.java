@@ -107,11 +107,11 @@ public class EmpService  {
 			return result;
 		}
 
-		public int updateQuit(char answer,int input) throws SQLException {
+		public int updateQuit(int input) throws SQLException {
 
 			Connection conn = getConnection();
 			
-			int result = dao.updateQuit(conn,answer,input);
+			int result = dao.updateQuit(conn,input);
 			
 			if(result >0 ) commit(conn);
 			else 		rollback(conn);

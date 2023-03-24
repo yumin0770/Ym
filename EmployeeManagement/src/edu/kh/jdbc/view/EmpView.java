@@ -355,6 +355,8 @@ public class EmpView {
 			System.out.print("[사번 입력]");
 			int input = sc.nextInt();
 			
+			try {
+				
 			System.out.print("[정말로 퇴직 처리 하시겠습니까?]");
 			char answer = sc.next().toUpperCase().charAt(0);
 			
@@ -368,7 +370,7 @@ public class EmpView {
 			
 			
 			int result;
-			try {
+			
 				result = service.updateQuit(input);
 				
 				String str = null;
