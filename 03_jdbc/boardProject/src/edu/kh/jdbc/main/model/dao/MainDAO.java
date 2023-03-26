@@ -15,7 +15,6 @@ public class MainDAO {
 
 	//필드
 	//jdbc객체 참조 변수
-	
 	private Statement stmt; //SQL 수행, 결과 반환 //캡슐화 원칙에 의해 private
 	private PreparedStatement pstmt; //placeholder를 포함한 SQL세팅/수행 (stmt의 자식)
 	private ResultSet rs; //SELECT 수행 결과를 저장
@@ -68,7 +67,7 @@ public class MainDAO {
 			
 			rs = pstmt.executeQuery(); //sql 안 쓴다! //SELECT 수행 후 결과 반환 받기 (RESUTL = rs)
 			
-			//3.조회 결과를 1행씩 접근해서 얻어오기  //1명씩 나올거라 예상되느 if
+			//3.조회 결과를 1행씩 접근해서 얻어오기  //1명씩 나올거라 예상되면 if
 			if(rs.next()) {
 				int memberNo = rs.getInt("MEMBER_NO");
 			//	String memberId = rs.getString("MEMBER_ID");

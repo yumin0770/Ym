@@ -434,8 +434,6 @@ public class EmployeeView {
 				System.out.println(str);
 			
 			
-			
-			
 		} catch (SQLException e) {
 			System.out.println("\n[ 사번 조회 중 예외 발생.]\n");
 			e.printStackTrace();

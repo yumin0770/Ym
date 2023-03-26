@@ -42,9 +42,7 @@ public class MainService {
 
 		Connection conn  = getConnection();
 		
-		int result = dao.idDuplicationCheck(conn,memberId);
-		 
-		
+		int result = dao.idDuplicationCheck(conn,memberId);	
 		close(conn);
 
 		return result;
@@ -58,9 +56,7 @@ public class MainService {
 	public int signUp(Member member) throws Exception{
 		
 		Connection conn = getConnection();
-		
-		int result = dao.signUp(conn,member); //->inset 수행
-		
+		int result = dao.signUp(conn,member); //->insert 수행
 		//트랜잭션 처리
 		if(result >0) commit(conn); //TCL하려면 conn 커넥션이 필요함! 그래서 commit시 담아줌
 		else  		  rollback(conn);

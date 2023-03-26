@@ -43,7 +43,7 @@ public class JDBCTemplate {
 				Properties prop = new Properties();
 				// Map<String, String> 형태, XML 파일 입출력 특화
 				
-				prop.loadFromXML(  new FileInputStream("driver.xml")  );
+				prop.loadFromXML(  new FileInputStream("driver.xml"));
 				// 스트림을 이용해서 driver.xml 파일을 읽어와 prop에 저장
 				
 				// prop에 저장된 값을 변수로 따로 저장

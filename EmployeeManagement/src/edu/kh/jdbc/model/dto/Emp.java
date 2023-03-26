@@ -53,8 +53,8 @@ public class Emp {
 
 
 
-	public Emp(String empName, String empNo, String email, String phone, int salary, String deptCode, String jobCode,
-			String salLevel, double bonus, int managerId) {
+	public Emp(String empName, String empNo, String email, String phone, String salLevel, String deptCode, String jobCode,
+			int salary, double bonus, int managerId) {
 		super();
 		this.empName = empName;
 		this.empNo = empNo;
@@ -93,6 +93,11 @@ public class Emp {
 		this.entYN = entYN2;
 		
 	}
+
+
+
+
+
 
 
 

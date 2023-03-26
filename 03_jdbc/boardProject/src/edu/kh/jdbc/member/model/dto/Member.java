@@ -2,13 +2,13 @@ package edu.kh.jdbc.member.model.dto;
 
 public class Member {
 
-	private int memberNo;
+	private int memberNo; 
 	private String memberId;
 	private String memberPw;
 	private String memberName;
 	private String memberGender;
 	private String enrollDate;
-	private String unresgisterFlag;
+	private String unresgisterFlag; //탈퇴여부
 	
 	
 	public Member() {}

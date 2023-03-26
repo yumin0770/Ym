@@ -28,8 +28,6 @@ public class MemberDAO {
 	
 	try {
 		prop= new Properties();
-		
-		
 		prop.loadFromXML(new FileInputStream("member-sql.xml"));
 		
 	}catch(Exception e) {

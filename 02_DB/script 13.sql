@@ -32,7 +32,7 @@ SET ENT_YN = ?,
 	ENT_DATE =SYSDATE ,
 WHERE EMP_ID =?;
 
-
+ROLLBACK;
 
 DELETE FROM EMPLOYEE 
 WHERE EMP_ID = '200';
@@ -125,7 +125,7 @@ SELECT ROWNUM, EMP_NAME, SALARY
 FROM (SELECT EMP_NAME, SALARY
 	  FROM EMPLOYEE 
 	  ORDER BY SALARY DESC) -->메인커리에 포함된 VIEW 생성 구문
-	  						--> 인라인 뷰
+	  					--> 인라인 뷰
 WHERE ROWNUM <= 5;
 
 
@@ -194,23 +194,90 @@ GROUP BY DEPT_CODE, DEPT_TITLE
 ORDER BY DEPT_CODE;
 
 
+--	System.out.println("1. 재직중인 사원 전체 조회"); 
+--				// 현재 재직중인 사원의
+--				// 사번, 이름, 부서명, 직급명, 급여, 전화번호, 이메일
+--				// 직급코드 오름차순으로 조회
+
+SELECT EMP_ID,EMP_NAME,DEPT_TITLE,JOB_NAME,SALARY,PHONE,EMAIL 
+FROM EMPLOYEE 
+LEFT JOIN DEPARTMENT ON (DEPT_CODE = DEPT_ID)
+JOIN JOB USING (JOB_CODE)
+ORDER BY JOB_CODE ;
+
+--// 사번, 이름, 전화번호, 이메일, 퇴사일을
+
+SELECT EMP_ID,EMP_NAME,PHONE,ENT_DATE  
+FROM EMPLOYEE 
+WHERE ENT_YN = 'Y';
+
+
+
+--사번, 이름, 부서명, 직급명, 급여, 전화번호, 이메일, 입사일, 퇴직여부 조회
+
+SELECT EMP_ID,EMP_NAME,NVL(DEPT_TITLE,'없음') DEPT_TITLE,NVL(JOB_NAME,'없음') JOB_NAME,SALARY,PHONE,EMAIL,ENT_DATE,ENT_YN 
+FROM EMPLOYEE 
+LEFT JOIN DEPARTMENT ON (DEPT_CODE = DEPT_ID)
+JOIN JOB USING (JOB_CODE)
+WHERE EMP_ID = '200';
 
 
 
 
+--사원 삭제하기
+
+DELETE FROM EMPLOYEE 
+WHERE EMP_ID = 227;
+
+SELECT* FROM EMPLOYEE ;
+
+ROLLBACK;
 
 
 
+--사원 퇴사처리하기
+
+UPDATE EMPLOYEE 
+SET ENT_YN = 'Y'
+WHERE EMP_ID = '228';
+
+-------------------------\-----------------\-----------------\
+---재직중인 사원 전체조회하기
+-- 사번, 이름, 부서명, 직급명, 급여, 전화번호, 이메일
 
 
+SELECT EMP_ID,EMP_NAME,DEPT_TITLE,JOB_NAME,SALARY, PHONE ,EMAIL 
+FROM EMPLOYEE 
+LEFT JOIN DEPARTMENT ON (DEPT_CODE = DEPT_ID)
+JOIN JOB USING (JOB_CODE)
+WHERE ENT_YN ='N';
+
+----사번이 일치하는 사원 조회
 
 
+CREATE SEQUENCE SQ_EMP_ID
+START WITH 223
+INCREMENT BY 1
+NOCYCLE
+NOCACHE;
+
+CREATE SEQUENCE SEQ_EMP_ID 
+START WITH 223 --223번 시작
+INCREMENT BY 1 --1씩 증가
+NOCYCLE  --반복 없음
+NOCACHE; --미리 만들어 두는 번호 없음
+
+--SEQ_EMP_ID.NEXTVAL : 다음 번호 생성
+--SEQ_EMP_ID_CURRBAL : 현재 번호 조회
 
 
+INSERT INTO EMPLOYEE VALUES(SEQ_EMP_ID.NEXTVAL,'고길동','790101-101111', 'gogi@naver.com','01090306677'
+					,'D2','J3','S3',2000000,0.4, 200,SYSDATE, NULL, 'N');
 
+				
+INSERT INTO EMPLOYEE VALUES(SEQ_EMP_ID.NEXTVAL,'고길동',,,,,,,,, SYSDATE, NULL, 'N');
 
+COMMIT;
 
-
-
-
+SELECT* FROM EMPLOYEE ;
 

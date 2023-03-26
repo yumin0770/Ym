@@ -22,16 +22,14 @@ public class MainView {
 	
 	public void mainMenu() {
 		
-		int input = 0;
-
+		int input = 0; //스캐너 입력 받아서 사용할 변수
 		
-		do {
-			
+		do {	
 			try {
 				//메뉴 2개 
 				
 				//로그인 X
-				if(Session.loginMember == null ) {
+				if(Session.loginMember == null ) {  
 					System.out.println("\n=====회원제 게시판 프로그램=====\n");
 					System.out.println("1. 로그인");
 					System.out.println("2. 회원 가입");
@@ -74,7 +72,7 @@ public class MainView {
 					
 				}
 			}
-			}catch(InputMismatchException e) {
+			}catch(InputMismatchException e) {  //메뉴 입력하다 잘못 입력할 때
 				System.out.println("\n*** 입력 형식이 바르지 않습니다.***\n");
 				sc.nextLine(); //입력 버퍼에 잘못된 문자열 제거
 				input = -1; //while문 종료 방지
@@ -126,7 +124,7 @@ public class MainView {
 	private void signUp() {
 		System.out.println("\n[회원가입]\n");
 		
-		//아이디,비밀번호,이름,서열
+		//아이디,비밀번호,이름,성별
 		
 		String memberId = null;
 		String memberPw = null;
@@ -140,7 +138,7 @@ public class MainView {
 			// 입력한 아이디와 같은 아이디가 존재하면 중복 판정
 			//-> 중복이 입력되지 않을 때 까지 무한 반복
 			
-			while(true) {
+			while(true) { //무한반복
 				
 				System.out.print("아이디 입력 : ");
 				memberId = sc.next();
@@ -194,6 +192,7 @@ public class MainView {
 			
 			//Member 객체를 생성하여 입력 받은 값 세팅
 			Member member = new Member();
+			
 			member.setMemberId(memberId);
 			member.setMemberPw(memberPw);
 			member.setMemberName(memberName);
