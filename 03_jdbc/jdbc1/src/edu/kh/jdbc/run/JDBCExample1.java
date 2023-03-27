@@ -86,9 +86,9 @@ public class JDBCExample1 {
 			// 19c 버전 :   :ORCL
 			// 18c 또는 강의장DB :   :XE
 			
-			String user = "kh_bdh"; // 계정명
+			String user = "kh_kym"; // 계정명
 			
-			String pw = "oracle_bdh123A"; // 비밀번호
+			String pw = "oracle_kym123A"; // 비밀번호
 			
 			
 			// DriverManager 객체

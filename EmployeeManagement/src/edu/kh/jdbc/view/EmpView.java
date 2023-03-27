@@ -263,8 +263,8 @@ public class EmpView {
 		     int managerId = sc.nextInt();
 		     sc.nextLine();
 			
-		 
-		     Emp emp = new Emp(empName,empNo,email,phone,deptCode,jobCode,salLevel,salary,bonus,managerId);
+
+		     Emp emp = new Emp(empName,empNo,email,phone,salary,deptCode,jobCode,salLevel,bonus,managerId);
 		     
 		     try {
 			 		int result = service.insertOne(emp);

@@ -1,13 +1,16 @@
 package edu.kh.jdbc.member.model.dao;
+import static edu.kh.jdbc.common.JDBCTemplate.close;
+
 import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 import java.util.Properties;
-import static edu.kh.jdbc.common.JDBCTemplate.*;
 
+import edu.kh.jdbc.common.Session;
 import edu.kh.jdbc.member.model.dto.Member;
 
 public class MemberDAO {
@@ -77,5 +80,117 @@ public class MemberDAO {
 		
 		return memList;
 	}
+
+
+	/**회원 정보 수정
+	 * @param conn
+	 * @param memberName
+	 * @param memberGender
+	 * @param memberNo
+	 * @return result;
+	 * @throws SQLException
+	 */
+	public int updateMember(Connection conn, String memberName, String memberGender, int memberNo) throws Exception {
+		
+		//1.결과 저장용 변수 선언 // 안에쓰면 안 담김.
+		int result = 0;
+		
+		try {
+		String sql = prop.getProperty("updateMember");
+		
+		pstmt =conn.prepareStatement(sql);
+		
+		pstmt.setString(1, memberName);
+		pstmt.setString(2, memberGender);
+		pstmt.setInt(3, memberNo);
+		
+		result = pstmt.executeUpdate();
+		
+		}finally {
+			//3.JDBC 객체 자원을 반환
+			close(pstmt);
+		}
+		return result;
+	}
+
+
+	/**회원 비밀번호 변경 서비스
+	 * @param conn
+	 * @param newPw
+	 * @param confirmPw
+	 * @param memberNo
+	 * @return result
+	 * @throws SQLException
+	 */
+	public int updatePassword(Connection conn,String currentPw, String newPw, int memberNo) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("updateaPassword");
+			
+			pstmt =conn.prepareStatement(sql);
+			
+			pstmt.setString(1, newPw);
+			pstmt.setString(2, currentPw);
+			pstmt.setInt(3, memberNo);
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+			close(pstmt);
+		}	
+		return result;
+	}
+
+
+	/**회원 정보 수정
+	 * @param conn
+	 * @param memberPw
+	 * @param memberNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int unResiterMember(Connection conn, int memberNo) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("unResiterMember");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1,memberNo);
+			result = pstmt.executeUpdate();
+			
+			
+		}finally {
+			
+			close(pstmt);
+		}
+		
+	
+		return result;
+	}
+	
+	
+	
+	
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 

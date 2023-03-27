@@ -12,8 +12,8 @@ import edu.kh.jdbc.common.JDBCTemplate;
 public class TestRun {
 
 	public static void main(String[] args) {
-	
-		//JDBCTemplate 사용 예시
+
+			//JDBCTemplate 사용 예시
 		
 		//1.JDBC객체 참조 변수 선언
 		Connection conn = null;

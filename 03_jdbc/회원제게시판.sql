@@ -204,5 +204,42 @@ ORDER BY MEMBER_NO DESC;
 
 
 
+------------
+--회원 정보 (이름,성별 ) 수정
+
+
+
+
+UPDATE "MEMBER"
+SET MEMBER_PW = 'pass01'
+WHERE MEMBER_NO  = 1;
+
+
+
+SELECT * FROM member;
+
+ROLLBACK;
+
+
+UPDATE "MEMBER"
+SET UNREGISTER_FL  = 'N'
+WHERE MEMBER_NO  = 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

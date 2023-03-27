@@ -32,7 +32,7 @@ public class EmpDAO {
 	 */
 	public List<Emp> selectAll(Connection conn) throws SQLException {
 	
-		List<Emp> empList = new ArrayList<> ();
+		List<Emp> empList = new ArrayList<>();
 		
 		try {
 		String sql = "SELECT EMP_ID,EMP_NAME,DEPT_TITLE,JOB_NAME,SALARY, PHONE ,EMAIL \r\n"
@@ -196,6 +196,7 @@ public class EmpDAO {
 				pstmt.setInt(8,emp.getSalary());
 				pstmt.setDouble(9,emp.getBonus());
 				pstmt.setInt(10,emp.getManagerId());
+				
 			
 			result = pstmt.executeUpdate();
 				
