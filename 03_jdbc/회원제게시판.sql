@@ -223,23 +223,63 @@ ROLLBACK;
 
 UPDATE "MEMBER"
 SET UNREGISTER_FL  = 'N'
-WHERE MEMBER_NO  = 1;
+WHERE MEMBER_NO  = 4;
+
+
+---------------------------------------
+--게시글 상세 조회 
+
+SELECT  BOARD_NO, BOARD_TITLE, BOARD_CONTENT , MEMBER_NO,
+		MEMBER_NM, READ_COUNT, CREATE_DT 
+FROM "BOARD"
+JOIN "MEMBER" USING (MEMBER_NO)
+WHERE DELETE_FL = 'N'
+AND BOARD_NO = ? ;
 
 
 
+--조회수 증가
+UPDATE "BOARD" 
+SET READ_COUNT = READ_COUNT  + 1  --이전 조회수 +1 값으로 수정
+WHERE BOARD_NO = 1;
+
+SELECT*FROM "BOARD" WHERE BOARD_NO  ='1';
+--DB에서 = 같다는 의미지만 수정할 땐 "대입"
+
+ROLLBACK;
 
 
+--게시글 수정
+UPDATE "BOARD" 
+SET BOARD_TITLE  = ?
+	BOARD_CONTENT = ?
+WHERE BOARD_NO = ?
+;
+--게시글 삭제 (update)
+
+UPDATE "BOARD"
+SET DELETE_FL  ='Y'
+WHERE BOARD_NO = ?
+;
+
+--게시글 복구
+UPDATE "BOARD"
+SET DELETE_FL  ='N'
+WHERE BOARD_NO = 1;
+COMMIT;
 
 
+SELECT * FROM "BOARD";
 
 
+---게시글 작성
+INSERT INTO "BOARD" 
+VALUES (?, ?, ?,DEFAULT,DEFAULT,DEFAULT, ?)
+; -- 삽입 성공 1, 실패하면 0
 
 
-
-
-
-
-
+--다음 시퀀스 번호 생성
+SELECT SEQ_BOARD_NO.NEXTVAL FROM DUAL;
 
 
 

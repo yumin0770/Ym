@@ -263,7 +263,7 @@ public class MemberView {
 		
 		try {
 			//회원 탈퇴 서비스 호출
-			int result = service.unResiterMember(Session.loginMember.getMemberNo());
+			int result = service.unResiterMember(memberPw,Session.loginMember.getMemberNo());
 			
 			
 			if(result>0) {

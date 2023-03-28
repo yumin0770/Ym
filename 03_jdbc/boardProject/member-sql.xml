@@ -30,7 +30,8 @@
 	<entry key = "unResiterMember">
 	UPDATE "MEMBER"
 	SET UNREGISTER_FL  = 'Y'
-	WHERE MEMBER_NO  = ?
+	WHERE  MEMBER_PW = ?
+	AND	   MEMBER_NO  = ?
 	</entry>
 	
 </properties>
