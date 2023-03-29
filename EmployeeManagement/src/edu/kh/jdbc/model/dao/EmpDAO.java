@@ -99,6 +99,7 @@ public class EmpDAO {
 			String entDate = rs.getString("ENT_DATE");
 			
 			Emp emp = new Emp();
+			
 			emp.setEmpId(empId);
 			emp.setEmpName(empName);
 			emp.setPhone(phone);
@@ -135,9 +136,7 @@ public class EmpDAO {
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, input);
 		rs=pstmt.executeQuery();
-		 
-
-	
+		 	
 	if(rs.next()) {
 		
 		int empId = rs.getInt("EMP_ID");
