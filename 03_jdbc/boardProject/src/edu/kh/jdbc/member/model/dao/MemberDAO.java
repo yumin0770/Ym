@@ -81,7 +81,6 @@ public class MemberDAO {
 		return memList;
 	}
 
-
 	/**회원 정보 수정
 	 * @param conn
 	 * @param memberName
@@ -152,7 +151,7 @@ public class MemberDAO {
 	 * @return result
 	 * @throws Exception
 	 */
-	public int unResiterMember(Connection conn, int memberNo) throws Exception {
+	public int unResiterMember(Connection conn, String memberPw, int memberNo) throws Exception {
 		
 		int result = 0;
 		
@@ -161,7 +160,8 @@ public class MemberDAO {
 			String sql = prop.getProperty("unResiterMember");
 			
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1,memberNo);
+			pstmt.setString(1,memberPw);
+			pstmt.setInt(2,memberNo);
 			result = pstmt.executeUpdate();
 			
 			

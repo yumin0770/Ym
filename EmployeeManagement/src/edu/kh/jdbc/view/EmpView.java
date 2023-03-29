@@ -154,13 +154,10 @@ public class EmpView {
 						e.getSalary(),
 						e.getPhone(),
 						e.getEmail());
-		
-	
-		}catch(SQLException e) {
+				}catch(SQLException e) {
 			System.out.println("전체 사원 조회 중 예외 발생");
 			e.printStackTrace();
 		}
-	
 	}
 	/**
 	 * 퇴직한 전체 사원 조회 	// 사번, 이름, 전화번호, 이메일, 퇴사일을
@@ -184,6 +181,10 @@ public class EmpView {
 		}
 	}
 		
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/main
 	/**
 	 * 	3. 사번이 일치하는 사원 조회 // 사번, 이름, 부서명, 직급명, 급여, 전화번호, 이메일, 입사일, 퇴직여부 조회
 	 */

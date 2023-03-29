@@ -97,11 +97,11 @@ public class MemberService {
 	 * @return result
 	 * @throws Exception
 	 */
-	public int unResiterMember(int memberNo) throws Exception {
+	public int unResiterMember(String memberPw,int memberNo) throws Exception {
 	
 		Connection conn = getConnection();
 		
-		int result = dao.unResiterMember(conn,memberNo);
+		int result = dao.unResiterMember(conn,memberPw,memberNo);
 		
 		if(result>0) commit(conn);
 		else		rollback(conn);

@@ -121,7 +121,6 @@ public class JDBCTemplate {
 		}
 	}		
 	
-	
 	/** 트랜잭션 Rollback 메서드
 	 * @param conn
 	 */
