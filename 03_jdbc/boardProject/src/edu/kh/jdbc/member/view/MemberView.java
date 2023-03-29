@@ -199,6 +199,7 @@ public class MemberView {
 		if(newPw.equals(confirmPw)) {
 			break;
 			
+			//아닐 때
 		} System.out.println("비밀번호가 일치하지 않습니다.");
 		
 		try {
