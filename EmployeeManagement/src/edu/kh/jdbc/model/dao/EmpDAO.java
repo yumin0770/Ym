@@ -380,65 +380,14 @@ public class EmpDAO {
 				
 				mapList.add(map);
 				
-			}
-			
-			
+			}		
 		}finally {
 			close(rs);
 			close(stmt);
-			
 		}
-		
-		
 		//5. 결과 반환
 		return mapList;
 	}
 
 
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-	
-
-
-	
-
-
-
-
-
-
 }
-
-	
-
-
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
-
-
-
-
-

@@ -1,16 +1,26 @@
 package edu.kh.jdbc.board.model.service;
 
+import static edu.kh.jdbc.common.JDBCTemplate.close;
+import static edu.kh.jdbc.common.JDBCTemplate.commit;
+import static edu.kh.jdbc.common.JDBCTemplate.getConnection;
+import static edu.kh.jdbc.common.JDBCTemplate.rollback;
+
 import java.sql.Connection;
 import java.util.List;
-import static edu.kh.jdbc.common.JDBCTemplate.*;
+
+
 import edu.kh.jdbc.board.model.dao.BoardDAO;
+import edu.kh.jdbc.board.model.dao.CommentDAO;
 import edu.kh.jdbc.board.model.dto.Board;
+import edu.kh.jdbc.board.model.dto.Comment;
 
 //데이터 가공,트랜잭션 처리
 public class BoardService {
 
 	private BoardDAO dao = new BoardDAO();
 
+	private CommentDAO commentDao = new CommentDAO();
+	
 	/**1.게시판 목록 조회
 	 * @return boradList
 	 * @throws Exception
@@ -38,10 +48,20 @@ public class BoardService {
 		
 		Board board = dao.selectBoard(conn,input);
 		
-		
-		
 		//3.게시글이 조회된 경우  //null이 아니라는 의미는 내용 있다는 뜻
 		if(board != null ) {
+			
+			
+			//****************************************************************************
+			//**해당 게시글에 대한 댓글 목록 조회 DAO 호출**
+			List<Comment> commentList = commentDao.selectCommentList(conn,input);
+			
+			//board에 댓글 목록 세팅
+			board.setCommentList(commentList);
+			
+			
+			//****************************************************************************
+			
 			//4.조회수 증가
 			//단, 게시글 작성자와 로그인한 회원이 다를 경우
 			if(board.getMemberNo() != memberNo) {
