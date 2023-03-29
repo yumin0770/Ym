@@ -61,8 +61,7 @@ public class MainView {
 					System.out.print("\n 메뉴 선택 : ");
 					input= sc.nextInt();
 					sc.nextLine(); //입력 버퍼 개행 문자 제거
-					
-					
+						
 					switch(input) {
 					case 1 : memberView.memberMenu(); break;
 					case 2 : boardView.boardMenu(); break;

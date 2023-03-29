@@ -95,7 +95,6 @@ public class BoardService {
 		
 		return result;
 	}
-
 	/**게시글 삭제하기
 	 * @param boardNo
 	 * @return result

@@ -169,7 +169,6 @@ public class BoardView {
             	default : System.out.println("\n*** 잘못 입력 하셨습니다.***\n");
               	  }
             	}
-            	
             }
 			
 		} catch (Exception e) {

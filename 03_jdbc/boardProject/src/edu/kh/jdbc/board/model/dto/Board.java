@@ -12,8 +12,7 @@ public class Board {
 	private String memberName; 	   //회원 이름
 	private int commentCount;      //댓글 수
 	
-	
-	
+
 	
 	public Board() {}
 

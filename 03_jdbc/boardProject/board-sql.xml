@@ -3,7 +3,6 @@
 <properties>
 	
 	<!-- Board용  SQL 모음 -->
-	
 	<entry key = "selectAllBoard">
 	SELECT BOARD_NO,BOARD_TITLE,MEMBER_NM,CREATE_DT,READ_COUNT,
 		(SELECT COUNT(*) FROM "COMMENT" SUB

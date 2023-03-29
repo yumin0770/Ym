@@ -32,7 +32,6 @@ public class MainService {
 		//4.결과 반환
 		return member;
 	}
-
 	/**아이디 중복 검사 서비스
 	 * @param memberId
 	 * @return

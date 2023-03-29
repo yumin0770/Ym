@@ -269,9 +269,7 @@ public class BoardDAO {
 		}finally {
 			
 			close(pstmt);
-		}
-		
-		
+		}		
 		return result;
 	}
 	
