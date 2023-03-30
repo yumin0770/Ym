@@ -16,7 +16,7 @@ java.sql.SQLSyntaxErrorException
 
 java.sql.SQLSyntaxErrorException: ORA-00933: 
 SQL 명령어가 올바르게 종료되지 않았습니다
-- SQL에 세미콜론이 포함됨
+- SQL에 세미콜론이 포함됨.
 
 
 java.sql.SQLException: 실행할 SQL 문은 비어 있거나 널일 수 없음

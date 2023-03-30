@@ -126,6 +126,9 @@ public class CommentView {
 	}
 	
 	
+	/**댓글 수정
+	 * @param boardNo
+	 */
 	public void updateComment(int boardNo) {
 	
 		System.out.println("\n===== 댓글 수정 =====\n");
