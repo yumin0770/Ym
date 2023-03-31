@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12_HTML실습문제_3</title>
+</head>
+<body>
+    <h1>회원 가입</h1>
+<form>
+    <fieldset>
+        <legend>필수 입력 사항</legend>
+        <table>
+        <tr>
+            <th>ID</th>
+            <td colspan="3"><input type="id" maxlength="10" placeholder="아이디 10글자 이내"></td>
+            <td colspan="1"><button>중복 확인</button></td>
+        </tr>
+        <tr>
+            <th>비밀번호</th>
+            <td colspan="4"><input type="password" size="28px" maxlength="8"
+                placeholder="영문,숫자, 특수문자 포함 8자 이상"></td>
+         
+        </tr>
+        <tr>
+            <th>비밀번호 확인</th>
+            <td colspan="4"><input type="password" size="28px" maxlength="8"></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td colspan="1"><input type="email"></td>
+            <td colspan="3"><select name="" id="">
+                    <option value="">직접입력</option>
+            </select></td>
+            
+        </tr>
+        </table>
+    </fieldset>
+
+
+    <fieldset>
+        <legend>추가 정보</legend>
+        프로필 사진 <button>파일 선택</button> <small>선택된 파일 없음</small><br>
+        <br>
+
+        성별: <input type="radio" checked>여자 <input type="radio"> 남자<br>
+        <br>
+
+        생년월일 : <input type="date" name="" id=""><br>
+        <br>
+
+        취미 <br>
+        <input type="checkbox" name="" id="">야구
+        <input type="checkbox" name="" id="">농구
+        <input type="checkbox" name="" id="">축구 <br>
+        <input type="checkbox" name="" id="" checked>공부 
+        <input type="checkbox" name="" id="">음악감상 <br>
+        <input type="checkbox" name="" id="">기타 
+        <input type="text">
+        
+        <br><br>
+        자기소개<br>
+        <textarea cols="100" rows="10"></textarea>
+
+    </fieldset>
+    <br>
+
+    <button>회원가입</button>
+    <button type="reset">다시입력</button>
+    <button src="../01_HTML/11_HTML실습문제_2.html">이전으로</button>
+
+</form>
+</body>
+</html>
+       
