@@ -183,7 +183,7 @@ WHERE ROLE= 'CONNECT';
 GRANT CONNECT, RESOURCE, CREATE VIEW TO kym_sample;
 									--  (계정명)
 
-
+	
 
 
 

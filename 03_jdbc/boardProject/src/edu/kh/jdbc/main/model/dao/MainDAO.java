@@ -75,7 +75,7 @@ public class MainDAO {
 			//-> 따로 DB에서 얻어 올 필요가 없다.
 				String memberName = rs.getString("MEMBER_NM");
 				String memberGender = rs.getString("MEMBER_GENDER");
-				String enrollDate = rs.getString("ENPROLL_DT");
+				String enrollDate = rs.getString("ENROLL_DT");
 				
 				//MEMBER 객체 생성 후 값 세팅
 				
