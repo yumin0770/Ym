@@ -1,0 +1,65 @@
+h1{
+    color: #0000ff
+}
+
+p{
+    color:green
+}
+
+.accent{
+    color:height(0, 100%, 50%);
+    font-weight: bold;
+}
+
+.accent{
+    color: red;
+}
+
+.center{
+    text-align: center;
+}
+
+.justify{
+    text-align: justify;
+}
+
+.shadow1{
+    color:red;
+    text-align: center;
+}
+
+.shadow2{
+    color:orangered;
+    text-align: start;
+}
+
+.shadow3{
+    letter-spacing: 0.2em;
+}
+
+ th,td {
+    border: 1px dotted black; 
+    padding: 10px;
+}
+
+.box1{
+    border: 1px solid black;
+    border-left-color: aqua;
+    color: #0000ff;
+    width:400px;
+    height: 200px;
+    margin: 200px solid red;
+    padding: 20px 30px 40px 50px;
+
+}
+.box2{
+    border: 1px solid black;
+    border-left-color: aqua;
+    color: #0000ff;
+    width:400px;
+    height: 200px;
+    margin: 0 auto;
+
+}
+
+
