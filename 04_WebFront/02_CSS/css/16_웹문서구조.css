@@ -1,0 +1,72 @@
+*{
+    box-sizing: border-box;    
+    padding: 0;
+    marging: 0;
+}
+
+div{border: 1px solid black;} /* 다 만들고 삭제 */
+
+.container{
+    width: 1140px;
+    margin: auto;
+    /* min-height: 요소의 최소 높이
+            -> 내부 요소가 없어도 최소 높이 유지
+            -> 내부 요소가 지정된 크기를 초과하면 그에 맞게 늘어남.
+    */
+    min-height: 500px;
+
+}
+
+/* header */
+.header{
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.header>div:nth-child(1){
+    width: 15%;
+    height: 100%;
+}
+.header>div:nth-child(2){
+    width: 70%;
+}
+.header>div:nth-child(3){
+    width: 15%;
+    height: 100%;
+}
+
+/* nav */
+.nav{
+    height: 50px;
+    position: sticky;
+    /* 화면 밖을 벗어났을 때 지정된 위치에 고정*/
+    top : 0; /* 최상단에 붙임 */
+
+}
+
+.content{
+    height: 800px;
+    display: flex;
+
+    /* flex 지정 시 기본값 */
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    
+    /* flex-start: flex요소에만 사용 가능한 정렬 방식 */
+    /* start: block요소, flex, grid 등에서도 적용 가능한 정렬 방식 */
+}
+.content-1 { flex-basis: 70%;}
+.content-2 { flex-basis: 30%;}
+
+/* footer */
+.footer{
+    height: 200px;
+    background-color: #a3add342;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
