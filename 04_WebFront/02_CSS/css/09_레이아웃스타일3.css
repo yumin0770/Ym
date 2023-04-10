@@ -27,17 +27,18 @@ div{
 .first{
     width: 100%;
     height: 100%;
-    background-color: yellowgreen;
+    background-color: rgb(49, 58, 188);
 
     position: absolute;
     z-index:1;
 }
 
 .second{
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     background-color: green;
     position: absolute;
+    
     /* 요소의 기존 배치 순서를 무시하고 겹쳐서 배치 */
 
     top: 50px;
@@ -52,7 +53,7 @@ div{
     height: 100px;
     background-color: red;
 
-    position : absolute;
+   position : absolute;
     
     left: 100px;
     top : 100px;

@@ -75,3 +75,27 @@ background-color: lemonchiffon;
     width: 100%;
     height: 50%;
 }
+
+.container-2{
+    width: 400px;
+    height: 200px;
+}
+
+.bg1{background-color: red;}
+.bg2{background-color: orange;}
+.bg3{background-color: yellow;}
+.bg4{background-color: green;}
+.bg5{background-color: blue;}
+.bg6{background-color: navy;}
+.bg7{background-color: violet;}
+
+.col1{
+    width: 50%;
+    height: 100%;
+    float: left;
+} 
+
+ .row1{
+    width: 100%;
+    height: 50%;
+} 
