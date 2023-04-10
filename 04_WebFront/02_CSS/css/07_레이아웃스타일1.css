@@ -12,11 +12,10 @@
     display: block; /* 요소 형식을 block으로 지정 */
 }
 
-.inline{display: inline;}/* 요소 형식을inline으로 지정 */
+.inline{ display: inline; } /* 요소 형식을 inline으로 지정 */
 
 /* 요소 형식을 inline-block으로 지정 */
-.inline-block{display: inline-block;}
-
+.inline-block{ display: inline-block;}
 
 /* 상하 2분할 */
 /* 감싸는 요소 스타일 지정 */
