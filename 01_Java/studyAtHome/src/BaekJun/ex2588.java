@@ -8,26 +8,18 @@ public class ex2588 {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("A 입력:");
-		int A = sc.nextInt();
-		System.out.println("B 입력:");
-		int B = sc.nextInt();
+		int H = sc.nextInt();
+		int M = sc.nextInt();
 		
-		System.out.println(A*(B % 10));
-		System.out.println(A*((B/10)%10-(B%10)/10));
-		System.out.println(A*((B/10%100)-(B/10 % 10))/10);
-		System.out.println(A*B);
-		
-		int C = (B % 10) * A;
-		int D = ((B % 100)/10)*A;
-		int E = (B /100)*A;
+		if(M>45) {System.out.println(H + " "+ (M-45));}
+		else if (H>0){System.out.println((H-1) + " " + (M+60-45));}
+		else {System.out.println((H-1+24) + " "+(M+60-45));}
+	
 		
 		
-		System.out.println(C);
-		System.out.println(D);
-		System.out.println(E);
-		System.out.println(A*B);
+		}
+		
 		
 	}
 
-}
+

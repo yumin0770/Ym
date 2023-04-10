@@ -1,5 +1,6 @@
 package study.main.view;
 
+import java.sql.SQLException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -45,7 +46,7 @@ public void mainMenu() {
 				switch(input) {
 				case 1 :login(); break;
 				case 2 :signUp(); break;
-				case 3 :seachPw(); break;
+				case 3 :searchPw(); break;
 				case 0: System.out.println("\n=== 프로그램 종료 ===\n");break;
 				default : System.out.println("\n*** 메뉴 번호만 입력 해주세요. ****\n");
 				}		
@@ -62,8 +63,8 @@ public void mainMenu() {
 				sc.nextLine(); //입력 버퍼 개행 문자 제거
 					
 				switch(input) {
-				case 1 : memberView.memberMenu(); break;
-				case 2 : boardView.boardMenu(); break;
+				case 1 :  break;
+				case 2 :  break;
 				case 3 : 
 					System.out.println("\n=== 로그아웃 되었습니다 ===\n");
 					Session.loginMember = null;
@@ -85,6 +86,11 @@ public void mainMenu() {
 	
 	
 }
+	private void searchPw() {
+	// TODO Auto-generated method stub
+	
+}
+
 	private void login() {
 		
 		System.out.println("로그인");
@@ -97,17 +103,34 @@ public void mainMenu() {
 		String memberPw = sc.next();
 		
 		//서비스 호출(매개변수와 함께) - session에 저장
-		Session.loginMember = service.login(memberId,memberPw);
+		try {
+			Session.loginMember = service.login(memberId,memberPw);
+		
 		//로그인 완료
 		
+		if(Session.loginMember != null) {
+			System.out.println("로그인 완료");
+		}
+		
 		//로그인 실패
+		else {
+			System.out.println("로그인 실패");
+		}
 		
-		
-		
-		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
 	}
 	
+	/**
+	 *회원가입
+	 */
+	private void signUp() {
 	
+	
+	
+    }
 	
 	
 	
