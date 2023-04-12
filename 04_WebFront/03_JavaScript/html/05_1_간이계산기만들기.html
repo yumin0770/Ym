@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_1_간이계산기만들기</title>
+</head>
+<br>
+
+두 수를 입력 받아 버튼에 작성된 연산을 수행하는 계산기 만들기
+<!-- 
+        if, for, while, swith, break, continue 사용 가능
+     -->
+
+<hr>
+첫 번째 값 : <input type="a" id="num1"> <br>
+두 번째 값 : <input type="b" id="num2"> <br>
+
+<button onclick="sumFn()">+</button>
+<button onclick="minusFn()">-</button>
+<button onclick="mulFn()">*</button>
+<button onclick="divFn()">/</button>
+<button onclick="modFn()">%</button>
+
+<br><br>
+계산 결과: <span id="result"><!-- 여기에 결과 출력 --></span>
+
+<script>
+    //작성된 HTML 요소에 원하는 속성(id, class, onclick)
+    //필요한 JS코드 (funtion)를 이용하여 계산기 만들기
+            //전역 변수에 각 요소 저장
+     
+
+
+    function sumFn() { 
+        const num1 =  document.getElementById("num1").value;
+        const num2 =  document.getElementById("num2").value;
+        const result =  document.getElementById("result");
+        result.innerText =  Number(num1.value) + Number(num2.value); 
+    }
+    //글자를 읽어오고 싶을 때 innerText
+
+    function minusFn() {
+        const num1 = document.getElementById("num1").value;
+        const num2 = document.getElementById("num2").value;
+        const result = document.getElementById("result");
+        result.innerText = Number(num1) - Number(num2);
+    }  
+    function mulFn()  {
+        const num1 = document.getElementById("num1").value;
+        const num2 = document.getElementById("num2").value;
+        const result = document.getElementById("result");
+        result.innerText = Number(num1) * Number(num2);
+
+    }
+    function divFn()  {
+        const num1 = document.getElementById("num1").value;
+        const num2 = document.getElementById("num2").value;
+        const result = document.getElementById("result");
+        result.innerText = Number(num1) / Number(num2);
+
+    }
+    function modFn()  {
+        const num1 = document.getElementById("num1").value;
+        const num2 = document.getElementById("num2").value;
+        const result = document.getElementById("result");
+        result.innerText = Number(num1) % Number(num2);
+
+    }
+
+    //왜 이어써질까
+    //HTML에서 얻어오는 모든것은 다 String(문자열) 얻어온 문자열이 숫자로만 되어있어
+    //number 타입으로 얻어오려면 Number로 써준다.
+    result.innerText = Num(num1.value) + Num(num2.value);
+
+</script>
+
+
+</body>
+
+</html>
