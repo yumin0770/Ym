@@ -207,6 +207,9 @@ document.getElementById("mod").addEventListener('click',function(){
 document.testForm.addEventListener("submit",function(e){
     
     //e : 이벤트 객체
-    e.preventDefault(); //기본 이벤트
+     e.preventDefault(); //기본 이벤트 
+
+    //preventDefault - a태글 눌러도 href링크로 이동하지 않게 함. 새로 실행하지 않게함.
+    //submit은 됨
 
 });
