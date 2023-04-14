@@ -3,9 +3,7 @@ document.getElementById("testBtn").addEventListener("click", ()=>{
 
     console.log("0초");
 
-    window.setTimeout(()=>{
-        console.log("1초");
-    }, 1000);
+    window.setTimeout(()=>{console.log("1초");}, 1000);
 
     window.setTimeout(()=>{
         console.log("2초");
@@ -19,7 +17,7 @@ document.getElementById("testBtn").addEventListener("click", ()=>{
 
 //window.setInterval(함수, 지연시간(ms));
 const loadingTime = document.getElementById("loadingTime");
-window.setInterval(()=>{loadingTime.innerText = Number(loadingTime.innerText)+1;s}, 1000);
+window.setInterval(()=>{loadingTime.innerText = Number(loadingTime.innerText)+1;}, 1000);
 
 const clock = document.querySelector("#clock");
 
