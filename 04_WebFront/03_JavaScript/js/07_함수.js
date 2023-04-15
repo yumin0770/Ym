@@ -93,7 +93,7 @@ document.querySelector("#button4").addEventListener("click", () => {
     //object를 변수를 저장해서 리턴하는건 가능
     prinkConsole (num => temp );
     
-    //retunr, {}생략 상태에서 object를 직접 작성하면 오류 발생
+    //return, {}생략 상태에서 object를 직접 작성하면 오류 발생
     //-> JS 객체의 {}를 함수 정의 부분의 {}로 인색해서 구문 오류 발생
 /*     prinkConsole (num => {"price": 100,  "name": "사탕"} ); */
 
