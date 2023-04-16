@@ -20,7 +20,7 @@ document.getElementById("btn1").addEventListener("click",()=>{
     // ** append(노드) :  마지막 자식으로 추가(덧붙이다) 
     li1.parentElement.append("ABCD");
 
-    //#test의 첫번째 자식 노드 탐색 : firstChil
+    //#test의 첫번째 자식 노드 탐색 : firstChild
 
     console.log(document.getElementById("test").firstChild);
     
