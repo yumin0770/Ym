@@ -17,10 +17,10 @@ public class ExampleController1 extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 	
-	//HttpServletRequest 
+	//HttpServletRequest 요청
 		// -클라이언트 요청 시 생성되는 객체
-		// -클라이언트 데이터 + 요청 관련 데이터
-	//HttpServletResponse 
+		// -클라이언트 데이터 + 요청 관련 데이터 (언제,어디서 ip를 요청했는가)
+	//HttpServletResponse 응답
 		// -클라이언트 요청 시 서버에서 생성하는 객체
 		// -서버가 클라이언트에게 응답하기위한 방법을 제공하는 객체
 		
@@ -33,7 +33,7 @@ public class ExampleController1 extends HttpServlet {
 	// name 속성 값이 일치하는 데이터의 value를 얻어와
 	// String 형태로 반환
 	
-	String name = req.getParameter("inputName");
+	String name = req.getParameter("inputName");   
 	String age = req.getParameter("inputAge");
 	
 	System.out.println("입력 받은 이름 : " + name);
