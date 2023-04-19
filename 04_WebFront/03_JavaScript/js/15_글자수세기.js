@@ -1,18 +1,15 @@
-const s = document.getElementById("count");
-const l = document.getElementById("content").value;
+const count = document.getElementById("count");
+const content = document.getElementById("content");
 
 
-l.addEventListener('keyup',()=>{
+content.addEventListener('keyup',()=>{
+
+   count.innerText = content.value.length;
     
-    const l = document.getElementById("content").value;
-
-    s.innerText = l.length;
-   
-    
-    if(l.length>100){
-        s.classList.add('error');
+    if(content.length>100){
+        count.classList.add('error');
     }else{
-        s.classList.remove('error')
+        count.classList.remove('error')
     }
 
     //요소.classList.toggle('클래스명')
