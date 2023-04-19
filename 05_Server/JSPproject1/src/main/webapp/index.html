@@ -7,28 +7,89 @@
     <title>JSP Project1</title>
 </head>
 <body>
-
     <h1>로그인 테스트</h1>
     <pre>
-        입력된 ID/PW가 user01/pass01이면 로그인 성공
-        아니면 "아이디 또는 비밀번호 일치하지 않습니다" 출력
+        입력된 ID/PW가  user01/pass01이면 "로그인 성공"
+        아니면 "아이디 또는 비밀번호가 일치하지 않습니다" 출력
     </pre>
 
     <form action="/login" method="POST">
-        ID : <input type="text" name="id"><br>
-        PW : <input type="password" name="pw"><br>
-        <button>login</button>
 
+        ID : <input type="text" name="id"> <br>
+        PW : <input type="password" name="pw"> <br>
+        <button>Login</button>
     </form>
+
+    <hr>
+
+    <h1>a태그 클릭 시 화면 전환하기</h1>
+
+    <h3 style="color:red">a태그, js코드(location) 요청은 모두 GET 방식</h3>
+
+    <a href="/test/result">페이지 이동</a>
     
     <hr>
 
-    <h1>a태그 클릭시 화면 전환하기</h1>
-    
-    <h3 style="color: red;">a,js 코드 요청 모두 GET방식</h3>
-    <a href="/test/result">페이지 이동</a>
+    <h1>피자 주문하기</h1>
+
+    <form action="/pizzaOrder" method="POST">
+
+    피자:
+    <select name="pizza">
+        <option value="1">치즈피자(8000)</option>
+        <option value="2">콤비네이션 피자(9000)</option>
+        <option value="3">핫치킨 피자(10000)</option>
+    </select>
+
+        <br><br>
+
+        사이즈 <br>
+        <label >
+            R <input type="radio" name="size" value="R">
+        </label>
+        <label >
+            L <input type="radio" name="size" value="L">
+        </label>
+
+        <br><br>
+
+        수량 :
+        <button type="button" id="minus">-</button>
+        <span id="amount">0</span>
+        <button type="button" id="plus">+</button>
+
+        <input type="hidden" name="amount" value="0">
+        
+        <br><br>
+        <button>주문하기</button>
+    </form>
+
+    <script>
+
+       const plus = document.getElementById("plus");
+       const minus = document.getElementById("minus");
+       const amount = document.getElementById("amount");
+       const input = document.querySelector("[name='amount']");
+
+       //plus 버튼 클릭시 amount, input 1 증가
+
+        plus.addEventListener("click",()=>{
+            amount.innerText++; //1증가 시킴
+            input.value =  amount.innerText;
+        })
+
+        minus.addEventListener("click",()=>{
+
+            //만약 수량이 0이면 이벤트 핸들러 종료
+            if(amount.innerText ==0 ) return;
+
+            amount.innerText--; //1감소 시킴
+            input.value =  amount.innerText;
+        })
 
 
 
+
+    </script>
 </body>
 </html>

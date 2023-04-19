@@ -15,12 +15,13 @@
         <li>id : <%= request.getParameter("id") %> </li>
         <li>pw : <%= request.getParameter("pw") %> </li>
     </ul>
-    
+
     <%-- JSP 주석 --%>
     <%-- Servlet에서 추가한 속성(message) 얻어오기 --%>
 
     <%-- Object request.getAttribute("키") --%>
-    <h1><%= request.getAttribute("message") %> </h1>
+
+    <h1> <%= request.getAttribute("message") %> </h1>
 
     <button type="button" onclick="history.back()">돌아가기</button>
 
