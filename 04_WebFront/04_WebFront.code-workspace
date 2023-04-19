@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../Users/user1/Downloads/Flexbox_And_Responsive/MediaQueries Starter"
+		},
+		{
+			"path": "../../Users/user1/Downloads/04_CSS_Intro/text_properties"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501,
+		"liveServer.settings.multiRootWorkspaceName": "04_WebFront"
+	}
+}

@@ -1,0 +1,11 @@
+#content{
+    /*   textarea 사이즈 조정 x  */
+    resize: none; 
+
+}
+
+.error{
+    color: red;
+    font-weight: bold;
+}
+

@@ -72,8 +72,8 @@ document.getElementById("btn2").addEventListener("click",()=>{
     console.log(arr.toString());
     console.log(arr.join("/"));
 
-    arr.forEach(value=> {
-        console.log("값 : " + value)
+    arr.forEach((index,value)=> {
+        console.log(value + " 값 : " + index)
     });
     
 
