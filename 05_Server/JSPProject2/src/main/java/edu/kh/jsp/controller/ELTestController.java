@@ -67,7 +67,6 @@ public class ELTestController extends HttpServlet {
 		//req안에 위의 para과 attribute 담겨져있다.
 		
 		
-		
 	}
 
 
