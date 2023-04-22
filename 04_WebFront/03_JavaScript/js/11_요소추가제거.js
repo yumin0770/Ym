@@ -3,16 +3,16 @@
 
 const calc = document.getElementById("calc");
 
-calc.addEventListener("click",()=>{
-    const list = document.getElementsByClassName("in");
+calc.addEventListener("click",()=>{ //계산 버튼을 눌렀을 때
+    const list = document.getElementsByClassName("in"); // in클래스들을 불러와서 list에 저장함
 
-    let sum = 0;  //합계 저장용 변수
+    let sum = 0;  //합계 저장용 변수선언
     
-    for(i=0; i<list.length; i++){
+    for(i=0; i<list.length; i++){ // 리스트의 길이(클래스 수만큼 누적)
         //HTML에 작성된 모든 내용, 속성, 값은 String(문자열);
-      sum += Number(list[i].value);
+      sum += Number(list[i].value); //리스트의 인덱스, 클래스의 하나 값들의 누적
     
-    }alert(sum);
+    }alert(sum); //합계를 alert창으로
 });
 //----------------------------------------------------------------------
 
@@ -70,11 +70,11 @@ add.addEventListener("click",()=>{
      //span에 &times;내용 추가(innerHTML 사용)
      span.innerHTML = "&times";
 
-     //만들어진 span요소에 이벤트리스너 추가
-     span.addEventListener("clickk",e=>{
-        //클래스 부모요소 삭제
+      // 만들어진 span 요소에 이벤트리스너 추가
+    span.addEventListener("click", e => {
+        // 클릭된 요소의 부모 요소를 삭제 == row 삭제
         e.target.parentElement.remove();
-     });
+    });
 
 
 
