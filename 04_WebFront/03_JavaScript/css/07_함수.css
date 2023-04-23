@@ -14,6 +14,6 @@ code{
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    user-select: none;
+    user-select: none;  /* //클릭할 때마다 블럭처리 되는거 막음 */
 
 }

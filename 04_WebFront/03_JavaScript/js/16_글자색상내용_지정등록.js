@@ -13,7 +13,7 @@ btn.addEventListener('click',()=>{
 
 regi.addEventListener('click',()=>{
 
-    const p = document.createElement("p")  //p 태그를 추가
+    const p = document.createElement("p")  //p 태그를 불러와서 저장
     
     p.innerText =  content.value; //p태그 안에 content 내용을 추가
 

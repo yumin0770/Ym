@@ -82,10 +82,13 @@ test3.addEventListener("click", function(e){
     //e.target : 이벤트가 발생한 현재 요소(==this)
 
     /* console.log(e); */
+    //화살표 함수에서는 this를 못 써서 e.target으로 쓴다
 
     const currentWidth = e.target.clientWidth;
 
     //현재 너비가 500px을 초과하면 너비/높이 200px로 초기화
+    //왜 -20? 이벤트 +20 이벤트 위에 먼저 실행 클릭해서 20을 늘려도
+    //이전 너비 값이 나오므로 -20 처리 해줘야 500넘는 순간 200px으로 돌아온다
     if(currentWidth >  500 -20 ){
         e.target.style.width = "200px";
         e.target.style.height = "200px";
@@ -159,7 +162,7 @@ document.getElementById("mod").addEventListener('click',function(){
   document.getElementById("moveGoogle").addEventListener("click",function(e){
 
     //e : 이벤트 객체
-    e.preventDefault(); //기본 이벤트를 막아버림
+    e.preventDefault(); //기본 이벤트를 막아버림 //구글 페이지로 안 넘어감
 
     //Default 기본/기본값
     //Pevent 막다, 예방하다

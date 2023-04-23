@@ -49,8 +49,8 @@
             open.addEventListener("click",e=>{
               
             //클릭된 다음 요소 선택
-                const next = e.target.nextElementSibling;
-
+                const next = e.target.nextElementSibling; //open(span)의 다음요소 <p>
+                    
                 //next가 display == "none"인 경우
                 if(next.style.display == "none" ){
                     //inline-block으로 변경
@@ -63,7 +63,7 @@
 
                 }else{
                     //next가 display == "inline-block";
-                next.style.disply ="none";
+                next.style.display ="none";
                 e.target.style.backgroundColor = "green";
                 e.target.innerText =  "열기";         
                 }

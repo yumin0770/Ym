@@ -12,7 +12,8 @@
     background-color: rgb(178, 199, 217);
     overflow: auto; /* 내용이 테두리를 넘어서면 스크롤이 자동으로 생성 */
 
-    word-break: break-all; /* 글자가 감싸고 있는 요소를 넘어서면 자동 줄바꿈 */
+    word-break: break-all; /* 글자가 감싸고 있는 요소를 
+    넘어서면 자동 줄바꿈 */
 }
 
 #chattingContainer > p{ /* 채팅이 출력되는 라인 */

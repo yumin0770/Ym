@@ -22,9 +22,9 @@ document.getElementById("btn1").addEventListener("click",()=>{
 
     //#test의 첫번째 자식 노드 탐색 : firstChild
 
-    console.log(document.getElementById("test").firstChild);
+    console.log(document.getElementById("test").firstChild); //#text
     
-    //#test의 마지막 자식 노드 탐색 : lastChild
+    //#test의 마지막 자식 노드 탐색 : lastChild //"ABCD"
     console.log(document.getElementById("test").lastChild);
 
     //중간에 존재하는 자식 노드 탐색: childNodes[인덱스]
@@ -35,8 +35,8 @@ document.getElementById("btn1").addEventListener("click",()=>{
     // 이전 형제 노드 탐색 : previousSibling
     // 다음 형제 노드 탐색 : nextSibling
 
-    console.log(list[8].previousSibling);
-    console.log(list[8].nextSibling);
+    console.log(list[8].previousSibling);  //comment(주석)
+    console.log(list[8].nextSibling); //list (컬러지정된 요소li)
 
     //탐색 구문은 연달아서 작성 가능
     console.log(list[11].firstChild.nextSibling.nextSibling);

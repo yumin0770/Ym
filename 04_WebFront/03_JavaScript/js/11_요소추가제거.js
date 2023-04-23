@@ -68,7 +68,7 @@ add.addEventListener("click",()=>{
      span.classList.add("remove-row");
 
      //span에 &times;내용 추가(innerHTML 사용)
-     span.innerHTML = "&times";
+     span.innerHTML = " &times";
 
       // 만들어진 span 요소에 이벤트리스너 추가
     span.addEventListener("click", e => {

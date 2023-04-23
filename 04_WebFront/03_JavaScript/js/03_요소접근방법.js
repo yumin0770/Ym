@@ -55,7 +55,7 @@ function accessName(){
         // 해당 요소가 체크되어 있으면 true, 아니면 false 반환
 
         if(hobbyList[i].checked){ // 체크 되어 있을 경우
-            result += hobbyList[i].value + ""; // value 값 누적
+            result += hobbyList[i].value + " "; // value 값 누적
             count++; // 1 증가
         }
     }
@@ -114,9 +114,9 @@ function readValue(){
         //채팅 내용 출력 후
         //container의 스크롤을 제일 밑으로 내리기
 
-        //요소.scrollTop        : 요소 내부 현재 스크롤 위치를 반환
+        //요소.scrollTop        : 요소 내부 현재 스크롤 위치를 반환//스크롤이 어디에 있는지 알려줌
         //요소.scrollTop = 위치;: 스크롤을 지정된 위치로 이동
-        //요소.scrollHeight    :스크롤 전체 높이 반환
+        //요소.scrollHeight    :스크롤 전체 높이 반환 //스크롤 제일 밑 길이 값
         container.scrollTop = container.scrollHeight;
     }
     
@@ -130,6 +130,9 @@ function readValue(){
 //input 태그에 엔터가 눌러졌을 때
 function inputEnter() {
 
- /*    console.log( window.event.key );  *///현재 눌러진 키를 반환
-        if(window.event.key == "Enter") readValue
+ /*    console.log( window.event.key );  
+    *///현재 눌러진 키를 반환
+        if(window.event.key == "Enter") readValue;
 }
+
+//readValue 함수 불러오겠다

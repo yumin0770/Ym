@@ -65,13 +65,14 @@ const temp = 999;
 
 function testFn2(){ 
     let let1 = 20;
-    let let2 = 200;
+    let let2 = 200; //변수명 중복X
 
     if(1 ==1){
-        let let1 = 30;
-        let let3 = 300; //let3 is not defined
+        let let1 = 30; //변수명 중복 가능
+        let let3 = 300; //let3 is not defined //var로 바꾸면 나옴 300
+        //우리가 알고있던 변수의 범위
     }
-    console.log("if문 내부 let3 : " + let3);
+    console.log("if문 내부 let3 : " + let3);//let3 is not defined
 }
 
 
@@ -144,7 +145,7 @@ function typeTest(){
     console.log(user);//콘솔로 객체 출력 시 
                         //브라우저가 파악하기 쉽게 바꿔서 출력
     //객체 V 출력 방법 (1)
-    box.innerHTML += "<br>user.id : " + user.id;
+    box.innerHTML += "<br>user.id : " + user.id + typeof user.id;
     box.innerHTML += "<br>user.pw : " + user.pw;
     box.innerHTML += "<br>user.address : " + user.address;
 
