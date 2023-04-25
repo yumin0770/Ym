@@ -43,90 +43,53 @@
 
 
     <script>
+ 
+        const addBtn = document.getElementById('addBtn');
+        const container = document.getElementsByClassName("container")[0];
 
-        const addBtn = document.getElementById('addBtn')
-        const container = document.getElementsByClassName('container')[0];
-
-        //새로운 상품 추가 버튼 클릭 시
         addBtn.addEventListener('click',()=>{
-            
-            //tr요소
-            const tr = document.createElement('tr');
 
-            //td두개 생성
+            const tr = document.createElement('tr');
             const td1 = document.createElement('td');
             const td2 = document.createElement('td');
+            const input1 = document.createElement('input');
+            const input2 = document.createElement('input');
 
-           //input 2개 생성
-           const input1 = document.createElement('input');
-           const input2 = document.createElement('input');
+            input1.setAttribute('type','text');
+            input2.setAttribute('type','number');
 
-        
-           //각각의 input태그에 type을 지정
+            input1.classList.add('pName');
+            input2.classList.add('price');
 
-           input1.setAttribute('type','text');
-           input2.setAttribute('type','number');
-
-           //각각의 input태그에 class를 추가
-           input1.classList.add('pName');
-           input1.classList.add('price');
-
-           //알맞은 형태로 조립
-           //.container -> tr -> td 2개 -> input 1개씩
-
-           td1.append(input1); //td1 자식으로 input1 추가
-           //<td><input type="text" class="pName"> 
-
+            td1.append(input1);
             td2.append(input2);
 
-            //tr의 자식으로 td1,td2를 추가한다
             tr.append(td1);
             tr.append(td2);
-            //<tr>
-            // <td><input type="text" class="pName">
-            // <td>  <input type="number" class="price">
-            //</tr>
-
-            //.container의 자식으로 tr을 추가한다.
 
             container.append(tr);
+
         });
 
-     /*    <button id="resultBtn">결과 확인</button>
-    
-    <h3>상품 개수 : <span id="amount"></span></h3>
-    <h3>전체 가격 : <span id="sum"></span></h3>
- */
 
-        const resultBtn = document.getElementById("resultBtn");
+        const resultBtn =document.getElementById("resultBtn");
         const amountSpan = document.getElementById("amount");
         const sumSpan = document.getElementById("sum");
 
-        //결과 확인 버튼 클릭 시 상품 개수, 총 가격 구하기
-        resultBtn.addEventListener("click",()=>{
+        resultBtn.addEventListener('click',()=>{
 
-            const priceList = document.getElementsByClassName("price");
+            const priceList = document.getElementsByClassName('price');
+            amountSpan.innerText =  priceList.length;
 
-            //상품 개수(amount)의 내용으로 priceList의 길이 출력
-          
-            amountSpan.innerText = priceList.length;
+            sum =0;
 
-            //가격 합계
-            let sum = 0;
+            for(let p of priceList){
+                sum+=Number(p.value);
 
-            //priceList의 요소를 하나씩 순차 접근해서 
-            //각각의 값을 얻어와 sum에 누적
-            for(let price of priceList){
-                //price: 하나씩 꺼낸 요소 (input)
-                sum += Number(price.value);     
+                sumSpan.innerText = sum;
             }
 
-            //sumSpan 안에 누적한 값을 내용으로 출력
-            //innerText :태그 해석 X (문자열로 그대로 보임)
-            //innerHTML : 태그 해석 O
-            sumSpan.innerText = sum; 
         });
-
 
 
 
