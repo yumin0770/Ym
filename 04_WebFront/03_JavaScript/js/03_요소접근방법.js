@@ -28,7 +28,7 @@ function accessId(){ // 함수 선언
 function accessClass(){
                         // class가 같은 요소를 모두 찾아 배열로 반환
     var div2Arr = document.getElementsByClassName("div2");
-
+    
     // 배열.length : 배열 길이
     // 배열[i] : i번 인덱스 요소 
 
