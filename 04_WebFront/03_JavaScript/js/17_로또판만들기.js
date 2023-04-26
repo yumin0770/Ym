@@ -30,6 +30,7 @@ document.getElementById("createBtn").addEventListener("click",()=>{
                 } //active 클래스를 가진 요소가 6개 미만인 경우
                 e.target.classList.toggle("active");
             }
+            
         });
         //로또판에 child 추가
         lottoBoard.append(child);
