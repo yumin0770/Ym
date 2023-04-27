@@ -68,7 +68,8 @@
           <groupId>org.apache.commons</groupId>
           <artifactId>commons-dbcp2</artifactId>
           <version>2.9.0</version>
-      </dependency>
+      </dependency
+>
    
       <!-- Spring 모듈 -->
       <dependency>

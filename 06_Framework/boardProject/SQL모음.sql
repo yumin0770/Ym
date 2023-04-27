@@ -78,16 +78,22 @@ VALUES(SEQ_MEMBER_NO.NEXTVAL, 'user02@kh.or.kr','pass02!'
 COMMIT;
 
 ------------------------------------------------------------
---로그인 SQL
+
+
+-- 로그인 SQL
 SELECT MEMBER_NO, MEMBER_EMAIL, MEMBER_NICKNAME,
-		MEMBER_TEL, MEMBER_ADDR, PROFILE_IMG, AUTHORITY, 
-		TO_CHAR(ENROLL_DATE, 'YYYY"년" MM"월" DD"일" HH24"시" MI"분" SS"초"') AS ENROLL_DATE
+	MEMBER_TEL, MEMBER_ADDR, PROFILE_IMG, AUTHORITY,
+	TO_CHAR(ENROLL_DATE, 'YYYY"년" MM"월" DD"일" HH24"시" MI"분" SS"초"') AS ENROLL_DATE 
 FROM "MEMBER"
 WHERE MEMBER_DEL_FL = 'N'
-AND  MEMBER_EMAIL = 'user01@kh.or.kr'
-AND MEMBER_PW = 'pass01!';
+AND MEMBER_EMAIL = 'user01@kh.or.kr'
+AND MEMBER_PW = 'pass01!'
+;
 
 
+-- user01의 비밀번호 변경
+UPDATE "MEMBER" SET
+MEMBER_PW = '$2a$10$5MEOLqKcIIuZb9f1aiQSwO11u8Xj4bZBoqnNx8zLILcKf1PtZF8c2'
 
 
 
