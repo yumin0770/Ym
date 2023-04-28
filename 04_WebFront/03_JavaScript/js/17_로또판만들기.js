@@ -2,7 +2,7 @@ const createBtn = document.getElementById("createBtn");
 const lottoBoard = document.getElementById("lottoBoard");
 
 
-document.getElementById("createBtn").addEventListener("click",()=>{
+createBtn.addEventListener("click",()=>{
                                  // 이전에 생성된 내용을 모두 삭제
      lottoBoard.innerHTML = ""; // 클릭할 때 마다 계속 번호가 삭제되는걸 방지
 

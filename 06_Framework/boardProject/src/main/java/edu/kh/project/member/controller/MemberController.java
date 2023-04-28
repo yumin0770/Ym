@@ -355,8 +355,6 @@ public class MemberController {
 		
 		int result = service.signUp(inputMember);
 		
-		
-		
 		return path;
 	}
 	
