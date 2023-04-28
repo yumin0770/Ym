@@ -348,6 +348,7 @@ public class MemberController {
 			String addr = String.join("^^^", memberAddress);
 			inputMember.setMemberAddress(addr);		
 		}
+<<<<<<< HEAD
 	    // 가입 성공 여부에 따라 주소 결정
 	      String path = "redirect:";
 	      String message = null;
@@ -373,6 +374,19 @@ public class MemberController {
 	      
 	      
 	      return path;
+=======
+		//가입 성공 여부에 따라 주소 결정
+		String path = "redirect:";
+		
+		//회원 가입 서비스 호출
+		//(DB에 DML 수행 시 성공 행의 개수(int형) 반환)
+		
+		int result = service.signUp(inputMember);
+		
+		return path;
+	}
+	
+>>>>>>> origin/main
 	
 	
 }
