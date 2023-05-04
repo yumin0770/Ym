@@ -152,7 +152,7 @@ public class MyPageController {
 				,@SessionAttribute("loginMember") Member loginMember
 				,RedirectAttributes ra
 				,SessionStatus status
-				, HttpServletResponse resp) {
+				,HttpServletResponse resp) {
 			
 			//SessionStatus status  -> 세션관리객체
 			// HttpServletResponse resp -> 클라이언트 응답 객체
