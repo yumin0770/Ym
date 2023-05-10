@@ -126,12 +126,20 @@
                         </form>
 
                     </c:when>
-                    <%-- 로그인 되었을 때 --%>
+                   <%-- 로그인 되었을 때 --%>
                     <c:otherwise>
                         <article class="login-area">
 
                             <a href="/myPage/profile">
-                                <img src="/resources/images/user.png" id="memberProfile">
+                                <%-- 프로필 이미지가 없으면 기본 이미지 --%>
+                                <c:if test="${empty loginMember.profileImage}" >
+                                    <img src="/resources/images/user.png" id="memberProfile">
+                                </c:if>
+
+                                <%-- 프로필 이미지가 있으면 있는 이미지 --%>
+                                <c:if test="${not empty loginMember.profileImage}" >
+                                    <img src="${loginMember.profileImage}" id="memberProfile">
+                                </c:if>
                             </a>
 
                             <div class="my-info">
@@ -143,7 +151,9 @@
 
                                 <p>${loginMember.memberEmail}</p>
 
-                            </div> 
+                            </div>
+
+                        
                         </article>
                     </c:otherwise>
                 </c:choose>

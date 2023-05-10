@@ -49,8 +49,8 @@
 
                     
                     <!-- 좋아요 하트 -->
-
                     <span class="like-area">
+
                     <%-- 좋아요 누르적이 없거나, 로그인 --%>
                     <c:if test="${empty likeCheck}" >
                        <i class="fa-regular fa-heart" id="boardLike"></i>
@@ -58,7 +58,7 @@
 
                     <%-- 좋아요 누른적이 있을 때--%>
                       <c:if test="${not empty likeCheck}" >
-                       <i class="fa-regular fa-heart" id="boardLike"></i>
+                       <i class="fa-solid fa-heart" id="boardLike"></i>
                      </c:if>                
                         <span>${board.likeCount}</span>
                     </span>
@@ -164,6 +164,33 @@
 
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
+    <%-- 누가(로그인한 회원 번호//세션에 있음) 어떤 게시글(현재 게시글 번호) 좋아요를 클릭/취소 
+    
+    로그인한 회원 번호 얻어오기
+    1) ajax로 session에 있는 loginMember의 memberNo를 반환
+    2) HTML 요소에 로그인한 회원의 번호를 숨겨놓고 js로 얻어오기
+    3) script 태그 jsp파일 제일 위에 있는 script태그에 JS+EL 이용해서 전역 변수로 선언해주기--%>
+
+    <script>
+    //html, css, js, java, el, jstl
+      //JSP 해석 우선 순위 : java, EL, JSTL > HTML,css,js 
+    
+    //게시글 번호 전역 변수로 선언
+    const boardNo = ${board.boardNo};
+    
+    //로그인한 회원 번호를 전역변수로   
+    //->작성한 EL 구문이 null일 경우 빈칸으로 출력되어 변수에 값이 대입되지 않는 문제가 발생할 수 있다.
+    //해결방법: EL구문을 '', "" 문자열로 감싸면 해결 => EL값이 null이여도 ""(빈문자열)로 출력
+
+
+    const loginMemberNo ="${loginMember.memberNo}";
+        
+    
+
+        
+    </script>
+
+    <script src="/resources/js/board/boardDetail.js"></script>
 
 </body>
 </html>
