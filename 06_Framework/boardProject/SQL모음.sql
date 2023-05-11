@@ -637,20 +637,37 @@ ORDER BY COMMENT_NO
 
 
 -- 회원 프로필 이미지 변경
+UPDATE "MEMBER" SET
+PROFILE_IMG = '/resources/images/member/SpongeBob.gif'
+WHERE MEMBER_NO = 4;
 
+COMMIT;
 
-
-
---좋아요 테이블 삽입
-INSERT INTO "BOARD_LIKE"
-VALUES (1992, 4);
-
-
-
---좋아요 테이블 삭제
-DELETE FROM BOARD_LIKE
+SELECT * FROM BOARD_IMG 
 WHERE BOARD_NO = 1996
-AND MEMBER_NO = 16;
+ORDER BY IMG_ORDER ;
 
---조회 수 증가
+
+
+
+-- 좋아요 여부 확인
+SELECT COUNT(*) FROM "BOARD_LIKE"
+WHERE BOARD_NO = 1996 -- 게시글 번호
+AND MEMBER_NO = 4 ;-- 로그인 회원 번호
+
+
+SELECT * FROM BOARD ORDER BY BOARD_NO DESC;
+
+--한번에 여러개 인설트하기
+--INSERT ALL : 여러 테이블에 동시에 INSERT하는 구문
+--> 시퀀스 생성 구문을 작성 못 한다 (탈락)
+
+--INSERT + SUB QUERY 
+
+SELECT '웹접근경로' IMG_PATH , '변경명' IMG_RENAME, '원본명' IMG_ORIGINAL ,
+		0 IMG_ORDER , 2001 BOARD_NO
+FROM DUAL;
+
+
+
 
