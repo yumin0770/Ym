@@ -713,3 +713,8 @@ AND IMG_ORDER = #{imageOrder}
 ;
 
 
+--게시글 삭제
+UPDATE "BOARD" SET 
+BOARD_DEL_FL = 'Y'
+WHERE BOARD_CODE = #{boardCode}
+AND BOARD_NO =  #{boardNo}
