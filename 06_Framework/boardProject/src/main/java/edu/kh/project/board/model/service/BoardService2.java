@@ -15,8 +15,25 @@ public interface BoardService2 {
  * @param images
  * @param webPath
  * @param filePath
- * @return boradNo
+ * @return boardNo
  */
-int boardInsert(Board board, List<MultipartFile> images, String webPath, String filePath) throws IllegalStateException, IOException; 
+int boardInsert(Board board, List<MultipartFile> images, String webPath, String filePath) throws IllegalStateException, IOException;
+
+/** 게시글 수정 서비스
+ * @param board
+ * @param images
+ * @param webPath
+ * @param filePath
+ * @param deleteList
+ * @return rowcount
+ */
+int boardUpdate(Board board, List<MultipartFile> images, String webPath, String filePath, String deleteList) throws IllegalStateException, IOException;
+
+/**게시글 삭세 서비스
+ * @param board
+ * @return result
+ */
+int boardDelete(Board board);
 
 }
+

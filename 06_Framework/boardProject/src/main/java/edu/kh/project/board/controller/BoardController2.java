@@ -1,13 +1,17 @@
 package edu.kh.project.board.controller;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.kh.project.board.model.dto.Board;
+import edu.kh.project.board.model.service.BoardService;
 import edu.kh.project.board.model.service.BoardService2;
 import edu.kh.project.member.model.dto.Member;
 
@@ -28,6 +33,9 @@ public class BoardController2 {
 
 	@Autowired
 	private BoardService2 service;
+	
+	@Autowired//게시글 수정 시 상세조회 서비스 호출용
+	private BoardService boardService;
 	
 	//게시글 작성 화면 전환
 	@GetMapping("/{boardCode:[0-9]+}/insert") 
@@ -99,9 +107,109 @@ public class BoardController2 {
 		return path;
 	}
 	
+	//게시글 수정 화면 전환
+	@GetMapping("/{boardCode}/{boardNo}/update")  //1/2004/update
+	public String boardUpdate(
+		@PathVariable("boardCode") int boardCode	 //:주소 값 가져오기 + request scope에 값 올리기
+		,@PathVariable("boardNo") int boardNo		//:게시글 값 가져오기 + request scope에 값 올리기
+		,Model model) {
+		//Model 데이터 전달용 객체(기본 scope는 request)
+				
+		Map<String,Object> map = new HashMap<>();    //전달할 데이터 키:값
+		map.put("boardCode",boardCode);
+		map.put("boardNo", boardNo);
 	
+		Board board =  boardService.selectBoard(map); //boardController(1)에 있는 selectBoard(map)전달 화면 나오게하기
+		
+		model.addAttribute("board",board);
+		//forward(새롭게 요청x 컨트롤러가 받은걸 jsp한테 요청 위임) ->request scope 유지
+			return "board/boardUpdate";
+	}
 	
+	@PostMapping("/{boardCode}/{boardNo}/update")  //1/2004/update
+	public String boardUpdate(
+			Board board //커맨드 객체(name== 필드 경우 필드에 파라미터 세팅)
+			,@RequestParam(value="cp", required=false, defaultValue="1") int cp //쿼리스트링 유지
+			,@RequestParam(value="deleteList",required=false) String deleteList //삭제할 이미지 순서
+			,@RequestParam(value="images", required=false) List<MultipartFile> images //업로드된 파일 리스트
+			,@PathVariable("boardCode") int boardCode	 //:주소 값 가져오기 + request scope에 값 올리기
+			,@PathVariable("boardNo") int boardNo	
+			,HttpSession session //서버 파일 저장 경로 얻어올 용도
+			,RedirectAttributes ra //리다이렉트 시 값 전달용
+			) throws IllegalStateException, IOException {
+		
+		//1) boardCode, boardNo를 커맨드객체 (board)에 세팅
+		board.setBoardCode(boardCode);
+		board.setBoardNo(boardNo);
+		
+		//board(boardCode, boardNo, boardTitle, boardContent)
+		
+		//2) 이미지 서버 저장 경로, 웹 접근 경로
+		String webPath = "/resources/images/board/";
+		String filePath = session.getServletContext().getRealPath(webPath);
+		
+		//3) 게시글 수정 서비스 호출
+		int rowCount =  service.boardUpdate(board, images, webPath, filePath, deleteList) ;
+		
+		//4)결과에 따라 message, path 설정
+		String message = null;
+		String path ="redirect:";
+		
+		if(rowCount > 0) {
+			message = "게시글이 수정되었습니다.";
+			path += "/board/"+boardCode+"/"+boardNo+"?cp=" + cp ; //상세조회 페이지
+		}else {
+			message = "게시글 수정 실패";
+			path += "update";
+		}
+		
+		ra.addFlashAttribute("message", message);
 	
+		
+		return path;
+	
+	}
+	
+	@GetMapping("/{boardCode}/{boardNo}/delete")  //1/2004/update
+	public String boardDelete(
+			Board board
+			,@PathVariable("boardCode") int boardCode	 //:주소 값 가져오기 + request scope에 값 올리기
+			,@PathVariable("boardNo") int boardNo		//:게시글 값 가져오기 + request scope에 값 올리기
+			,RedirectAttributes ra //리다이렉트 시 값 전달용
+			) {
+		
+				/*
+				 * Map<String,Object> map = new HashMap<>(); //전달할 데이터 키:값
+				 * map.put("boardCode",boardCode); map.put("boardNo", boardNo);
+				 */
+		board.setBoardCode(boardCode);
+		board.setBoardNo(boardNo);
+		
+	
+		//3) 게시글 수정 서비스 호출
+		int result =  service.boardDelete(board);
+		
+		//4)결과에 따라 message, path 설정
+		String message = null;
+		String path ="redirect:";
+		
+		if(result > 0) {
+			message = "게시글이 삭제되었습니다.";
+			path += "/board/{boardCode} "; //상세조회 페이지
+		}else {
+			message = "게시글 삭제 실패";
+			path += "/board/{boardCode}/{boardNo}";
+		}
+		
+		ra.addFlashAttribute("message", message);
+	
+		
+		return path;
+		
+	}
+
+	
+		
 	
 	
 	
