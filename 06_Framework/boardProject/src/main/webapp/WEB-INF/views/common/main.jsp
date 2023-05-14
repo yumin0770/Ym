@@ -29,10 +29,43 @@
             <section class="content-1">
 
                 <h3>로그인된 회원 정보</h3>
-
                 ${sessionScope.loginMember}
 
+                <h3>닉네임이 일치하는 회원의 전화번호를 조회</h3>
 
+                <input type="text" id="inputNickname">
+                <button id="btn1">조회</button>
+                <h4 id="result1"></h4>
+
+                <hr>
+
+        <h3>이메일을 입력 받아 일치하는 회원의 정보를 모두 조회</h3>
+        email :  <input type="text" id="inputEmail">
+        <button id="btn2">조회</button>
+        <ul id="result2">
+        </ul>
+
+        <hr>
+        <h3>이메일이 일부라도 일치하는 모든회원 조회</h3>
+        검색어 :  <input type="text" id="input">
+        <button id="btn3">조회</button>
+        <table border="1" style="border-collapse:collapse">  
+            <thead>
+            <tr>
+                <th>회원번호</th>
+                <th>이메일</th>
+                <th>닉네임</th>
+            </tr>
+            </thead>
+
+            <tbody id=result3>
+                <tr>
+                    <td>1</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
 
             </section>
 
@@ -93,14 +126,26 @@
                         </form>
 
                     </c:when>
+<<<<<<< HEAD
 
                     
                     <%-- 로그인 되었을 때 --%>
+=======
+                   <%-- 로그인 되었을 때 --%>
+>>>>>>> origin/main
                     <c:otherwise>
                         <article class="login-area">
 
                             <a href="/myPage/profile">
-                                <img src="/resources/images/user.png" id="memberProfile">
+                                <%-- 프로필 이미지가 없으면 기본 이미지 --%>
+                                <c:if test="${empty loginMember.profileImage}" >
+                                    <img src="/resources/images/user.png" id="memberProfile">
+                                </c:if>
+
+                                <%-- 프로필 이미지가 있으면 있는 이미지 --%>
+                                <c:if test="${not empty loginMember.profileImage}" >
+                                    <img src="${loginMember.profileImage}" id="memberProfile">
+                                </c:if>
                             </a>
 
                             <div class="my-info">

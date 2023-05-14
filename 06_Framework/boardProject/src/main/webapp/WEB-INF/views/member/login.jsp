@@ -16,23 +16,23 @@
 
 <body>
     <main>
-
-        <section class="logo-area">
+        <%-- 로고 사진--%>
+        <section class="logo-area"> 
             <a href="/">
                 <img src="/resources/images/logo.jpg">
             </a>
         </section>
 
-
+          <%-- 로그인 --%>
         <form action="/member/login" method="post" id="loginFrm">
+  
             <section class="input-box">
-                <input type="text" name="memberEmail" placeholder="Email" value="${cookie.saveId.value}" required />
+                <input type="text" name="memberEmail" placeholder="Email"
+                 value="${cookie.saveId.value}" required />
             </section>
-
             <section class="input-box">
                 <input type="password" name="memberPw" placeholder="Password" required />
             </section>
-
             <button class="login-btn">Login</button>
 
             <%-- 쿠키에 saveId가 있는 경우--%>

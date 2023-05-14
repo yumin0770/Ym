@@ -40,7 +40,7 @@ import edu.kh.project.member.model.service.MemberService;
 @SessionAttributes({"loginMember"}) // Model의 이름(key)를 적으면 session으로 추가
 public class MemberController {
 	
-	// 등록된 Bean 중에서 필드와 타입이 일치하는 Bean을 주입
+	// 등록된 Bean 중에서 필드와 타입이 일치하는 Bean을 의존성 주입
 	// -> MemberService를 구현한 MemberServiceImpl의 Bean 주입
 	@Autowired
 	private MemberService service;
@@ -79,7 +79,7 @@ public class MemberController {
 	// @PostMapping
 	// -> @RequestMapping의 자식으로
 	//    POST 방식 요청을 연결하는 어노테이션
-	//@PostMapping("/login")
+	//@PostMapping("/login")  //post방식일 때 login으로 이동하겠다!
 	public String login(/*@RequestParam("inputEmail")*/ String inputEmail,
 						/*@RequestParam("inputPw")*/ String inputPw) {
 		
@@ -158,7 +158,7 @@ public class MemberController {
 		
 		// Member inputMember : 커맨드 객체(필드에 파라미터 담겨있음)
 		
-		// @RequestHeader(value="referer") String referer 
+		// @RequestHeader(value="referer") String refer
 		// -> 요청 HTTP header에서 "referer"(이전주소) 값을 얻어와
 		//    매개 변수 String referer에 저장
 		
@@ -235,7 +235,7 @@ public class MemberController {
 			cookie.setPath("/"); // localhost/ 이하 모든 주소
 								// ex) /  , /member/login,  /member/logout 등
 								//     모든 요청에 쿠키 첨부
-			
+				
 			// 응답 객체(HttpServletResponse)를 이용해서 
 			// 만들어진 쿠키를 클라이언트에게 전달
 			resp.addCookie(cookie);
@@ -358,6 +358,7 @@ public class MemberController {
 			String addr = String.join("^^^", memberAddress);
 			inputMember.setMemberAddress(addr);
 		}
+<<<<<<< HEAD
 		
 		
 		// 회원 가입 서비스 호출
@@ -387,6 +388,33 @@ public class MemberController {
 		return path;
 	}
 	
+=======
+	    // 가입 성공 여부에 따라 주소 결정
+	      String path = "redirect:";
+	      String message = null;
+	      int result =service.signUp(inputMember);
+	      
+	      
+	      if(result > 0) { // 가입 성공
+	    	  
+	         path += "/"; // 메인 페이지
+	         
+	         message = inputMember.getMemberNickname() + "님의 가입을 환영합니다.";
+	          
+	         
+	      } else { // 가입 실패
+	         // 회원 가입 페이지 
+//	         path += "/member/signUp";  // 절대 경로
+	         path += "signUp"; // 상대 경로
+	      
+	         message = "회원 가입 실패!";
+	      }
+	      //리다이렉트 시 session에 잠깐 올라갔다 내려오도록
+	      ra.addFlashAttribute("message",message);
+	      
+	      
+	      return path;
+>>>>>>> origin/main
 	
 	
 	

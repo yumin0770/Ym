@@ -30,16 +30,18 @@
                 <%--현재페이지 http://localhost/myPage/info 
                 제일 뒤에 info 지우고 action에 작성된 경로를 추가--%>
                 <%-- 상대경로 --%>
-                <form action="info" method="POST" name="myPageFrm">
+                <form action="info" method="POST" name="myPageFrm" id="updateInfo">
 
                     <div class="myPage-row">
                         <label>닉네임</label>
-                        <input type="text" name="memberNickname"  maxlength="10" value="${sessionScope.loginMember.memberNickname}">
+                        <input type="text" name="memberNickname"  maxlength="10"
+                         value="${sessionScope.loginMember.memberNickname}" id="memberNickname">
                     </div>
 
                     <div class="myPage-row">
                         <label>전화번호</label>
-                        <input type="text" name="memberTel"  maxlength="11" value="${sessionScope.loginMember.memberTel}">
+                        <input type="text" name="memberTel"  maxlength="11" 
+                        value="${sessionScope.loginMember.memberTel}" id="memberTel">
                     </div>
 
                     <div class="myPage-row info-title">
@@ -111,6 +113,7 @@
         }).open();
     }
 </script>
+<script src="/resources/js/myPage/myPage.js"></script>
 
 </body>
 </html>
