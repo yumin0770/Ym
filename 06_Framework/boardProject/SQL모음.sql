@@ -81,10 +81,6 @@ VALUES(SEQ_MEMBER_NO.NEXTVAL, 'user02@kh.or.kr', 'pass02!'
 
 COMMIT;
 
-<<<<<<< HEAD
-=======
-------------------------------------------------------------
->>>>>>> origin/main
 
 
 -- 로그인 SQL
@@ -99,13 +95,26 @@ AND MEMBER_PW = 'pass01!'
 
 
 -- user01의 비밀번호 변경
-<<<<<<< HEAD
-
-=======
 UPDATE "MEMBER" SET
-MEMBER_PW = '$2a$10$5MEOLqKcIIuZb9f1aiQSwO11u8Xj4bZBoqnNx8zLILcKf1PtZF8c2'
->>>>>>> origin/main
+MEMBER_PW = '$2a$10$4yX4KNCbULuzdqjSibpcHOSJuIyyoLf2eqhrBMk3KXhvmou8gjlL';
 
+COMMIT;
+
+SELECT * FROM "MEMBER";
+
+UPDATE MEMBER
+SET MEMBER_ADDR = REPLACE(MEMBER_ADDR, ',,', '^^^')
+WHERE INSTR(MEMBER_ADDR, ',,') > 0;
+
+COMMIT;
+
+-- 회원 정보 수정
+UPDATE "MEMBER" SET
+MEMBER_NICKNAME = 값,
+MEMBER_TEL  = 값,
+MEMBER_ADDR  = 값
+WHERE MEMBER_NO = 값
+;
 
 
 

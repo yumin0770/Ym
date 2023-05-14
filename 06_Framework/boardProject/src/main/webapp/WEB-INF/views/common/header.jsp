@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<link rel="stylesheet" href="/resources/css/main-style.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main-style.css"> 
+<%-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main-style.css">
+ --%>
+
+
 
 <!-- font awesome 라이브러리 추가 + key 등록 -->
 <script src="https://kit.fontawesome.com/f7459b8054.js" crossorigin="anonymous"></script>
@@ -11,7 +15,7 @@
     <section>
         <!-- 클릭 시 메인 페이지로 이동하는 로고 -->
         <a href="/">
-            <img src="/resources/images/logo.jpg" alt="로고" id="homeLogo">
+       <!--      <img src="/resources/images/logo.png" alt="로고" id="homeLogo"> -->
         </a>
     </section>
 
@@ -63,7 +67,7 @@
         <c:choose>
             <c:when test="${empty loginMember}">
                 <%-- 로그인 X --%>
-                <a href="/">메인 페이지</a> | <a href="/member/login">로그인</a>
+                <a href="/">메인 페이지</a> | <a href="/member/login">로그인</a> <%-- a태는 get방식 --%>
             </c:when>
             
             <c:otherwise>

@@ -51,9 +51,6 @@ public class LoginFilter implements Filter {
 		//3) session에서 "loginMember" key를 가진 속성을 얻어와
 		// null인 경우 메인 페이지로 redirect 시키기
 		
-		
-		
-		
 		if(session.getAttribute("loginMember") == null) {
 			resp.sendRedirect("/");
 			
@@ -63,7 +60,7 @@ public class LoginFilter implements Filter {
 		else {
 			
 			chain.doFilter(request, response);
-			//chain의미가 모지
+			//chain 연쇄해서 다음 동작해라
 		}
 		
 		

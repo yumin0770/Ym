@@ -25,6 +25,7 @@ public class MyPageController {
 	private MyPageService service;
 	
 	
+	//내 정보 페이지로 이동
 	@GetMapping("/info") //get방식 일 때
 	public String info() {
 		

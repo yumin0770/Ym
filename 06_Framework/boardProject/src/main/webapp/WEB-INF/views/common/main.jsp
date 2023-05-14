@@ -93,6 +93,8 @@
                         </form>
 
                     </c:when>
+
+                    
                     <%-- 로그인 되었을 때 --%>
                     <c:otherwise>
                         <article class="login-area">
@@ -110,10 +112,16 @@
 
                                 <p>${loginMember.memberEmail}</p>
 
-                            </div> 
+                            </div>
+
+                        
                         </article>
                     </c:otherwise>
+
+
                 </c:choose>
+
+                
             </section>
         </section>
     </main>
