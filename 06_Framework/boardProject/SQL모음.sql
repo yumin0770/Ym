@@ -96,7 +96,11 @@ AND MEMBER_PW = 'pass01!'
 
 -- user01의 비밀번호 변경
 UPDATE "MEMBER" SET
+<<<<<<< HEAD
+MEMBER_PW = '$2a$10$4yX4KNCbULuzdqjSibpcHOSJuIyyoLf2eqhrBMk3KXhvmou8gjlL';
+=======
 MEMBER_PW = '$2a$10$5MEOLqKcIIuZb9f1aiQSwO11u8Xj4bZBoqnNx8zLILcKf1PtZF8c2';
+>>>>>>> origin/main
 
 COMMIT;
 
@@ -115,6 +119,8 @@ MEMBER_TEL  = 값,
 MEMBER_ADDR  = 값
 WHERE MEMBER_NO = 값
 ;
+<<<<<<< HEAD
+=======
 
 
 -- 회원번호가 일치하는 회원의 비밀번호 조회
@@ -408,6 +414,7 @@ REFERENCES "COMMENT" (
 	"COMMENT_NO"
 );
 
+>>>>>>> origin/main
 
 
 

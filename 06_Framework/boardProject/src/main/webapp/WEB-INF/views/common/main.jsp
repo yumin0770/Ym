@@ -126,7 +126,13 @@
                         </form>
 
                     </c:when>
+<<<<<<< HEAD
+
+                    
+                    <%-- 로그인 되었을 때 --%>
+=======
                    <%-- 로그인 되었을 때 --%>
+>>>>>>> origin/main
                     <c:otherwise>
                         <article class="login-area">
 
@@ -156,7 +162,11 @@
                         
                         </article>
                     </c:otherwise>
+
+
                 </c:choose>
+
+                
             </section>
         </section>
     </main>

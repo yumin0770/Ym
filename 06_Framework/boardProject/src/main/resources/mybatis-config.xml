@@ -21,6 +21,10 @@
 		<typeAlias type="edu.kh.project.board.model.dto.BoardImage" alias="BoardImage" />
 		<typeAlias type="edu.kh.project.board.model.dto.Comment" alias="Comment" />
 	</typeAliases>
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/main
 	<!-- mapper 파일(SQL 작성되는파일) 위치 등록 부분 -->
 	<mappers>
 		<mapper resource="/mappers/member-mapper.xml" />
@@ -31,7 +35,6 @@
 		<mapper resource="/mappers/board-mapper.xml" />
 		<mapper resource="/mappers/comment-mapper.xml" />
 	</mappers>
-	
 
 
 </configuration>

@@ -2,13 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="myPageMapper">
 
-	<!--회원 정보 수정                   별칭--> 
-<update id="updateInfo" parameterType="Member" >
+
+	<!-- 회원 정보 수정 -->
+	<update id="updateInfo" parameterType="Member">
 		UPDATE "MEMBER" SET
-		MEMBER_NICKNAME = #{memberNickname},  
-		MEMBER_TEL = #{memberTel},
+		MEMBER_NICKNAME = #{memberNickname},
+		MEMBER_TEL  = #{memberTel},
 		MEMBER_ADDR  = #{memberAddress}
 		WHERE MEMBER_NO = #{memberNo}
+<<<<<<< HEAD
+	</update>
+=======
 </update>
 	
 	<!-- 비밀번호 조회 -->
@@ -54,5 +58,6 @@
 	
 	
 	
+>>>>>>> origin/main
 
 </mapper>
