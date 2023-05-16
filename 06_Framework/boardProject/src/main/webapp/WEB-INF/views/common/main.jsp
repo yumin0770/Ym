@@ -9,6 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게시판 프로젝트</title>
 
+<link rel="stylesheet" href="/resources/css/main-style.css">
+<script src="https://kit.fontawesome.com/f7459b8054.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
@@ -126,13 +129,11 @@
                         </form>
 
                     </c:when>
-<<<<<<< HEAD
+
 
                     
                     <%-- 로그인 되었을 때 --%>
-=======
-                   <%-- 로그인 되었을 때 --%>
->>>>>>> origin/main
+
                     <c:otherwise>
                         <article class="login-area">
 
@@ -158,15 +159,9 @@
                                 <p>${loginMember.memberEmail}</p>
 
                             </div>
-
-                        
                         </article>
                     </c:otherwise>
-
-
-                </c:choose>
-
-                
+                </c:choose>                
             </section>
         </section>
     </main>
@@ -174,6 +169,8 @@
     <%-- footer --%>
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
+    <%-- SockJS 추가 --%>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
 
     <!-- main.js 추가 -->
     <script src="/resources/js/main.js"></script>

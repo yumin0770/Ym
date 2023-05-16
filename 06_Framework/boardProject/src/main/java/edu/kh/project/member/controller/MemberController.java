@@ -358,7 +358,6 @@ public class MemberController {
 			String addr = String.join("^^^", memberAddress);
 			inputMember.setMemberAddress(addr);
 		}
-<<<<<<< HEAD
 		
 		
 		// 회원 가입 서비스 호출
@@ -388,33 +387,6 @@ public class MemberController {
 		return path;
 	}
 	
-=======
-	    // 가입 성공 여부에 따라 주소 결정
-	      String path = "redirect:";
-	      String message = null;
-	      int result =service.signUp(inputMember);
-	      
-	      
-	      if(result > 0) { // 가입 성공
-	    	  
-	         path += "/"; // 메인 페이지
-	         
-	         message = inputMember.getMemberNickname() + "님의 가입을 환영합니다.";
-	          
-	         
-	      } else { // 가입 실패
-	         // 회원 가입 페이지 
-//	         path += "/member/signUp";  // 절대 경로
-	         path += "signUp"; // 상대 경로
-	      
-	         message = "회원 가입 실패!";
-	      }
-	      //리다이렉트 시 session에 잠깐 올라갔다 내려오도록
-	      ra.addFlashAttribute("message",message);
-	      
-	      
-	      return path;
->>>>>>> origin/main
 	
 	
 	

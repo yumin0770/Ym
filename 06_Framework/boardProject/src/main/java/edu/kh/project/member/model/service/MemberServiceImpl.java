@@ -80,15 +80,4 @@ public class MemberServiceImpl implements MemberService{
 	}
 	
 	
-	
-	
-<<<<<<< HEAD
-	
-	
-	
-	
-	
 }
-=======
-}
->>>>>>> origin/main
