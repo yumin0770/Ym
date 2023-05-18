@@ -57,6 +57,12 @@ public interface BoardService {
 	List<Map<String, Object>> headerSearch(String query);
 
 
+	/**DB파일 목록 조회
+	 * @return
+	 */
+	List<String> selectImageList();
+
+
 
 
 
