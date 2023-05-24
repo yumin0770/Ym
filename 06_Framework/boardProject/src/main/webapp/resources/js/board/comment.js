@@ -33,7 +33,7 @@ function selectCommentList(){
             // 답글일 경우 child-comment 클래스 추가
             if(comment.parentNo != 0)  commentRow.classList.add("child-comment");
 
-
+[]
             // 작성자
             const commentWriter = document.createElement("p");
             commentWriter.classList.add("comment-writer");
