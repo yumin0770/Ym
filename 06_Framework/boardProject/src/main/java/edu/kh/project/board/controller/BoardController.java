@@ -111,7 +111,7 @@ public class BoardController {
          
          model.addAttribute("map", map);
          
-      }
+  }
       
       return "board/boardList";
    }

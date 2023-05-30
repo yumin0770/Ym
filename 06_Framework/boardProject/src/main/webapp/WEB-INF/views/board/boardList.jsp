@@ -125,7 +125,8 @@
                 <ul class="pagination">
                 
                     <!-- 첫 페이지로 이동 -->
-                    <%-- <li><a href="${boardCode}?cp=1">&lt;&lt;</a></li> --%>
+                    <%-- <li><a href="${boardCode}?cp=1">&lt;&lt;</a></li> -
+                    -%>
                     <li><a href="/board/${boardCode}?cp=1${sp}">&lt;&lt;</a></li>
 
                     <!-- 이전 목록 마지막 번호로 이동 -->
