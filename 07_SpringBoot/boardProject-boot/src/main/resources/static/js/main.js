@@ -201,7 +201,7 @@ btn3.addEventListener('click',()=>{
 
 });
 
-//-----------------------------------------------------------------
+/* //-----------------------------------------------------------------
 //웹소켓 테스트
 //1.SockJS 라이브러리 추가
 
@@ -218,17 +218,50 @@ function sendMessage(name, str){
 
    /*  console.log(obj); */  
 
-   testSock.send(JSON.stringify(obj));  /* JS객체 -> JSON */
+/*    testSock.send(JSON.stringify(obj));  /* JS객체 -> JSON */
 
-}            
+/*}   */          
 
 //웹소켓 객체(testSocket)가 서버로 부터 전달받은 메시지가 있을 경우
-testSock.onmessage = e => {
+/* testSock.onmessage = e => {
     //e : 이벤트 객체
     //e.data : 전달받은 메시지(JSON)
 
     let obj = JSON.parse(e.data); //JSON -> JS 객체
 
     console.log(`보낸사람 :  ${obj.name} / ${obj.str}`);
+
+} */ 
+
+function getCookie(key){
+    const cookies = document.cookie;
+    //배열 .map() : 배열의 모든 순차 접근하여 함수 수행 후 
+    //              수행 결과를 이용해서 새로운 배열을 만드는 함수
+   const cookieList = cookies.split(";").map(cookie=> cookie.split("="));
+
+   const obj = {}; //빈 객체 생성
+   
+   for(let i=0; i<cookieList.length; i++){
+    obj[cookieList[i][0]] = cookieList[i][1];
+   }
+
+   return obj[key];
+
+}
+
+//쿠키에 saveId가 있을 경우
+
+
+if(document.querySelector("input[name='memberEmail']")!=null){
+//화면에 memberEmail 입력박스가 있을 경우
+
+    const saveId = getCookie("saveId");
+    //있으면 이메일,없으면 undefined
+
+    if(saveId != undefined){ //쿠키에 저장된 이메일이 있을 때
+        document.querySelector("input[name='memberEmail']").value = saveId;
+        document.querySelector("input[name='saveId']").checked = true;
+
+    }
 
 }
