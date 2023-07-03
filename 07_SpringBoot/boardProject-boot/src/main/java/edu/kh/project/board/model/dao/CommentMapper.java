@@ -9,36 +9,36 @@ import org.springframework.stereotype.Repository;
 
 import edu.kh.project.board.model.dto.Comment;
 
-
 @Mapper
 public interface CommentMapper {
-
-
-
-	/**댓글 조회
+	
+	/** 댓글 목록 조회
 	 * @param boardNo
-	 * @return
+	 * @return cList
 	 */
 	public List<Comment> select(int boardNo);
 
-	/**댓글 삽입
+	
+	/** 댓글 삽입
 	 * @param comment
-	 * @return
+	 * @return result
 	 */
 	public int insert(Comment comment);
 
-
-	/**댓글삭제
+	
+	/** 댓글 삭제
 	 * @param commentNo
-	 * @return
+	 * @return result
 	 */
 	public int delete(int commentNo);
 
-
-	/**댓글 수정
-	 * @param comment
-	 * @return
-	 */
-	public int update(Comment comment) ;
 	
+	/** 댓글 수정
+	 * @param comment
+	 * @return result
+	 */
+	public int update(Comment comment);
+	
+	
+
 }

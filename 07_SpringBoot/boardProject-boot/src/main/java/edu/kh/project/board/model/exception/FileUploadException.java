@@ -1,23 +1,24 @@
 package edu.kh.project.board.model.exception;
 
-//사용자 정의 예외를 만드는 방법!
-//-> Exception 관련 클래스를 상속 받으면 된다.
+// 사용자 정의 예외를 만드는 방법!
+// -> Exception 관련 클래스를 상속 받으면 된다
 
-//tip.unchecked exception를 만들고 싶다면 RuntimeExceptiond을 상속 받아서 구현
+// tip. unchecked exception을 만들고 싶다면
+//     RuntimeException을 상속 받아서 구현
 
-//unchecked 에외 처리 선택적 
-//checkec  : 예 처리 필수
+// unchecked exception  : 예외 처리 선택
+// checked exception    : 예외 처리 필수
 
-//예외처리 : try-catch, throws
+// 예외 처리 : try-catch / throws
 
-public class FileUploadException extends RuntimeException {
+public class FileUploadException extends RuntimeException{
 
 	public FileUploadException() {
 		super("파일 업로드 중 예외 발생");
 	}
 	
+	
 	public FileUploadException(String message) {
 		super(message);
 	}
-	
 }

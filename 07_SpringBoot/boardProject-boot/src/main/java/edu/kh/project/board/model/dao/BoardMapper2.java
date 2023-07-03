@@ -13,38 +13,37 @@ import edu.kh.project.board.model.dto.BoardImage;
 
 @Mapper
 public interface BoardMapper2 {
-	
 
-
-	/**게시글 삽입
+	/** 게시글 삽입
 	 * @param board
-	 * @return boradNo
+	 * @return boardNo
 	 */
 	public int boardInsert(Board board);
 
-	/**이미지 리스트(여러개) 삽입
+	/** 이미지 리스트(여러 개) 삽입
 	 * @param uploadList
 	 * @return result
 	 */
 	public int insertImageList(List<BoardImage> uploadList);
-	
+
 	/** 게시글 수정
 	 * @param board
 	 * @return rowCount
 	 */
 	public int boardUpdate(Board board);
 
-	/**이미지 삭제
+	/** 이미지 삭제
 	 * @param deleteMap
-	 * @return
+	 * @return rowCount
 	 */
 	public int imageDelete(Map<String, Object> deleteMap);
 
-	/**이미지 수정
-	 * @param img
+	
+	/** 이미지 수정
+ 	 * @param img
 	 * @return rowCount
 	 */
-	public int imageUpdate(BoardImage img) ;
+	public int imageUpdate(BoardImage img);
 
 	/** 이미지 삽입(1개)
 	 * @param img
@@ -52,8 +51,12 @@ public interface BoardMapper2 {
 	 */
 	public int imageInsert(BoardImage img);
 
-	public int boardDelete(Map<String, Object> deleteMap) ;
-
+	/** 게시글 삭제
+	 * @param map
+	 * @return result
+	 */
+	public int boardDelete(Map<String, Object> map);
 	
-
+	
+	
 }

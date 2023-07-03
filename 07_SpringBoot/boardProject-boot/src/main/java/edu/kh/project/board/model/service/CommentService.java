@@ -6,15 +6,15 @@ import edu.kh.project.board.model.dto.Comment;
 
 public interface CommentService {
 
-	/**
+	/** 댓글 목록 조회
 	 * @param boardNo
 	 * @return cList
 	 */
-	public List<Comment> select(int boardNo);
+	List<Comment> select(int boardNo);
 
-	/**
+	/** 댓글 삽입
 	 * @param comment
-	 * @return
+	 * @return result
 	 */
 	int insert(Comment comment);
 
@@ -22,12 +22,12 @@ public interface CommentService {
 	 * @param commentNo
 	 * @return result
 	 */
-	public int delete(int commentNo);
+	int delete(int commentNo);
 
-	/**댓글 수정
+	/** 댓글 수정
 	 * @param comment
 	 * @return result
 	 */
-	public int update(Comment comment);
+	int update(Comment comment);
 
 }
