@@ -1,3 +1,8 @@
 h1{
   color: aqua;
 }
+
+.completed{
+  text-decoration: line-through;/* 중간선 */
+  
+}

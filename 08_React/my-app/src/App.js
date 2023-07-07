@@ -8,6 +8,9 @@ import PropsEx from './components/R01_props';
 import State1 from './components/R02_state1';
 import State2 from './components/R03_state2';
 import State3 from './components/R04_state3';
+import TodoList1 from './components/R05_todolist1';
+import ContextApi from './components/R06_context_api'
+
 
 function App() {
   //리액트의 컴포넌트는 딱 하나의 요소만을 반환할 수 있다.
@@ -26,13 +29,20 @@ function App() {
 {/*       <PropsEx name={'박공부'}/>  */}
 
       {/* R02 state1 */}
-      <State1/>
+      {/* <State1/> */}
 
       {/* R03 state2 */}
-      <State2 init={100}/>
+     {/*  <State2 init={100}/> */}
 
       {/* R04 state3 */}
-      <State3/>
+      {/* <State3/> */}
+
+      {/* R05_todolist1 */}
+       {/* <TodoList1/> */} 
+
+       {/*R06_context_api */}
+
+      <ContextApi/>
 
       </>
   );
